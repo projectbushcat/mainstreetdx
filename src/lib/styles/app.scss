@@ -57,7 +57,12 @@ a:not(:has(i)) {
     font-size: 1.25rem;
   }
 
-  &:hover {
+  &:is(input) {
+    @apply text-black;
+  }
+
+  &:hover,
+  &:focus {
     @apply text-black;
   }
 }

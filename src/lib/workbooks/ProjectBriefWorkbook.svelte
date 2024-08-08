@@ -11,7 +11,7 @@
   <div class="flex flex-col gap">
     <p class="header">
       <span>“We hired Main Street to</span>
-      <EditableText punctuation="period" value="redesign our Shopify" />
+      <EditableText punctuation="period" value="redesign our Shopify website" />
       <ActionButton label="Add" icon="plus" positionOverrideType="editable_text" />
       <ActionButton label="Shuffle" icon="refresh" positionOverrideType="editable_text" />
     </p>

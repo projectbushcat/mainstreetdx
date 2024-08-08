@@ -48,7 +48,7 @@
         label={weeksLabel}
         valueText={weeksLabel}
         min={1}
-        max={4}
+        max={8}
         bind:value={weeks}
         labelledBy="budget-header"
       />
@@ -56,7 +56,7 @@
   </div>
 </Section>
 <Section prose>
-  <Accordion title="More details about how we work.">
+  <Accordion title="A conversation is always free.">
     Lorem ipsum is old text used in the copywriting industry to indicate an area that isn’t final yet.
   </Accordion>
 </Section>

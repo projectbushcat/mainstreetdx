@@ -9,13 +9,13 @@
 </script>
 
 <svelte:head>
-  <title>
-    Main Street Digital | Small business technology consulting | Meet your digital superpower | Book a free
-    intro call today (we'll bring snacks!*)
-  </title>
+  <title
+    >Main Street DX | Digital transformation and business consulting services for local businesses and
+    organizations | Meet your digital superpower optimized for speed, outcome and trust</title
+  >
   <meta
     name="description"
-    content="Meet your digital superpower. Main Street helps your business get the most out of tech. We prioritize speed, outcome — and trust. Our POV is shaped by decades of experience: ship fast, move the needle, and be accountable."
+    content="Meet your digital superpower: Main Street helps your business get the most out of tech. We prioritize speed, outcome — and trust. Our POV is shaped by decades of experience: ship fast, move the needle, and be accountable."
   />
 </svelte:head>
 
@@ -32,7 +32,7 @@
       </a>
       <div class="flex items-center gap-md">
         <ActionLink href={BookAnIntroCallHref} label="Book a call" icon="support" />
-        <Highlight>We'll bring snacks!*</Highlight>
+        <Highlight>Times available</Highlight>
       </div>
     </div>
   </Section>
@@ -40,9 +40,9 @@
 <slot></slot>
 <footer>
   <Section>
-    <div class="text-main-gray opacity-70">
-      &copy; {currentYear} Main Street Digital, LLC. *Offer valid for in-person meetings only :)
-      <a href={BookAnIntroCallHref}>Book a call</a>.
+    <div class="text-main-gray opacity-70 flex flex-col gap-4">
+      <p>&copy; {currentYear} Main Street Digital Transformation Services, LLC.</p>
+      <!-- <p>*Offer valid for our hometown of Bentonville, AR. &lt;3</p> -->
     </div>
   </Section>
 </footer>

@@ -9,24 +9,24 @@
 <Section>
   <SectionHeader
     level={1}
-    header="Meet your digital superpower."
-    subhead="Main Street helps your business get the most out of tech."
+    header="Meet your new superpower."
+    subhead="Main Street drives cutting-edge digital outcomes in weeks, not years."
   />
   <SectionHeader
-    header="We prioritize speed, outcome — and trust."
-    subhead="Our POV is shaped by decades of experience: ship fast, move the needle, and be accountable."
+    header="Consulting optimized for speed, impact — and trust."
+    subhead="Our innovative per-project model is accessible for every size, shape and phase of business."
   />
   <SectionHeader
     standalone
-    header="Put simply, we prefer to show instead of tell."
-    subhead="Use the workbooks below to explore offerings, answer any immediate questions, and schedule kickoff."
+    header="Put simply: our bias is for action."
+    subhead="Use the workbooks below to configure your project and schedule kickoff in ten minutes."
   />
 </Section>
 <article class="pb">
   <Section>
     <SectionHeader
       actionable
-      header="Step 1: Build your project's brief."
+      header="Step 1: Configure your project."
       subhead="Treat it like you’re writing a testimonial about us, so we’re all motivated to make it true."
     />
   </Section>
@@ -44,13 +44,8 @@
   <ProjectBudgetWorkbook></ProjectBudgetWorkbook>
 </article>
 <article class="pb">
-  <Section>
-    <SectionHeader
-      standalone
-      actionable
-      header="Step 3: Schedule Kickoff"
-      subhead={`Everything you send to us is covered by our <a href="/customer-policy">standard customer policy</a>.`}
-    />
-  </Section>
   <ProjectKickoffWorkbook></ProjectKickoffWorkbook>
+  <!-- <Section>
+    <SectionHeader actionable form_notice header="Step 3: Project Kickoff" />
+  </Section> -->
 </article>
