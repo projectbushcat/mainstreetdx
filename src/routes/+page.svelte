@@ -4,7 +4,6 @@
   import ProjectBriefWorkbook from "$lib/workbooks/ProjectBriefWorkbook.svelte";
   import ProjectBudgetWorkbook from "$lib/workbooks/ProjectBudgetWorkbook.svelte";
   import ProjectKickoffWorkbook from "$lib/workbooks/ProjectKickoffWorkbook.svelte";
-  const hi = "hello";
 </script>
 
 <Section>
