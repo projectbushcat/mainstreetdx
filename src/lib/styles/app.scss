@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.2;
+
+  @screen md {
+    font-weight: 300;
+  }
+}
+
+a:not(:has(i)) {
+  text-decoration: underline;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.header,
+.header-strong,
+.header-weak {
+  font-size: 1.25rem;
+  text-wrap: pretty;
+
+  @screen md {
+    font-size: 2rem;
+  }
+}
+
+.header-strong {
+  font-weight: 500;
+  font-stretch: semi-expanded;
+
+  @screen md {
+    font-weight: 450;
+  }
+}
+
+.header-weak {
+  @apply text-main-gray;
+}
+
+.text-label {
+  font-weight: 600;
+  @apply text-main-gray;
+
+  font-size: 1rem;
+
+  @screen md {
+    font-size: 1.25rem;
+  }
+
+  &:hover {
+    @apply text-black;
+  }
+}
+
+.text-accordion {
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  @screen md {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.text-stat {
+  font-size: 1rem;
+  font-stretch: condensed;
+  text-transform: uppercase;
+
+  @apply text-main-gray;
+}
+
+.text-jumbo {
+  font-size: 1.5rem;
+  font-stretch: extra-expanded;
+  font-weight: 900;
+
+  @screen md {
+    font-size: 2rem;
+  }
+}
