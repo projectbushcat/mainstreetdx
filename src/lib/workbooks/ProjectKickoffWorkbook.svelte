@@ -21,7 +21,7 @@
   let phase: "email" | "summary" = "summary";
 
   const phase_labels: Record<Phases, PhaseLabel> = {
-    summary: { label: "Review your project:" },
+    summary: { label: "Your project plan." },
     email: {
       label: "Step 3: Insights and initial questions",
       actionable: true

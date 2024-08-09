@@ -58,7 +58,7 @@
   <Section>
     <SectionHeader
       actionable
-      header="Step 3: Schedule kickoff."
+      header="Step 3: Immediate insight."
       subhead="We'll analyze your project, ask any follow-ups, and book kickoff."
     />
   </Section>
