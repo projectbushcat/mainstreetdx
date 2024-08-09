@@ -1,6 +1,5 @@
 <script lang="ts">
   import "$lib/styles/app.scss";
-  import { ActionClassName } from "$lib/ui/Action";
   import ActionLink from "$lib/ui/ActionLink.svelte";
   import Highlight from "$lib/ui/Highlight.svelte";
   import Section from "$lib/ui/Section.svelte";
@@ -16,7 +15,6 @@
         href="/"
         class="focus:outline-main-green focus:outline-offset-4"
         aria-label="Main Street Digital Transformation - Homepage"
-        aria-current="page"
       >
         <img src="/wordmark.svg" alt="Main Street DX (Digital Transformation)" />
       </a>
@@ -34,7 +32,13 @@
   <Section surface="dark">
     <ul class="flex flex-col gap-lg">
       <li>
-        <img src="/wordmark-bw.svg" alt="Main Street DX (Digital Transformation)" />
+        <a
+          href="/"
+          class="focus:outline-main-green focus:outline-offset-4"
+          aria-label="Main Street Digital Transformation - Homepage"
+        >
+          <img src="/wordmark-bw.svg" alt="Main Street DX (Digital Transformation)" />
+        </a>
       </li>
       <li>
         <p class="text-label">Made with &lt;3 in a thriving small town.</p>

@@ -20,7 +20,7 @@
     {/if}
   </p>
   <p class="header">
-    90-day goal: {$ProjectStore.goal}<br />
+    Goal: {$ProjectStore.goal} in 90 days.<br />
     Duration: {`${Number($ProjectStore.hours) * Number($ProjectStore.weeks)} ${plural($ProjectStore.hours, "hour", "hours")} total over ${$ProjectStore.weeks} ${plural($ProjectStore.weeks, "week", "weeks")}`}<br
     />
     Budget: {currencyFormatter.format(

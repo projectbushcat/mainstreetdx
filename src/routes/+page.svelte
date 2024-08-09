@@ -24,7 +24,7 @@
     subhead="Main Street delivers cutting-edge outcomes in weeks, not months."
   />
   <SectionHeader
-    header="Transformation optimized for speed, impact — and trust."
+    header="Consulting optimized for speed, impact — and trust."
     subhead="Our innovative per-project model is accessible for every size, shape and phase of business."
   />
   <SectionHeader

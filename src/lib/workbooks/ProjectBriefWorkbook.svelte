@@ -62,8 +62,14 @@
   </Accordion>
 </Section>
 
-<style lang="scss">
+<style lang="postcss">
   p {
-    line-height: 1.35;
+    line-height: 1.5;
+  }
+
+  @screen md {
+    p {
+      line-height: 1.35;
+    }
   }
 </style>

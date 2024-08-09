@@ -30,10 +30,10 @@
       />
     </div>
     <div
-      class="bg-surface-dark rounded text-center py-md row-span-2 flex flex-col justify-center items-center"
+      class="bg-main-green text-white rounded text-center py-md row-span-2 flex flex-col justify-center items-center"
       role="status"
     >
-      <p class="text-stat">Max charge:</p>
+      <p class="text-stat text-white">Max charge:</p>
       <p class="text-jumbo">
         {currencyFormatter.format(
           ProjectHourlyRate * Number($ProjectStore.hours) * Number($ProjectStore.weeks)

@@ -46,14 +46,16 @@
   };
 </script>
 
-<form method="dialog">
+<form
+  method="dialog"
+  on:submit|preventDefault={() => {
+    dialog?.close();
+  }}
+>
   <div class="flex flex-col gap">
     <SectionHeader
       actionable
       header={type === "outcome" ? "Set a project outcome." : "Define a 90-day goal."}
-      subhead={type === "outcome"
-        ? "A maximum of three outcomes are allowed per project."
-        : "Goals ensure we're all on the same page."}
     />
     <div class="flex flex-col gap-lg">
       <TextInput
@@ -72,7 +74,7 @@
             label="Done"
             icon="thumb"
             on:click={() => {
-              dialog.close();
+              dialog?.close();
             }}
           />
         </li>
@@ -80,8 +82,8 @@
     </div>
 
     <ul class="flex flex-col">
-      <li class="text-label">Some inspiration:</li>
-      {#each inspo as item (item)}
+      <li class="text-label">Inspiration:</li>
+      {#each inspo as item}
         <li>
           <ActionButton
             label={item}

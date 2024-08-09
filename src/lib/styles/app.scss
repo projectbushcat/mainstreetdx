@@ -31,7 +31,7 @@ a:not(:has(i)) {
 .header,
 .header-strong,
 .header-weak {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   text-wrap: pretty;
 
   @screen md {
@@ -91,6 +91,10 @@ a:not(:has(i)) {
   text-transform: uppercase;
 
   @apply text-main-gray;
+
+  &.text-white {
+    color: #fff;
+  }
 }
 
 .text-jumbo {
