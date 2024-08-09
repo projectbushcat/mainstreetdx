@@ -52,13 +52,33 @@
       actionable
       header={type === "outcome" ? "Set a project outcome." : "Define a 90-day goal."}
       subhead={type === "outcome"
-        ? "A maximum of 3 outcomes are allowed per project."
+        ? "A maximum of three outcomes are allowed per project."
         : "Goals ensure we're all on the same page."}
     />
-    <TextInput
-      bind:value
-      label={type === "outcome" ? "What do you need to accomplish?" : "What's your business's 90-day goal?"}
-    />
+    <div class="flex flex-col gap-lg">
+      <TextInput
+        bind:value
+        autofocus
+        label={type === "outcome" ? "What do you need to accomplish?" : "What's your business's 90-day goal?"}
+      />
+      <ul class="flex justify-between">
+        <li>
+          {#if type === "outcome" && $ProjectStore.outcomes.length > 1}
+            <ActionButton label="Delete" icon="x" on:click={handleDeleteClick} />
+          {/if}
+        </li>
+        <li>
+          <ActionButton
+            label="Done"
+            icon="thumb"
+            on:click={() => {
+              dialog.close();
+            }}
+          />
+        </li>
+      </ul>
+    </div>
+
     <ul class="flex flex-col">
       <li class="text-label">Some inspiration:</li>
       {#each inspo as item (item)}
@@ -72,22 +92,6 @@
           />
         </li>
       {/each}
-    </ul>
-    <ul class="flex justify-between">
-      <li>
-        {#if type === "outcome" && $ProjectStore.outcomes.length > 1}
-          <ActionButton label="Delete" icon="x" on:click={handleDeleteClick} />
-        {/if}
-      </li>
-      <li>
-        <ActionButton
-          label="Done"
-          icon="thumb"
-          on:click={() => {
-            dialog.close();
-          }}
-        />
-      </li>
     </ul>
   </div>
 </form>

@@ -5,6 +5,7 @@
   export let label: string;
   export let name: string = id;
   export let value: string;
+  export let autofocus: boolean = false;
 </script>
 
 <div class="flex flex-col gap-2 max-w-[32.5ch]">
@@ -14,11 +15,13 @@
     {/if}
     <span>{label}</span>
   </label>
+  <!-- svelte-ignore a11y-autofocus -->
   <input
     type="text"
     {id}
     {name}
     {required}
+    {autofocus}
     bind:value
     class="text-label p-lg rounded outline outline-2 outline-main-green ring-4 ring-surface-dark bg-surface-dark focus:ring-surface-dark-h focus:bg-surface-dark-h"
     placeholder="Write here"

@@ -20,11 +20,11 @@
 <Section>
   <SectionHeader
     level={1}
-    header="Meet your new superpower."
-    subhead="Main Street delivers cutting-edge digital outcomes in weeks, not months."
+    header="Meet your digital superpower."
+    subhead="Main Street delivers cutting-edge outcomes in weeks, not months."
   />
   <SectionHeader
-    header="Consulting optimized for speed, impact — and trust."
+    header="Transformation optimized for speed, impact — and trust."
     subhead="Our innovative per-project model is accessible for every size, shape and phase of business."
   />
   <SectionHeader
@@ -49,7 +49,7 @@
     <SectionHeader
       actionable
       header="Step 2: Set budget & duration."
-      subhead="Our unique pricing model makes us nimble and efficient. Invoiced every Friday, due by noon Monday."
+      subhead="Our per-project working model makes us nimble and efficient. Invoiced every Friday, due by noon Monday."
     />
   </Section>
   <ProjectBudgetWorkbook></ProjectBudgetWorkbook>

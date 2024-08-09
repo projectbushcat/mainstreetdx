@@ -39,7 +39,7 @@
 </script>
 
 <span
-  class="bg-surface-dark hover:bg-surface-dark-h border-main-green border-b-2 active:ring-2 active:ring-main-green active:rounded focus:outline-main-green px-sm"
+  class="bg-surface-dark hover:bg-surface-dark-h border-main-green border-b-2 active:ring-2 active:ring-main-green active:rounded focus:outline-main-green active:outline-main-green px-sm"
   role="button"
   on:click={handleClick}
   on:keydown={handleKeyDown}
