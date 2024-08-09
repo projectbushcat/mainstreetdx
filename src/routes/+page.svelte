@@ -55,5 +55,12 @@
   <ProjectBudgetWorkbook></ProjectBudgetWorkbook>
 </article>
 <article class="pb">
+  <Section>
+    <SectionHeader
+      actionable
+      header="Step 3: Schedule kickoff."
+      subhead="We'll analyze your project, ask any follow-ups, and book kickoff."
+    />
+  </Section>
   <ProjectKickoffWorkbook></ProjectKickoffWorkbook>
 </article>

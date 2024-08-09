@@ -29,13 +29,6 @@
   };
 </script>
 
-<Section>
-  <SectionHeader
-    actionable
-    header="Step 3: Schedule kickoff."
-    subhead="We'll analyze your project, ask any follow-ups, and get your kickoff booked."
-  />
-</Section>
 <Section surface="light" bordered prose>
   <div>
     <Highlight>Workbook #3</Highlight>
@@ -57,8 +50,10 @@
       <Button
         on:click={() => {
           phase = "summary";
-        }}>Confirm project details</Button
+        }}
       >
+        Confirm project details
+      </Button>
     </ButtonLabel>
   {/if}
 
