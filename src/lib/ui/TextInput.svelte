@@ -7,7 +7,7 @@
   export let value: string;
 </script>
 
-<div class="flex flex-col gap-2 max-w-64">
+<div class="flex flex-col gap-2 max-w-[32.5ch]">
   <label for={id} class="text-label">
     {#if required}
       <span class="text-red-600">*</span>

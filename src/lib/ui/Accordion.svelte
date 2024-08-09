@@ -29,7 +29,12 @@
       on:keyup={handleKeyUp}>{title}</button
     >
   </h3>
-  <section {id} class="text-accordion p-0 transition-all" class:hidden={!expanded} class:p-8={expanded}>
+  <section
+    {id}
+    class="text-accordion p-0 transition-all flex flex-col gap-lg"
+    class:hidden={!expanded}
+    class:p-8={expanded}
+  >
     <slot />
   </section>
 </article>

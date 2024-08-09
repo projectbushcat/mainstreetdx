@@ -6,9 +6,10 @@
   export let label: string;
   export let icon: IconName;
   export let positionOverrideType: "editable_text" | undefined = undefined;
+  export let type: "submit" | "button" = "button";
 </script>
 
-<button class={ActionClassName} class:et={positionOverrideType === "editable_text"} on:click>
+<button {type} class={ActionClassName} class:et={positionOverrideType === "editable_text"} on:click>
   <Icon {icon} />
   <span class="underline underline-offset-2">
     {label}

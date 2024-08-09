@@ -4,19 +4,12 @@
   import Range from "$lib/ui/Range.svelte";
   import Section from "$lib/ui/Section.svelte";
   import SectionHeader from "$lib/ui/SectionHeader.svelte";
-  import { HourlyRate } from "./ProjectBudget";
+  import { currencyFormatter } from "$lib/utils/currencyFormatter";
+  import { plural } from "$lib/utils/plural";
+  import { ProjectHourlyRate, ProjectStore } from "./Project";
 
-  let hours: string = "16";
-  let weeks: string = "2";
-
-  const formatter = new Intl.NumberFormat("en-US", {
-    currency: "USD",
-    style: "currency",
-    maximumFractionDigits: 0
-  });
-
-  $: hoursLabel = `${hours} hours/wk @ $${HourlyRate}/hr`;
-  $: weeksLabel = `${weeks} week${Number(weeks) > 1 ? "s" : ""}`;
+  $: hoursLabel = `${$ProjectStore.hours} hours/wk @ $${ProjectHourlyRate}/hr`;
+  $: weeksLabel = `${$ProjectStore.weeks} ${plural($ProjectStore.weeks, "week", "weeks")}`;
 </script>
 
 <Section surface="light" bordered prose>
@@ -28,11 +21,11 @@
     <div>
       <Range
         label={hoursLabel}
-        valueText={`${hours} hours per week`}
+        valueText={`${$ProjectStore.hours} hours per week`}
         min={2}
         max={32}
         step={2}
-        bind:value={hours}
+        bind:value={$ProjectStore.hours}
         labelledBy="budget-header"
       />
     </div>
@@ -41,7 +34,11 @@
       role="status"
     >
       <p class="text-stat">Max charge:</p>
-      <p class="text-jumbo">{formatter.format(HourlyRate * Number(hours) * Number(weeks))}</p>
+      <p class="text-jumbo">
+        {currencyFormatter.format(
+          ProjectHourlyRate * Number($ProjectStore.hours) * Number($ProjectStore.weeks)
+        )}
+      </p>
     </div>
     <div>
       <Range
@@ -49,7 +46,7 @@
         valueText={weeksLabel}
         min={1}
         max={8}
-        bind:value={weeks}
+        bind:value={$ProjectStore.weeks}
         labelledBy="budget-header"
       />
     </div>

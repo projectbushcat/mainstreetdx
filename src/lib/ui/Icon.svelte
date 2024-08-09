@@ -6,6 +6,10 @@
     | "support"
     | "thumb"
     | "x"
+    | "link"
+    | "linkedin"
+    | "email"
+    | "new_window"
     | "plus_circle"
     | "minus_circle";
 </script>
@@ -14,6 +18,7 @@
   export let icon: IconName;
   export let className: string = "";
   export let positionOverrideType: "editable_text" | "accordion" | undefined = undefined;
+  export let ariaLabel: string | undefined = undefined;
 </script>
 
 <i
@@ -21,6 +26,7 @@
   class={className}
   class:et={positionOverrideType === "editable_text"}
   class:ac={positionOverrideType === "accordion"}
+  aria-label={ariaLabel}
 >
   <img src={`/icons/${icon}.svg`} alt="" />
 </i>

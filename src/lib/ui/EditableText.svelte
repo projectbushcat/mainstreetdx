@@ -1,9 +1,10 @@
 <script lang="ts">
-  import Icon from "./Icon.svelte";
   import EditableTextPicker from "./EditableTextPicker.svelte";
 
-  export let punctuation: "comma" | "and" | "period" | undefined = undefined;
   export let value: string;
+  export let index: number;
+  export let length: number;
+  export let type: "outcome" | "goal" = "outcome";
 
   let dialog: HTMLDialogElement;
 
@@ -45,19 +46,18 @@
   on:keyup={handleKeyUp}
   tabindex="0"
 >
-  {value}{#if punctuation === "comma"},{/if}{#if punctuation === "period"}.{/if}
+  {value}{#if length > 2 && index < 2},{/if}{#if index === length - 1}.{/if}
 </span>
-{#if punctuation === "and"}
+{#if (length > 2 && index === 1) || (length === 2 && index === 0)}
   <span> and </span>
 {/if}
 <dialog
-  popover="auto"
   bind:this={dialog}
   on:close={handleClose}
-  class="p-4 md:p-8 rounded bg-surface-dark ring-surface-dark ring-6 border-2 border-main-green max-w-[640px] w-[95vw] overscroll-contain"
+  class="p-4 md:p-8 rounded bg-surface-light ring-surface-dark ring-6 border-2 border-main-green max-w-[640px] w-[95vw] overscroll-contain"
 >
   <button class="sr-only" on:click={handleClose}>Close</button>
-  <EditableTextPicker bind:value />
+  <EditableTextPicker bind:value bind:dialog {type} {index} />
 </dialog>
 
 <style lang="scss">

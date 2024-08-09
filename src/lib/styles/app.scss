@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  @apply bg-surface-dark;
+}
+
 html:has(dialog[open]) {
   overflow: hidden;
 }
@@ -61,9 +66,12 @@ a:not(:has(i)) {
     @apply text-black;
   }
 
-  &:hover,
-  &:focus {
-    @apply text-black;
+  &:is(button),
+  &:is(a) {
+    &:hover,
+    &:focus {
+      @apply text-black;
+    }
   }
 }
 
