@@ -9,7 +9,8 @@
   export let id: string | undefined = undefined;
 </script>
 
-<div class="flex flex-col" class:pb-8={standalone}>
+<div class="flex flex-col gap-md" class:pb={standalone}>
+  <slot name="highlight" />
   {#if level === 1}
     <h1 class="header-strong" {id}>
       {#if actionable}
@@ -40,4 +41,5 @@
       <span class="text-red-600">*</span> Indicates a required field.
     </p>
   {/if}
+  <slot />
 </div>

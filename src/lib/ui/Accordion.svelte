@@ -13,14 +13,19 @@
   };
 </script>
 
-<article class="transition-all" class:bg-surface-dark={expanded} class:rounded={expanded}>
-  <h3
-    class="header flex gap-md items-baseline justify-start transition-all hover:text-black"
-    class:header-weak={!expanded}
-    class:p={expanded}
-    class:pb-0={expanded}
-  >
-    <Icon icon={expanded ? "minus_circle" : "plus_circle"} positionOverrideType="accordion" />
+<article
+  class="transition-all flex flex-col gap-lg"
+  class:bg-surface-dark={expanded}
+  class:rounded={expanded}
+  class:p-lg={expanded}
+  class:md:p={expanded}
+>
+  <h3 class="header-weak flex gap-md items-baseline justify-start hover:text-black">
+    <Icon
+      icon={expanded ? "minus_circle" : "plus_circle"}
+      positionOverrideType="accordion"
+      className="shrink-0"
+    />
     <button
       aria-expanded={expanded}
       aria-controls={id}
@@ -29,12 +34,7 @@
       on:keyup={handleKeyUp}>{title}</button
     >
   </h3>
-  <section
-    {id}
-    class="text-accordion p-0 transition-all flex flex-col gap-lg"
-    class:hidden={!expanded}
-    class:p-8={expanded}
-  >
+  <section {id} class="text-accordion flex flex-col gap-lg" class:hidden={!expanded}>
     <slot />
   </section>
 </article>

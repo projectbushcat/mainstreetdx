@@ -9,25 +9,25 @@
   export let editable: boolean = false;
 </script>
 
-<div class="flex flex-col gap">
-  <p class="header">
-    Project outcomes:<br />
+<div class="flex flex-col">
+  <h3 class="header-strong">Project outcomes:</h3>
+  <ol class="header text-main-gray list-decimal ml-[2rem]">
     {#each $ProjectStore.outcomes as outcome, index (outcome)}
-      {index + 1}. {outcome}<br />
+      <li>{outcome}</li>
     {/each}
-    {#if editable}
-      <ActionLink icon="edit" label="Edit" href="#brief" />
-    {/if}
+  </ol>
+  {#if editable}
+    <ActionLink icon="edit" label="Edit" href="#brief" />
+  {/if}
+  <br />
+  <h3 class="header-strong">Metrics:</h3>
+  <p class="header text-main-gray">Goal: {$ProjectStore.goal} in 90 days.</p>
+  <p class="header text-main-gray">
+    Duration: {`${Number($ProjectStore.hours) * Number($ProjectStore.weeks)} ${plural($ProjectStore.hours, "hour", "hours")} total over ${$ProjectStore.weeks} ${plural($ProjectStore.weeks, "week", "weeks")}`}
   </p>
-  <p class="header">
-    Goal: {$ProjectStore.goal} in 90 days.<br />
-    Duration: {`${Number($ProjectStore.hours) * Number($ProjectStore.weeks)} ${plural($ProjectStore.hours, "hour", "hours")} total over ${$ProjectStore.weeks} ${plural($ProjectStore.weeks, "week", "weeks")}`}<br
-    />
+  <p class="header text-main-gray">
     Budget: {currencyFormatter.format(
       ProjectHourlyRate * Number($ProjectStore.hours) * Number($ProjectStore.weeks)
     )} ({currencyFormatter.format(ProjectHourlyRate)}/hr)
   </p>
-  <ButtonLabel label="Next step:">
-    <Button>Get insights</Button>
-  </ButtonLabel>
 </div>

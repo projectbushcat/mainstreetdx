@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Accordion from "$lib/ui/Accordion.svelte";
+  import EditableText from "$lib/ui/EditableText.svelte";
+  import Highlight from "$lib/ui/Highlight.svelte";
   import Section from "$lib/ui/Section.svelte";
   import SectionHeader from "$lib/ui/SectionHeader.svelte";
   import ProjectBriefWorkbook from "$lib/workbooks/ProjectBriefWorkbook.svelte";
@@ -16,51 +19,46 @@
     content="Meet your digital superpower: Main Street helps your business get the most out of tech. We prioritize speed, outcome — and trust. Our POV is shaped by decades of experience: ship fast, move the needle, and be accountable."
   />
 </svelte:head>
-
+<article>
+  <Section>
+    <SectionHeader
+      standalone
+      header="Main Street’s partner for digital transformation."
+      subhead="We help entrepreneurial businesses implement cutting-edge technology that drives community-lead growth."
+    ></SectionHeader>
+  </Section>
+</article>
+<!-- <article> -->
+<!-- <Section surface="md:dark">
+    
+  </Section> -->
 <Section>
   <SectionHeader
-    level={1}
-    header="Meet your digital superpower."
-    subhead="Main Street delivers cutting-edge outcomes in weeks, not months."
-  />
-  <SectionHeader
-    header="Consulting optimized for speed, impact — and trust."
-    subhead="Our innovative per-project model is accessible for every size, shape and phase of business."
-  />
-  <SectionHeader
-    standalone
-    header="Put simply: our bias is for action."
-    subhead="Use the workbooks below to configure your project and schedule kickoff in ten minutes, tops."
-  />
+    header="Experience our expertise."
+    subhead="Get an action plan tailored to your most important goals for free, using the interactive workbooks below."
+  >
+    <!-- <Highlight slot="highlight">Free resource</Highlight> -->
+  </SectionHeader>
 </Section>
-<article class="pb">
-  <Section>
-    <SectionHeader
-      id="brief"
-      actionable
-      header="Step 1: Configure your project."
-      subhead="Treat it like you’re writing a testimonial about us, so we’re all motivated to make it true."
-    />
-  </Section>
-  <ProjectBriefWorkbook></ProjectBriefWorkbook>
-</article>
-<article class="pb">
-  <Section>
+<ProjectBriefWorkbook></ProjectBriefWorkbook>
+<!-- </article>
+<article>
+  <Section surface="md:dark">
     <SectionHeader
       actionable
-      header="Step 2: Set budget & duration."
-      subhead="Our per-project working model makes us nimble and efficient. Invoiced every Friday, due by noon Monday."
+      header="Step 2: Working model"
+      subhead="Our services adapt to your budget to deliver expert insight at every phase and scale of business."
     />
-  </Section>
-  <ProjectBudgetWorkbook></ProjectBudgetWorkbook>
-</article>
-<article class="pb">
-  <Section>
+  </Section> -->
+<ProjectBudgetWorkbook></ProjectBudgetWorkbook>
+<!-- </article>
+<article>
+  <Section surface="md:dark">
     <SectionHeader
       actionable
-      header="Step 3: Immediate insight."
-      subhead="We'll analyze your project, ask any follow-ups, and book kickoff."
+      header="Step 3: Take action"
+      subhead="We'll generate an action plan, ask any follow-up questions, and  offer to schedule a kickoff."
     />
-  </Section>
-  <ProjectKickoffWorkbook></ProjectKickoffWorkbook>
-</article>
+  </Section> -->
+<ProjectKickoffWorkbook></ProjectKickoffWorkbook>
+<!-- </article> -->

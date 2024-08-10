@@ -12,11 +12,13 @@
   $: weeksLabel = `${$ProjectStore.weeks} ${plural($ProjectStore.weeks, "week", "weeks")}`;
 </script>
 
-<Section surface="light" bordered prose>
-  <div>
-    <Highlight>Workbook #2</Highlight>
-    <SectionHeader header="Set your budget and duration." id="budget-header" />
-  </div>
+<Section surface="light" bordered prose gap>
+  <SectionHeader actionable level={3} header="Set budget and duration." id="budget-header">
+    <Highlight slot="highlight">Workbook</Highlight>
+  </SectionHeader>
+
+  <!-- <h2 class="header" id="budget-header">Set your project's budget and duration.</h2> -->
+
   <div class="grid grid-cols-2 gap-lg">
     <div>
       <Range

@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
-  export type Phases = "email" | "summary";
+  export type Phases = "action_plan" | "analyzing" | "additional_questions" | "final_review";
   export interface PhaseLabel {
-    label: string;
+    header: string;
     subhead?: string;
     actionable?: boolean;
     form_notice?: boolean;
@@ -18,42 +18,30 @@
   import SectionHeader from "$lib/ui/SectionHeader.svelte";
   import TextInput from "$lib/ui/TextInput.svelte";
 
-  let phase: "email" | "summary" = "summary";
+  let phase: Phases = "action_plan";
 
   const phase_labels: Record<Phases, PhaseLabel> = {
-    summary: { label: "Your project plan." },
-    email: {
-      label: "Step 3: Insights and initial questions",
-      actionable: true
-    }
+    action_plan: { header: "Get your action plan.", actionable: true },
+    analyzing: { header: "Analyzing…" },
+    additional_questions: { header: "We have some additional questions about your project." },
+    final_review: { header: "Final review" }
   };
 </script>
 
 <Section surface="light" bordered prose>
-  <div>
-    <Highlight>Workbook #3</Highlight>
-    <SectionHeader
-      header={phase_labels[phase].label}
-      subhead={phase_labels[phase].subhead}
-      actionable={phase_labels[phase].actionable}
-      form_notice={phase_labels[phase].form_notice}
-    />
-  </div>
+  <SectionHeader
+    header={phase_labels[phase].header}
+    subhead={phase_labels[phase].subhead}
+    actionable={phase_labels[phase].actionable}
+    form_notice={phase_labels[phase].form_notice}
+  >
+    <Highlight slot="highlight">Workbook</Highlight>
+  </SectionHeader>
 
-  {#if phase === "summary"}
-    <ProjectSummary editable />
-  {/if}
-
-  {#if phase === "email"}
-    <TextInput label="Your email address:" name="email" value="" />
+  {#if phase === "action_plan"}
+    <ProjectSummary />
     <ButtonLabel label="Next step:">
-      <Button
-        on:click={() => {
-          phase = "summary";
-        }}
-      >
-        Confirm project details
-      </Button>
+      <Button>Generate action plan</Button>
     </ButtonLabel>
   {/if}
 

@@ -4,6 +4,7 @@
   import EditableText from "$lib/ui/EditableText.svelte";
   import Highlight from "$lib/ui/Highlight.svelte";
   import Section from "$lib/ui/Section.svelte";
+  import SectionHeader from "$lib/ui/SectionHeader.svelte";
   import { ProjectStore, ProjectUtils } from "./Project";
 
   const handleShuffleClick = () => {
@@ -28,8 +29,11 @@
   };
 </script>
 
-<Section gap={false} surface="light" bordered prose>
-  <Highlight>Workbook #1</Highlight>
+<!-- subhead="Frame your project like a testimonial, so we're all on the same page." -->
+<Section surface="light" bordered prose>
+  <SectionHeader id="brief" actionable level={3} header="How can we help?">
+    <Highlight slot="highlight">Workbook</Highlight>
+  </SectionHeader>
   <div class="flex flex-col gap">
     <p class="header">
       <span>“We hired Main Street to</span>
@@ -48,23 +52,25 @@
         on:click={handleShuffleClick}
       />
     </p>
-    <p class="header">
-      <span>Our </span>
-      <EditableText index={0} length={0} bind:value={$ProjectStore.goal} type="goal" />
-      <span> in 90 days.”</span>
-    </p>
-    <p class="header-weak opacity-70">— You, in 90 days.</p>
+    <div>
+      <p class="header">
+        <span>Our </span>
+        <EditableText index={0} length={0} bind:value={$ProjectStore.goal} type="goal" />
+        <span> in 90 days.”</span>
+      </p>
+      <p class="header-weak opacity-70">— You, in 90 days.</p>
+    </div>
   </div>
 </Section>
 <Section prose>
-  <Accordion title="Why we require a 90-day goal.">
+  <Accordion title="90-day goals drive outcomes.">
     Lorem ipsum is old text used in the copywriting industry to indicate an area that isn’t final yet.
   </Accordion>
 </Section>
 
 <style lang="postcss">
   p {
-    line-height: 1.5;
+    line-height: 1.35;
   }
 
   @screen md {
