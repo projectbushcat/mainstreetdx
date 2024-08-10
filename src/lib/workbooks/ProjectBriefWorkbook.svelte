@@ -29,7 +29,6 @@
   };
 </script>
 
-<!-- subhead="Frame your project like a testimonial, so we're all on the same page." -->
 <Section surface="light" bordered prose>
   <SectionHeader id="brief" actionable level={3} header="How can we help?">
     <Highlight slot="highlight">Workbook</Highlight>

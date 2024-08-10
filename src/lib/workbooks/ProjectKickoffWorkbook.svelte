@@ -16,7 +16,6 @@
   import ProjectSummary from "$lib/ui/ProjectSummary.svelte";
   import Section from "$lib/ui/Section.svelte";
   import SectionHeader from "$lib/ui/SectionHeader.svelte";
-  import TextInput from "$lib/ui/TextInput.svelte";
 
   let phase: Phases = "action_plan";
 
