@@ -33,6 +33,7 @@
     subhead={phase_labels[phase].subhead}
     actionable={phase_labels[phase].actionable}
     form_notice={phase_labels[phase].form_notice}
+    level={3}
   >
     <Highlight slot="highlight">Workbook</Highlight>
   </SectionHeader>

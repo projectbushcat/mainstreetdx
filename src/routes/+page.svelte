@@ -38,21 +38,27 @@
 <Section>
   <SectionHeader header="Our mission is to empower Main Street with future-ready digital solutions.">
     <Accordion emoji="👋" title="Meet your digital superpower">
+      <SectionHeader
+        header="With our roots in advertising, startups, and enterprise transformation, we bring big-tech expertise to
+        local challenges."
+        level={3}
+      />
       <p>
-        With our roots in advertising, startups, and enterprise transformation, we bring big-tech expertise to
-        local challenges. We're driven by a simple belief: empowered entrepreneurs build thriving communities.
-        Which is why our mission is to partner with you on your hardest digital challenges — so that you can
-        focus on serving your community.
+        We're driven by a simple belief: empowered entrepreneurs build thriving communities. Which is why our
+        mission is to partner with you on your hardest digital challenges — so that you can focus on serving
+        your community.
       </p>
-      <p>
+      <h3 class="header-weak">
         As entrepreneurs ourselves, we understand the power of collaboration and the value of a good
-        conversation about your business. When you partner with Main Street DX, you're not just getting a
-        service provider; you're gaining a dedicated ally on your journey. We've walked in your shoes, faced
-        similar challenges, and know how to leverage technology to overcome them. Together, we can accomplish
-        more than you might imagine — turning digital challenges into stepping stones for growth, innovation,
-        and community impact.
+        conversation about your business.
+      </h3>
+      <p>
+        When you partner with Main Street DX, you're not just getting a service provider; you're gaining a
+        dedicated ally on your journey. We've walked in your shoes, faced similar challenges, and know how to
+        leverage technology to overcome them. Together, we can accomplish more than you might imagine —
+        turning digital challenges into stepping stones for growth, innovation, and community impact.
       </p>
-      <p>We're excited to have the first conversation and explore how we can help.</p>
+      <p>We're excited for our first conversation and learning how we can help.</p>
     </Accordion>
   </SectionHeader>
 </Section>

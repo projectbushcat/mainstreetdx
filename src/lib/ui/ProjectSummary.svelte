@@ -3,8 +3,6 @@
   import { plural } from "$lib/utils/plural";
   import { ProjectHourlyRate, ProjectStore } from "$lib/workbooks/Project";
   import ActionLink from "./ActionLink.svelte";
-  import Button from "./Button.svelte";
-  import ButtonLabel from "./ButtonLabel.svelte";
 
   export let editable: boolean = false;
 </script>
@@ -31,3 +29,9 @@
     )} ({currencyFormatter.format(ProjectHourlyRate)}/hr)
   </p>
 </div>
+
+<style lang="scss">
+  ol.list-decimal {
+    padding-left: 2.5rem;
+  }
+</style>

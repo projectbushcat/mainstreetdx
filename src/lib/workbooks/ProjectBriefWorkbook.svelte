@@ -35,7 +35,7 @@
     actionable
     level={3}
     header="How can we help?"
-    subhead="Tell us about your project from the perspective of a 90-day goal you want to achieve."
+    subhead="Tell us about your problem from the perspective of a 90-day goal you want to achieve."
   >
     <Highlight slot="highlight">Workbook</Highlight>
   </SectionHeader>
@@ -62,7 +62,7 @@
   </div>
 </Section>
 <Section prose>
-  <Accordion emoji="🏆" title="Why do we require a 90-day goal?" surface="light">
+  <Accordion emoji="🏆" title="Goals are your superpower." surface="light">
     <SectionHeader
       header="Let's talk 90-day goals."
       subhead="This powerful technique isn't just about setting targets — it's about creating a roadmap for success."
@@ -70,11 +70,13 @@
     />
     <p>Here's a helpful framework:</p>
     <ol class="list-decimal">
-      <li><strong>Envision:</strong> Where do you want your business to be in 90 days?</li>
-      <li><strong>Specify:</strong> What 3-5 key objectives will get you there?</li>
-      <li><strong>Plan:</strong> Break each objective into weekly actionable tasks.</li>
-      <li><strong>Execute:</strong> Commit to your plan, but stay flexible.</li>
-      <li><strong>Review:</strong> At day 90, celebrate wins and learn from challenges.</li>
+      <li><strong class="text-label">Envision:</strong> Where do you want your business to be in 90 days?</li>
+      <li><strong class="text-label">Specify:</strong> What 3-5 key objectives will get you there?</li>
+      <li><strong class="text-label">Plan:</strong> Break each objective into weekly actionable tasks.</li>
+      <li><strong class="text-label">Execute:</strong> Commit to your plan, but stay flexible.</li>
+      <li>
+        <strong class="text-label">Review:</strong> At day 90, celebrate wins and learn from challenges.
+      </li>
     </ol>
     <h4 class="header-weak">This process, when repeated, creates a rhythm of continuous improvement.</h4>
     <p>
