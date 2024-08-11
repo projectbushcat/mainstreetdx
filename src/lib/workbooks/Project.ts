@@ -22,7 +22,7 @@ export const AllProjectGoals = [
   "traffic doubled",
   "engagement increased 20%",
   "inbound is up 15%",
-  "MVP launches"
+  "MVP launched successfully"
 ];
 export const ProjectHourlyRate = 149;
 export const ProjectBookAnIntroCallHref = `https://calendly.com`;
