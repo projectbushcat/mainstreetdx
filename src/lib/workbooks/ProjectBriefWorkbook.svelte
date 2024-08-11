@@ -30,12 +30,20 @@
 </script>
 
 <Section surface="light" bordered prose>
-  <SectionHeader id="brief" actionable level={3} header="How can we help?">
+  <SectionHeader
+    id="brief"
+    actionable
+    level={3}
+    header="How can we help?"
+    subhead="Tell us about your project from the perspective of a 90-day goal you want to achieve."
+  >
     <Highlight slot="highlight">Workbook</Highlight>
   </SectionHeader>
   <div class="flex flex-col gap">
     <p class="header">
-      <span>“We hired Main Street to</span>
+      <span>Our </span>
+      <EditableText index={0} length={0} bind:value={$ProjectStore.goal} type="goal" />
+      <span> in 90 days because we hired Main Street to</span>
       {#each $ProjectStore.outcomes as outcome, index}
         <EditableText value={outcome} {index} length={$ProjectStore.outcomes.length} type="outcome" />
       {/each}
@@ -51,37 +59,29 @@
         on:click={handleShuffleClick}
       />
     </p>
-    <div>
-      <p class="header">
-        <span>Our </span>
-        <EditableText index={0} length={0} bind:value={$ProjectStore.goal} type="goal" />
-        <span> in 90 days.”</span>
-      </p>
-      <p class="header-weak opacity-70">— You, in 90 days.</p>
-    </div>
   </div>
 </Section>
 <Section prose>
-  <Accordion title="90-day goals drive outcomes." surface="light">
+  <Accordion emoji="🏆" title="Why do we require a 90-day goal?" surface="light">
     <SectionHeader
       header="Let's talk 90-day goals."
       subhead="This powerful technique isn't just about setting targets — it's about creating a roadmap for success."
       level={4}
     />
     <p>Here's a helpful framework:</p>
-    <ol class="list-decimal ml-[1rem]">
+    <ol class="list-decimal">
       <li><strong>Envision:</strong> Where do you want your business to be in 90 days?</li>
       <li><strong>Specify:</strong> What 3-5 key objectives will get you there?</li>
       <li><strong>Plan:</strong> Break each objective into weekly actionable tasks.</li>
       <li><strong>Execute:</strong> Commit to your plan, but stay flexible.</li>
       <li><strong>Review:</strong> At day 90, celebrate wins and learn from challenges.</li>
     </ol>
-    <p>This process, when repeated, creates a rhythm of continuous improvement.</p>
+    <h4 class="header-weak">This process, when repeated, creates a rhythm of continuous improvement.</h4>
     <p>
       Whether you're working with us or charting your own course, mastering 90-day goal setting is a skill
       that will serve you throughout your entrepreneurial journey.
     </p>
-    <p>Need help refining your goals? That's where our expertise comes in.</p>
+    <p>And when you need help achieving them, well, you're in the right place.</p>
   </Accordion>
 </Section>
 

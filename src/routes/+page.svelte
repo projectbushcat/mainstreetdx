@@ -37,7 +37,7 @@
 </article>
 <Section>
   <SectionHeader header="Our mission is to empower Main Street with future-ready digital solutions.">
-    <Accordion title="Meet your digital superpower 👋">
+    <Accordion emoji="👋" title="Meet your digital superpower">
       <p>
         With our roots in advertising, startups, and enterprise transformation, we bring big-tech expertise to
         local challenges. We're driven by a simple belief: empowered entrepreneurs build thriving communities.

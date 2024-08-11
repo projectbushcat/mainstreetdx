@@ -38,6 +38,7 @@
       and how we will treat it. If you have any questions or concerns about our privacy practices, please
       don't hesitate to contact us using the information provided at the end of this policy.
     </p>
+    <p><strong>Last updated:</strong> August 10, 2024</p>
   </Accordion>
   <Accordion title="Information We Collect">
     <p>
@@ -117,7 +118,7 @@
       engagement period of our services.
     </p>
     <p>During our engagement, we use your information to:</p>
-    <ul>
+    <ul class="list-disc">
       <li>Deliver the digital transformation services you've requested</li>
       <li>Analyze your current systems and processes to recommend improvements</li>
       <li>Develop and implement tailored digital solutions</li>
@@ -137,14 +138,14 @@
       Upon completion of our services or termination of our engagement, we take one of two actions with your
       information, based on your preference:
     </p>
-    <ol>
+    <ol class="list-decimal">
       <li>
-        Secure Destruction: We will permanently and securely delete all your data from our systems using
-        industry-standard data erasure methods.
+        <strong>Secure Destruction:</strong> We will permanently and securely delete all your data from our systems
+        using industry-standard data erasure methods.
       </li>
       <li>
-        Access Removal: We will remove all access to your information, ensuring it's no longer available to
-        any of our team members.
+        <strong>Access Removal:</strong> We will remove all access to your information, ensuring it's no longer
+        available to any of our team members.
       </li>
     </ol>
     <p>
@@ -164,20 +165,20 @@
       sell, rent, or trade your personal information to third parties. However, there are limited
       circumstances where we may share your information:
     </p>
-    <ul>
+    <ul class="list-disc">
       <li>
-        With service providers: We may share your information with third-party service providers who perform
-        services on our behalf, such as hosting, data analysis, and IT services. These providers are
+        <strong>With service providers:</strong> We may share your information with third-party service providers
+        who perform services on our behalf, such as hosting, data analysis, and IT services. These providers are
         contractually obligated to protect your information and can only use it to provide services to us.
       </li>
       <li>
-        For legal reasons: We may disclose your information if required by law, such as to comply with a
-        subpoena or other legal process, or to protect our rights, privacy, safety, or property, or that of
-        our clients or others.
+        <strong>For legal reasons:</strong> We may disclose your information if required by law, such as to comply
+        with a subpoena or other legal process, or to protect our rights, privacy, safety, or property, or that
+        of our clients or others.
       </li>
       <li>
-        With your consent: We may share your information with third parties when you have given us your
-        consent to do so.
+        <strong>With your consent:</strong> We may share your information with third parties when you have given
+        us your consent to do so.
       </li>
     </ul>
     <p>
@@ -191,24 +192,28 @@
       Depending on your location, you may have certain rights regarding your personal information. These may
       include:
     </p>
-    <ul>
-      <li>Right to access: You can request a copy of the personal information we hold about you.</li>
+    <ul class="list-disc">
       <li>
-        Right to rectification: You can ask us to correct or update any inaccurate or incomplete information.
+        <strong>Right to access:</strong> You can request a copy of the personal information we hold about you.
       </li>
       <li>
-        Right to erasure: In certain circumstances, you can request that we delete your personal information.
+        <strong>Right to rectification:</strong> You can ask us to correct or update any inaccurate or incomplete
+        information.
       </li>
       <li>
-        Right to restrict processing: You can ask us to temporarily or permanently stop processing your
-        personal information.
+        <strong>Right to erasure:</strong> In certain circumstances, you can request that we delete your personal
+        information.
       </li>
       <li>
-        Right to data portability: You can request a copy of your data in a structured, commonly used, and
-        machine-readable format.
+        <strong>Right to restrict processing:</strong> You can ask us to temporarily or permanently stop processing
+        your personal information.
       </li>
       <li>
-        Right to object: You can object to our processing of your personal information in certain
+        <strong>Right to data portability:</strong> You can request a copy of your data in a structured, commonly
+        used, and machine-readable format.
+      </li>
+      <li>
+        <strong>Right to object:</strong> You can object to our processing of your personal information in certain
         circumstances.
       </li>
     </ul>
@@ -222,7 +227,7 @@
       We implement and maintain appropriate technical and organizational security measures to protect your
       information from unauthorized access, disclosure, alteration, and destruction. These measures include:
     </p>
-    <ul>
+    <ul class="list-disc">
       <li>Encryption of data in transit and at rest</li>
       <li>Regular security assessments and penetration testing</li>
       <li>Access controls and authentication mechanisms</li>
@@ -242,7 +247,7 @@
       your IP address, browser type, operating system, and browsing behavior.
     </p>
     <p>We use this information to:</p>
-    <ul>
+    <ul class="list-disc">
       <li>Analyze website traffic and usage patterns</li>
       <li>Improve our website functionality</li>
       <li>Personalize your experience on our site</li>
@@ -293,16 +298,20 @@
   <Accordion title="Contact Us">
     <p>
       If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices,
-      please contact us at:
+      please contact us at: <a href="mailto:studio@mainstreetdx.com" class="text-label"
+        >studio@mainstreetdx.com</a
+      >
     </p>
-    <p>
-      Main Street Digital Transformation Services, LLC<br />
-      d.b.a. Main Street DX<br />
-      [Street Address]<br />
-      [City, State ZIP]<br />
-      Email: privacy@mainstreetdx.com<br />
-      Phone: [Phone Number]
-    </p>
+    {#if false}
+      <p>
+        Main Street Digital Transformation Services, LLC<br />
+        d.b.a. Main Street DX<br />
+        [Street Address]<br />
+        [City, State ZIP]<br />
+        Email: privacy@mainstreetdx.com<br />
+        Phone: [Phone Number]
+      </p>
+    {/if}
     <p>We will make every effort to respond to your inquiry promptly and address your concerns thoroughly.</p>
   </Accordion>
 </Section>

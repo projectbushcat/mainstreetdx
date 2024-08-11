@@ -20,11 +20,9 @@ export const AllProjectOutcomes = [
 export const AllProjectGoals = [
   "revenue is up 20%",
   "traffic doubled",
-  "store opens",
-  "engagement is up",
-  "MVP launches",
-  "product enters beta",
-  "soft launch is"
+  "engagement increased 20%",
+  "inbound is up 15%",
+  "MVP launches"
 ];
 export const ProjectHourlyRate = 149;
 export const ProjectBookAnIntroCallHref = `https://calendly.com`;
@@ -104,7 +102,7 @@ export class ProjectUtils {
 export const ProjectStore = writable<Project>({
   outcomes: ProjectUtils.shuffleOutcomes(),
   goal: ProjectUtils.shuffleGoal(),
-  hours: "16",
+  hours: "8",
   weeks: "2",
   insight: "",
   questions: [],

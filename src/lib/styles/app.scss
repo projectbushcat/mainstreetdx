@@ -122,3 +122,8 @@ a:not(:has(i)) {
     font-size: 2rem;
   }
 }
+
+ol.list-decimal,
+ul.list-disc {
+  padding-left: 2rem;
+}

@@ -10,9 +10,9 @@
 </script>
 
 <div class="flex flex-col">
-  <h3 class="header-strong">Project outcomes:</h3>
-  <ol class="header text-main-gray list-decimal ml-[3.5rem]">
-    {#each $ProjectStore.outcomes as outcome, index (outcome)}
+  <h3 class="header-strong">Outcomes:</h3>
+  <ol class="header text-main-gray list-decimal">
+    {#each $ProjectStore.outcomes as outcome}
       <li>{outcome}</li>
     {/each}
   </ol>

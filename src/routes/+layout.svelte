@@ -41,7 +41,7 @@
         </a>
       </li>
       <li>
-        <p class="text-label">Made with &lt;3 in a thriving small town.</p>
+        <p class="text-label">Made with ♡ in a thriving small town.</p>
       </li>
       <li>
         <ActionLink href={ProjectBookAnIntroCallHref} label="Book a call" icon="support" />

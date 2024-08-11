@@ -13,12 +13,16 @@
 </script>
 
 <Section surface="light" bordered prose gap>
-  <SectionHeader actionable level={3} header="Set budget and duration." id="budget-header">
+  <SectionHeader
+    actionable
+    level={3}
+    header="Set budget and duration."
+    subhead="Your budget is invested in concrete actions and measurable
+      outcomes — not meetings."
+    id="budget-header"
+  >
     <Highlight slot="highlight">Workbook</Highlight>
   </SectionHeader>
-
-  <!-- <h2 class="header" id="budget-header">Set your project's budget and duration.</h2> -->
-
   <div class="grid grid-cols-2 gap-lg print:block">
     <div>
       <Range
@@ -55,18 +59,19 @@
   </div>
 </Section>
 <Section prose>
-  <Accordion title="A conversation is always free." surface="light">
-    <SectionHeader header="Our approach is simple." level={4} />
-    <ol class="list-decimal ml-[1rem]">
+  <Accordion emoji="🛟" title="A conversation is always free." surface="light">
+    <SectionHeader header="Our approach is simple: we're here to help." level={4} />
+    <ol class="list-decimal">
       <li>We listen to your needs (for free)</li>
       <li>We brainstorm solutions (still free!)</li>
       <li>We propose a plan that maximizes your budget</li>
       <li>We execute efficiently, delivering real value</li>
     </ol>
+    <h4 class="header-weak">Simply put, we work to maximize your budget.</h4>
     <p>
-      Simply put, we work to maximize your budget. That's why conversations are always free — we don't bill
-      for meetings or brainstorming sessions. Your budget is invested in concrete actions and measurable
-      outcomes. Partners don't nickel and dime each other — they get the job done.
+      That's why conversations are always free — we don't bill for meetings or brainstorming sessions. Your
+      budget is invested in concrete actions and measurable outcomes. Partners don't nickel and dime each
+      other, they get the job done.
     </p>
   </Accordion>
 </Section>
