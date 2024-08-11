@@ -82,7 +82,7 @@ a:not(:has(i)) {
     @apply text-black;
   }
 
-  &:is(button),
+  &:is(button):not(.bg-main-green),
   &:is(a) {
     &:hover,
     &:focus {

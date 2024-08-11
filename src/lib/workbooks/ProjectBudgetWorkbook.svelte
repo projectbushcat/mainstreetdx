@@ -51,7 +51,7 @@
         label={weeksLabel}
         valueText={weeksLabel}
         min={1}
-        max={8}
+        max={12}
         bind:value={$ProjectStore.weeks}
         labelledBy="budget-header"
       />

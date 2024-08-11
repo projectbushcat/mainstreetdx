@@ -11,7 +11,8 @@
     | "email"
     | "new_window"
     | "plus_circle"
-    | "minus_circle";
+    | "minus_circle"
+    | "loader";
 </script>
 
 <script lang="ts">
@@ -19,6 +20,7 @@
   export let className: string = "";
   export let positionOverrideType: "editable_text" | "accordion" | undefined = undefined;
   export let ariaLabel: string | undefined = undefined;
+  export let rotates: boolean = false;
 </script>
 
 <i
@@ -28,7 +30,7 @@
   class:ac={positionOverrideType === "accordion"}
   aria-label={ariaLabel}
 >
-  <img src={`/icons/${icon}.svg`} alt="" />
+  <img src={`/icons/${icon}.svg`} alt="" class:animate-spin={rotates} />
 </i>
 
 <style lang="postcss">

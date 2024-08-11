@@ -13,6 +13,7 @@
   import ButtonLabel from "$lib/ui/ButtonLabel.svelte";
   import Highlight from "$lib/ui/Highlight.svelte";
   import Icon from "$lib/ui/Icon.svelte";
+  import ProjectAnalyzingAnimation from "$lib/ui/ProjectAnalyzingAnimation.svelte";
   import ProjectSummary from "$lib/ui/ProjectSummary.svelte";
   import Section from "$lib/ui/Section.svelte";
   import SectionHeader from "$lib/ui/SectionHeader.svelte";
@@ -21,7 +22,7 @@
 
   const phase_labels: Record<Phases, PhaseLabel> = {
     action_plan: { header: "Get your action plan.", actionable: true },
-    analyzing: { header: "Analyzing…" },
+    analyzing: { header: "Generating your action plan." },
     additional_questions: { header: "We have some additional questions about your project." },
     final_review: { header: "Final review" }
   };
@@ -41,8 +42,12 @@
   {#if phase === "action_plan"}
     <ProjectSummary />
     <ButtonLabel label="Next step:">
-      <Button>Generate action plan</Button>
+      <Button on:click={() => (phase = "analyzing")}>Get your action plan</Button>
     </ButtonLabel>
+  {/if}
+
+  {#if phase === "analyzing"}
+    <ProjectAnalyzingAnimation />
   {/if}
 
   <p class="text-label">

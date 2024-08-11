@@ -5,7 +5,7 @@
 <button
   {type}
   on:click
-  class="px-4 py-2 outline outline-2 outline-white ring-4 ring-main-green bg-main-green text-label rounded hover:bg-main-green-h hover:ring-main-green-h active:ring-0"
+  class="px-4 py-2 outline outline-2 outline-white ring-4 ring-main-green bg-main-green text-label rounded hover:bg-main-green-h hover:ring-main-green-h active:ring-0 focus:underline"
 >
   <slot />
 </button>
