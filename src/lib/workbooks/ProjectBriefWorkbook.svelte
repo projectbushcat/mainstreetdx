@@ -62,8 +62,26 @@
   </div>
 </Section>
 <Section prose>
-  <Accordion title="90-day goals drive outcomes.">
-    Lorem ipsum is old text used in the copywriting industry to indicate an area that isn’t final yet.
+  <Accordion title="90-day goals drive outcomes." surface="light">
+    <SectionHeader
+      header="Let's talk 90-day goals."
+      subhead="This powerful technique isn't just about setting targets — it's about creating a roadmap for success."
+      level={4}
+    />
+    <p>Here's a helpful framework:</p>
+    <ol class="list-decimal ml-[1rem]">
+      <li><strong>Envision:</strong> Where do you want your business to be in 90 days?</li>
+      <li><strong>Specify:</strong> What 3-5 key objectives will get you there?</li>
+      <li><strong>Plan:</strong> Break each objective into weekly actionable tasks.</li>
+      <li><strong>Execute:</strong> Commit to your plan, but stay flexible.</li>
+      <li><strong>Review:</strong> At day 90, celebrate wins and learn from challenges.</li>
+    </ol>
+    <p>This process, when repeated, creates a rhythm of continuous improvement.</p>
+    <p>
+      Whether you're working with us or charting your own course, mastering 90-day goal setting is a skill
+      that will serve you throughout your entrepreneurial journey.
+    </p>
+    <p>Need help refining your goals? That's where our expertise comes in.</p>
   </Accordion>
 </Section>
 

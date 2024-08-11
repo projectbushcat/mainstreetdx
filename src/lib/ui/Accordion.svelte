@@ -2,6 +2,7 @@
   import Icon from "./Icon.svelte";
 
   export let expanded: boolean = false;
+  export let surface: "dark" | "light" = "dark";
   export let title: string;
 
   const id = crypto.randomUUID();
@@ -15,10 +16,14 @@
 
 <article
   class="transition-all flex flex-col gap-lg"
-  class:bg-surface-dark={expanded}
+  class:bg-surface-dark={expanded && surface === "dark"}
+  class:bg-surface-light={expanded && surface === "light"}
+  class:ring-2={expanded && surface === "light"}
+  class:ring-surface-light={expanded && surface === "light"}
+  class:border-2={expanded && surface === "light"}
+  class:border-surface-dark={expanded && surface === "light"}
   class:rounded={expanded}
   class:p-lg={expanded}
-  class:md:p={expanded}
 >
   <h3 class="header-weak flex gap-md items-baseline justify-start hover:text-black">
     <Icon
@@ -34,7 +39,7 @@
       on:keyup={handleKeyUp}>{title}</button
     >
   </h3>
-  <section {id} class="text-accordion flex flex-col gap-lg" class:hidden={!expanded}>
+  <section {id} class="text-accordion flex flex-col gap-lg print:block" class:hidden={!expanded}>
     <slot />
   </section>
 </article>

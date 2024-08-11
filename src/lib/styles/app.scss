@@ -39,6 +39,16 @@ a:not(:has(i)) {
   }
 }
 
+.text-accordion .header,
+.text-accordion .header-strong,
+.text-accordion .header-weak {
+  font-size: 1.25rem;
+
+  @screen md {
+    font-size: 1.5rem;
+  }
+}
+
 .header-strong {
   font-weight: 500;
   font-stretch: semi-expanded;
@@ -83,11 +93,11 @@ a:not(:has(i)) {
 
 .text-accordion {
   font-size: 1rem;
-  line-height: 1.5rem;
+  // line-height: 1.5rem;
 
   @screen md {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1.25rem;
+    // line-height: 2rem;
   }
 }
 

@@ -2,7 +2,7 @@
   export let header: string;
   export let subhead: string | undefined = undefined;
 
-  export let level: 1 | 2 | 3 = 2;
+  export let level: 1 | 2 | 3 | 4 = 2;
   export let actionable: boolean = false;
   export let standalone: boolean = false; // controls extra spacing form headers
   export let form_notice: boolean = false;
@@ -32,6 +32,13 @@
       {/if}
       {header}
     </h3>
+  {:else if level === 4}
+    <h4 class="header-strong" {id}>
+      {#if actionable}
+        ☞
+      {/if}
+      {header}
+    </h4>
   {/if}
   {#if subhead}
     <p class="header-weak">{@html subhead}</p>

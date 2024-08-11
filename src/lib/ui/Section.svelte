@@ -20,7 +20,7 @@
   class:md:border-2={bordered}
   class:max-w-prose={prose}
   class:ring-4={bordered}
-  class:ring-surface-dark={bordered}
+  class:ring-surface-light={bordered}
 >
   <slot />
 </section>

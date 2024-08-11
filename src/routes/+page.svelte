@@ -21,14 +21,14 @@
 <Section>
   <SectionHeader
     header="Main Street’s partner for digital transformation."
-    subhead="We help entrepreneurial businesses implement cutting-edge technology that drives community-lead growth."
+    subhead="We help entrepreneurial businesses implement cutting-edge technology that drives community-led growth."
   ></SectionHeader>
 </Section>
 <article class="bg-surface-dark md:pb md:rounded-[2rem]">
   <Section>
     <SectionHeader
-      header="Experience our expertise."
-      subhead="Get an action plan tailored to your most important goals for free, using the interactive workbooks below."
+      header="Experience our expertise — for free."
+      subhead="Get an instant action plan tailored to your most important goal, using the interactive workbooks below."
     />
   </Section>
   <ProjectBriefWorkbook></ProjectBriefWorkbook>
@@ -36,15 +36,23 @@
   <ProjectKickoffWorkbook></ProjectKickoffWorkbook>
 </article>
 <Section>
-  <SectionHeader header="Our mission is to empower Main Street with a future-looking perspective.">
+  <SectionHeader header="Our mission is to empower Main Street with future-ready digital solutions.">
     <Accordion title="Meet your digital superpower 👋">
       <p>
-        We're digital natives with decades of experience across advertising, startups, and enterprise
-        transformation. We know that a thriving small town starts with the entrepreneurs that call it home,
-        which is why our mission is to partner with you on your hardest digital challenges — so that you can
+        With our roots in advertising, startups, and enterprise transformation, we bring big-tech expertise to
+        local challenges. We're driven by a simple belief: empowered entrepreneurs build thriving communities.
+        Which is why our mission is to partner with you on your hardest digital challenges — so that you can
         focus on serving your community.
       </p>
-      <p></p>
+      <p>
+        As entrepreneurs ourselves, we understand the power of collaboration and the value of a good
+        conversation about your business. When you partner with Main Street DX, you're not just getting a
+        service provider; you're gaining a dedicated ally on your journey. We've walked in your shoes, faced
+        similar challenges, and know how to leverage technology to overcome them. Together, we can accomplish
+        more than you might imagine — turning digital challenges into stepping stones for growth, innovation,
+        and community impact.
+      </p>
+      <p>We're excited to have the first conversation and explore how we can help.</p>
     </Accordion>
   </SectionHeader>
 </Section>

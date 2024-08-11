@@ -19,7 +19,7 @@
 
   <!-- <h2 class="header" id="budget-header">Set your project's budget and duration.</h2> -->
 
-  <div class="grid grid-cols-2 gap-lg">
+  <div class="grid grid-cols-2 gap-lg print:block">
     <div>
       <Range
         label={hoursLabel}
@@ -55,7 +55,18 @@
   </div>
 </Section>
 <Section prose>
-  <Accordion title="A conversation is always free.">
-    Lorem ipsum is old text used in the copywriting industry to indicate an area that isn’t final yet.
+  <Accordion title="A conversation is always free." surface="light">
+    <SectionHeader header="Our approach is simple." level={4} />
+    <ol class="list-decimal ml-[1rem]">
+      <li>We listen to your needs (for free)</li>
+      <li>We brainstorm solutions (still free!)</li>
+      <li>We propose a plan that maximizes your budget</li>
+      <li>We execute efficiently, delivering real value</li>
+    </ol>
+    <p>
+      Simply put, we work to maximize your budget. That's why conversations are always free — we don't bill
+      for meetings or brainstorming sessions. Your budget is invested in concrete actions and measurable
+      outcomes. Partners don't nickel and dime each other — they get the job done.
+    </p>
   </Accordion>
 </Section>
