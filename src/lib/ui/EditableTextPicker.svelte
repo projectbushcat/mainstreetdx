@@ -49,6 +49,7 @@
 <form
   method="dialog"
   on:submit|preventDefault={() => {
+    if (value === "") handleDeleteClick();
     dialog?.close();
   }}
 >
@@ -70,13 +71,7 @@
           {/if}
         </li>
         <li>
-          <ActionButton
-            label="Done"
-            icon="thumb"
-            on:click={() => {
-              dialog?.close();
-            }}
-          />
+          <ActionButton type="submit" label="Done" icon="thumb" />
         </li>
       </ul>
     </div>

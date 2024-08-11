@@ -22,6 +22,7 @@
     {name}
     {required}
     {autofocus}
+    minlength="3"
     bind:value
     class="text-label p-lg rounded ring-4 ring-surface-dark bg-surface-dark focus:ring-surface-dark-h focus:bg-surface-dark-h focus:outline-none border-solid border-2 border-main-green"
     placeholder="Write here"
