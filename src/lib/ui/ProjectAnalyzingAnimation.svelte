@@ -4,10 +4,6 @@
     status: "idle" | "processing" | "complete";
   }
 
-  class AnalyzingTracker {
-    static count = 0;
-  }
-
   const fakeResponse = false;
 
   const fakedResponse = {
@@ -42,8 +38,8 @@
 
   const checks = writable<Stage[]>([
     { label: "Analyzing brief for feasibility…", status: "idle" },
-    { label: "Generating personalized action plan…", status: "idle" },
-    { label: "Generating clarifying questions…", status: "idle" }
+    { label: "Generating action plan…", status: "idle" },
+    { label: "Generating next steps…", status: "idle" }
   ]);
 
   const dispatch = createEventDispatcher();
@@ -104,8 +100,8 @@
     }
 
     try {
-      if (AnalyzingTracker.count === 0) {
-        AnalyzingTracker.count = 1;
+      if ($ProjectStore.onMountTriggersAnalyze === true) {
+        $ProjectStore.onMountTriggersAnalyze = false;
 
         const body = new FormData();
 

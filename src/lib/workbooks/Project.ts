@@ -145,7 +145,12 @@ export interface PlanAnalyzeData {
   clarifying_questions: string[];
 }
 
-export const ProjectStore = writable<Project & { editable: boolean }>({
+interface ProjectStoreAddons {
+  editable: boolean;
+  onMountTriggersAnalyze: boolean;
+}
+
+export const ProjectStore = writable<Project & ProjectStoreAddons>({
   outcomes: ProjectUtils.shuffleOutcomes(),
   goal: ProjectUtils.shuffleGoal(),
   hours: "8",
@@ -154,5 +159,6 @@ export const ProjectStore = writable<Project & { editable: boolean }>({
   action_items: [],
   questions: [],
   email: "",
-  editable: true
+  editable: true,
+  onMountTriggersAnalyze: true
 });
