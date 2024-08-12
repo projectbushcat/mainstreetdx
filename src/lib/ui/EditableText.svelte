@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { ProjectStore } from "$lib/workbooks/Project";
   import EditableTextPicker from "./EditableTextPicker.svelte";
 
   export let value: string;
@@ -38,16 +39,22 @@
   };
 </script>
 
-<span
-  class="bg-surface-dark hover:bg-surface-dark-h border-b-main-green border-b-2 active:rounded px-sm focus:outline focus:outline-2 focus:outline-main-green focus:rounded header"
-  role="button"
-  on:click={handleClick}
-  on:keydown={handleKeyDown}
-  on:keyup={handleKeyUp}
-  tabindex="0"
->
-  {value}{#if length > 2 && index < 2},{/if}{#if index === length - 1}.{/if}
-</span>
+{#if $ProjectStore.editable}
+  <span
+    class="bg-surface-dark hover:bg-surface-dark-h border-b-main-green border-b-2 active:rounded px-sm focus:outline focus:outline-2 focus:outline-main-green focus:rounded header"
+    role="button"
+    on:click={handleClick}
+    on:keydown={handleKeyDown}
+    on:keyup={handleKeyUp}
+    tabindex="0"
+  >
+    {value}{#if length > 2 && index < 2},{/if}{#if index === length - 1}.{/if}
+  </span>
+{:else}
+  <span
+    >{value}{#if length > 2 && index < 2},{/if}{#if index === length - 1}.{/if}</span
+  >
+{/if}
 {#if (length > 2 && index === 1) || (length === 2 && index === 0)}
   <span> and </span>
 {/if}

@@ -4,5 +4,7 @@
 
 <div class="flex flex-col gap-md">
   <p class="text-label">{label}</p>
-  <slot />
+  <div>
+    <slot />
+  </div>
 </div>

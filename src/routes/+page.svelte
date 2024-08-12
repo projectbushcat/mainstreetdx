@@ -58,7 +58,6 @@
         leverage technology to overcome them. Together, we can accomplish more than you might imagine —
         turning digital challenges into stepping stones for growth, innovation, and community impact.
       </p>
-      <p>We're excited for our first conversation and learning how we can help.</p>
     </Accordion>
   </SectionHeader>
 </Section>

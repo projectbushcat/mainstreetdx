@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-  export type Phases = "action_plan" | "analyzing" | "additional_questions" | "final_review";
+  export type Phases = "action_plan" | "analyzing" | "additional_questions";
   export interface PhaseLabel {
     header: string;
     subhead?: string;
@@ -9,6 +9,7 @@
 </script>
 
 <script lang="ts">
+  import ActionLink from "$lib/ui/ActionLink.svelte";
   import Button from "$lib/ui/Button.svelte";
   import ButtonLabel from "$lib/ui/ButtonLabel.svelte";
   import Highlight from "$lib/ui/Highlight.svelte";
@@ -17,14 +18,14 @@
   import ProjectSummary from "$lib/ui/ProjectSummary.svelte";
   import Section from "$lib/ui/Section.svelte";
   import SectionHeader from "$lib/ui/SectionHeader.svelte";
+  import { ProjectBookAnIntroCallHref } from "./Project";
 
   let phase: Phases = "action_plan";
 
   const phase_labels: Record<Phases, PhaseLabel> = {
     action_plan: { header: "Get your action plan.", actionable: true },
     analyzing: { header: "Generating your action plan." },
-    additional_questions: { header: "We have some additional questions about your project." },
-    final_review: { header: "Final review" }
+    additional_questions: { header: "Review your action plan." }
   };
 </script>
 
@@ -47,11 +48,18 @@
   {/if}
 
   {#if phase === "analyzing"}
-    <ProjectAnalyzingAnimation />
+    <ProjectAnalyzingAnimation on:complete={() => (phase = "additional_questions")} />
+  {/if}
+
+  {#if phase === "additional_questions"}
+    <ProjectSummary extended />
+    <ButtonLabel label="Ready to make it happen?">
+      <ActionLink href={ProjectBookAnIntroCallHref} label="Book a call" icon="support" />
+    </ButtonLabel>
   {/if}
 
   <p class="text-label">
-    <span class="opacity-50">Refer to our </span><a
+    <span class="opacity-50">Use of this workbook is subject to our </span><a
       href="/privacy-policy"
       target="_blank"
       aria-label="opens in a new window"
@@ -59,6 +67,6 @@
     >
       <span class="underline">privacy policy</span>
       <Icon icon="new_window" className="inline-flex translate-y-[2px] opacity-80" />
-    </a><span class="opacity-50"> for how we process the data we collect in this workbook.</span>
+    </a>
   </p>
 </Section>

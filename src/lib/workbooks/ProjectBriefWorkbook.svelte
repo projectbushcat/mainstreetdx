@@ -35,9 +35,25 @@
     actionable
     level={3}
     header="How can we help?"
-    subhead="Tell us about your problem from the perspective of a 90-day goal you want to achieve."
+    subhead="Share your challenges from the perspective of a 90-day goal you want to achieve."
   >
     <Highlight slot="highlight">Workbook</Highlight>
+    <div class="flex flex-md items-center">
+      <ActionButton
+        label="Shuffle"
+        icon="refresh"
+        positionOverrideType="editable_text"
+        on:click={handleShuffleClick}
+      />
+      {#if $ProjectStore.outcomes.length < 3}
+        <ActionButton
+          label="Add"
+          icon="plus"
+          positionOverrideType="editable_text"
+          on:click={handleAddOutcomeClick}
+        />
+      {/if}
+    </div>
   </SectionHeader>
   <div class="flex flex-col gap">
     <p class="header">
@@ -47,17 +63,6 @@
       {#each $ProjectStore.outcomes as outcome, index}
         <EditableText value={outcome} {index} length={$ProjectStore.outcomes.length} type="outcome" />
       {/each}
-      {#if $ProjectStore.outcomes.length < 3}<ActionButton
-          label="Add"
-          icon="plus"
-          positionOverrideType="editable_text"
-          on:click={handleAddOutcomeClick}
-        />{/if}<ActionButton
-        label="Shuffle"
-        icon="refresh"
-        positionOverrideType="editable_text"
-        on:click={handleShuffleClick}
-      />
     </p>
   </div>
 </Section>
