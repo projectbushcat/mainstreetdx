@@ -56,6 +56,8 @@ export const AllProjectGoals = [
 export const ProjectHourlyRate = 149;
 export const ProjectBookAnIntroCallHref = `https://calendly.com/mainstreetdx/30min`;
 export const ProjectEmailAddress = `studio@mainstreetdx.com`;
+export const ProjectLinkedInHref = `https://linkedin.com/company
+/mainstreetdx`;
 
 export const ProjectOutcomeValidator = z.string().min(3);
 export const ProjectOutcomesValidator = z.array(ProjectOutcomeValidator);

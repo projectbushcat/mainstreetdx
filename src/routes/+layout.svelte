@@ -3,7 +3,11 @@
   import ActionLink from "$lib/ui/ActionLink.svelte";
   import Highlight from "$lib/ui/Highlight.svelte";
   import Section from "$lib/ui/Section.svelte";
-  import { ProjectBookAnIntroCallHref, ProjectEmailAddress } from "$lib/workbooks/Project";
+  import {
+    ProjectBookAnIntroCallHref,
+    ProjectEmailAddress,
+    ProjectLinkedInHref
+  } from "$lib/workbooks/Project";
 
   const currentYear = new Date().getFullYear();
 </script>
@@ -50,7 +54,7 @@
         <ActionLink href={`mailto:${ProjectEmailAddress}`} label={ProjectEmailAddress} icon="email" />
       </li>
       <li>
-        <ActionLink href="https://linkedin.com/" label="Connect with us" icon="linkedin" />
+        <ActionLink href={ProjectLinkedInHref} label="Connect with us" icon="linkedin" />
       </li>
       <li>
         <ActionLink href="/privacy-policy" label="Privacy policy" icon="link" />
