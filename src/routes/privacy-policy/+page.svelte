@@ -2,6 +2,7 @@
   import Accordion from "$lib/ui/Accordion.svelte";
   import Section from "$lib/ui/Section.svelte";
   import SectionHeader from "$lib/ui/SectionHeader.svelte";
+  import { ProjectEmailAddress } from "$lib/workbooks/Project";
 </script>
 
 <svelte:head>
@@ -298,8 +299,8 @@
   <Accordion title="Contact Us">
     <p>
       If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices,
-      please contact us at: <a href="mailto:studio@mainstreetdx.com" class="text-label"
-        >studio@mainstreetdx.com</a
+      please contact us at: <a href={`mailto:${ProjectEmailAddress}`} class="text-label"
+        >{ProjectEmailAddress}</a
       >
     </p>
     {#if false}
