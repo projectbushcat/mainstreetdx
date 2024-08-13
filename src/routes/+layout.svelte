@@ -20,7 +20,7 @@
         class="focus:outline-main-green focus:outline-offset-4"
         aria-label="Main Street Digital Transformation - Homepage"
       >
-        <img src="/wordmark.svg" alt="Main Street DX (Digital Transformation)" />
+        <img width="201" height="51" src="/wordmark.svg" alt="Main Street DX (Digital Transformation)" />
       </a>
       <div class="flex items-center gap-md">
         <ActionLink href={ProjectBookAnIntroCallHref} label="Book a call" icon="support" />
@@ -41,7 +41,7 @@
           class="focus:outline-main-green focus:outline-offset-4"
           aria-label="Main Street Digital Transformation - Homepage"
         >
-          <img src="/wordmark-bw.svg" alt="Main Street DX (Digital Transformation)" />
+          <img width="201" height="51" src="/wordmark-bw.svg" alt="Main Street DX (Digital Transformation)" />
         </a>
       </li>
       <li>

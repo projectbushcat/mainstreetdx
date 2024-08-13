@@ -50,8 +50,10 @@
   {/if}
 </div>
 
-<style lang="scss">
+<style lang="postcss">
   ol.list-decimal {
-    padding-left: 2.5rem;
+    @screen md {
+      padding-left: 2.5rem;
+    }
   }
 </style>

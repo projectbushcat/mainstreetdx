@@ -30,7 +30,7 @@
   class:ac={positionOverrideType === "accordion"}
   aria-label={ariaLabel}
 >
-  <img src={`/icons/${icon}.svg`} alt="" class:animate-spin={rotates} />
+  <img src={`/icons/${icon}.svg`} alt="" class:animate-spin={rotates} width="16" height="16" />
 </i>
 
 <style lang="postcss">
