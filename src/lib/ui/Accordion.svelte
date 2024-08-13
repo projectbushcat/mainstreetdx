@@ -27,7 +27,7 @@
   class:p-lg={expanded}
 >
   <h3 class="header-weak flex gap-md items-baseline justify-start hover:text-black">
-    {#if emoji}
+    {#if emoji && !expanded}
       <span role="presentation">{emoji}</span>
     {:else}
       <Icon

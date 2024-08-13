@@ -10,7 +10,7 @@
 </script>
 
 <button {type} class={ActionClassName} class:et={positionOverrideType === "editable_text"} on:click>
-  <Icon {icon} />
+  <Icon {icon} className="shrink-0 self-baseline translate-y-[4px]" />
   <span class="underline underline-offset-2">
     {label}
   </span>

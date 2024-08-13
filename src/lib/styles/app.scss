@@ -70,6 +70,7 @@ a:not(:has(i)) {
 
 .text-label {
   font-weight: 600;
+  text-align: left;
   @apply text-main-gray;
 
   font-size: 1rem;
@@ -125,5 +126,5 @@ a:not(:has(i)) {
 
 .list-decimal,
 .list-disc {
-  padding-left: 2rem;
+  padding-left: 1.5rem;
 }
