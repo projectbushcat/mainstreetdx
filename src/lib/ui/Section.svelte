@@ -1,26 +1,23 @@
 <script lang="ts">
-  export let gap: true | false | "md" | "lg" = true;
-  export let surface: "md:dark" | "dark" | "light" | undefined = undefined;
-  export let bordered: boolean = false;
-  export let prose: boolean = false;
-  export let padded: boolean = true;
+  import type { ColorName } from "$lib/data/ColorName";
+
+  export let bg: ColorName = "white";
 </script>
 
 <section
-  class="m-auto max-w-[868px] flex flex-col px md:rounded"
-  class:py={padded}
-  class:gap={gap === true}
-  class:gap-md={gap === "md"}
-  class:gap-lg={gap === "lg"}
-  class:bg-surface-dark={surface === "dark" || surface === "md:dark"}
-  class:md:bg-transparent={surface === "md:dark"}
-  class:bg-surface-light={surface === "light"}
-  class:border-main-green={bordered}
-  class:border-y-2={bordered}
-  class:md:border-2={bordered}
-  class:max-w-prose={prose}
-  class:ring-4={bordered}
-  class:ring-surface-light={bordered}
+  class="rounded-bl-4xl rounded-br-4xl"
+  class:bg-surface-green={bg === "surface-green"}
+  class:bg-surface-blue={bg === "surface-blue"}
+  class:bg-surface-yellow={bg === "surface-yellow"}
+  class:bg-surface-orange={bg === "surface-orange"}
+  class:bg-surface-gray={bg === "surface-gray"}
+  class:bg-main-yellow={bg === "main-yellow"}
+  class:bg-black={bg === "black"}
+  class:bg-white={bg === "white"}
+  class:text-white={bg === "black"}
 >
-  <slot />
+  <div class="max-w-prose m-auto pt-24 px-8 pb-8 flex flex-col gap-8">
+    <slot />
+  </div>
+  <slot name="full-width" />
 </section>

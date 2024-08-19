@@ -5,25 +5,34 @@ export default {
     extend: {
       colors: {
         "main-green": "#007A53",
-        "main-green-h": "#006645",
-        "main-gray": "#4D4D4D",
-        "surface-dark": "#EBF0EE",
-        "surface-dark-h": "#DCE5E1",
-        "surface-light": "#FCFEFD",
-        "surface-light-h": "#ECF9F2"
-      },
-      spacing: {
-        DEFAULT: "2rem",
-        sm: ".25rem",
-        md: ".5rem",
-        lg: "1rem"
+        "main-blue": "#0F398B",
+        "main-yellow": "#FDDA16",
+        "main-orange": "#FE5000",
+        "main-gray": "#303030",
+        "main-gray-secondary": "#969696",
+        "surface-green": "#E5F0EC",
+        "surface-blue": "#E5E9F0",
+        "surface-yellow": "#F0EEE5",
+        "surface-orange": "#F0E9E5",
+        "surface-gray": "#F0E5E5",
+        "required-red": "#B30000"
       },
       borderRadius: {
-        DEFAULT: "6px",
-        lg: "1rem"
+        "4xl": "2rem"
       },
-      ringWidth: {
-        6: "6px"
+      fontSize: {
+        headline: ["1.5rem", { lineHeight: "1.875rem", fontWeight: 590 }],
+        subhead: ["1.25rem", "1.5rem"],
+        hero: ["2.5rem", { lineHeight: "2.5rem", fontWeight: 620 }],
+        body: ["1.125rem", "1.5rem"],
+        label: ["1.25rem", { lineHeight: "1.5rem", fontWeight: 590 }],
+        mono: ["1rem", { lineHeight: "1.875rem", fontWeight: 590 }]
+      },
+      spacing: {
+        "jelly-half": "50%"
+      },
+      lineHeight: {
+        decoration: "3.25rem"
       }
     }
   },

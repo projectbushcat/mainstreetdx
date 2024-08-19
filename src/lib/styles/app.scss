@@ -2,129 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  @apply bg-surface-dark;
-}
-
-html:has(dialog[open]) {
-  overflow: hidden;
-}
-
-body {
-  font-weight: 400;
-  line-height: 1.2;
-
-  @screen md {
-    font-weight: 300;
-  }
-}
-
-a:not(:has(i)) {
-  text-decoration: underline;
-
-  &:hover {
-    color: #000;
-  }
-}
-
-.header,
-.header-strong,
-.header-weak {
-  font-size: 1.5rem;
+* {
   text-wrap: pretty;
-
-  @screen md {
-    font-size: 2rem;
-  }
 }
 
-.text-accordion .header,
-.text-accordion .header-strong,
-.text-accordion .header-weak {
-  font-size: 1.25rem;
-
-  @screen md {
-    font-size: 1.5rem;
-  }
+body {
+  @apply bg-surface-green;
 }
 
-.header-strong {
-  font-weight: 500;
-  font-stretch: semi-expanded;
-
-  @screen md {
-    font-weight: 450;
-  }
-}
-
-.header-weak {
+.text-body {
   @apply text-main-gray;
+}
 
-  font-size: 1.25rem;
-
-  @screen md {
-    font-size: 1.75rem;
+.bg-main-green,
+.bg-main-gray,
+.bg-main-blue {
+  .text-body {
+    @apply text-white;
   }
 }
 
-.text-label {
-  font-weight: 600;
-  text-align: left;
-  @apply text-main-gray;
-
-  font-size: 1rem;
-
-  @screen md {
-    font-size: 1.25rem;
-  }
-
-  &:is(input) {
+.bg-main-yellow,
+.bg-main-orange {
+  .text-body {
     @apply text-black;
   }
-
-  &:is(button):not(.bg-main-green),
-  &:is(a) {
-    &:hover,
-    &:focus {
-      @apply text-black;
-    }
-  }
 }
 
-.text-accordion {
-  font-size: 1rem;
-  // line-height: 1.5rem;
+.text-body a {
+  font-weight: 510;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 
-  @screen md {
-    font-size: 1.25rem;
-    // line-height: 2rem;
+  &:hover {
+    @apply text-black;
   }
-}
-
-.text-stat {
-  font-size: 1rem;
-  font-stretch: condensed;
-  text-transform: uppercase;
-
-  @apply text-main-gray;
-
-  &.text-white {
-    color: #fff;
-  }
-}
-
-.text-jumbo {
-  font-size: 1.5rem;
-  font-stretch: extra-expanded;
-  font-weight: 900;
-
-  @screen md {
-    font-size: 2rem;
-  }
-}
-
-.list-decimal,
-.list-disc {
-  padding-left: 1.5rem;
 }
