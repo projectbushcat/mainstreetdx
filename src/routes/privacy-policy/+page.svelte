@@ -22,9 +22,9 @@
     </a>
   </div>
   <h1 class="text-hero">Privacy Policy</h1>
-  <p class="text-subhead">
+  <h2 class="text-subhead">
     TL;DR — anything you send to us is treated as confidential and is never used to train LLMs.
-  </p>
+  </h2>
 </Section>
 
 <Section>
@@ -347,3 +347,14 @@
     </p>
   </Accordion>
 </Section>
+
+<style lang="scss">
+  ul,
+  ol {
+    list-style-position: outside;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+</style>
