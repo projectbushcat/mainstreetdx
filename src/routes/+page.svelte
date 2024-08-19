@@ -10,8 +10,8 @@
 <svelte:head>
   <title
     >Main Street DX | Digital transformation services for local businesses, nonprofits, startups and
-    enterprise | Free AI-enabled resources for entrepreneurs | Local web design, development and business
-    services starting at $250/day</title
+    enterprise | Free AI-enabled resources for entrepreneurs | Local web design, development and
+    business services starting at $250/day</title
   >
   <meta
     name="description"

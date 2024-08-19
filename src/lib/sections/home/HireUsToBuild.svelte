@@ -5,7 +5,9 @@
 
 <Section bg="main-yellow">
   <h2 class="text-hero">Hire us to build.</h2>
-  <h3 class="text-headline">Consulting services available per-project, accessible for every budget.</h3>
+  <h3 class="text-headline">
+    Consulting services available per-project, accessible for every budget.
+  </h3>
   <ul class="flex flex-col gap-8">
     <li>
       <h4 class="flex justify-between border-b-2 border-b-black mb-2">
@@ -36,8 +38,8 @@
         <span class="font-mono text-mono">$150/hr</span>
       </h4>
       <p class="text-body">
-        Dedicated weekly capacity for the most important deliveries. <a href="mailto:{MainStreetEmailAddress}"
-          >Email us</a
+        Dedicated weekly capacity for the most important deliveries. <a
+          href="mailto:{MainStreetEmailAddress}">Email us</a
         >.
       </p>
     </li>

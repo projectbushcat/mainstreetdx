@@ -1,5 +1,9 @@
 <script lang="ts">
-  import { Calendly30Min, MainStreetEmailAddress, MainStreetLinkedInAddress } from "$lib/data/MainStreet";
+  import {
+    Calendly30Min,
+    MainStreetEmailAddress,
+    MainStreetLinkedInAddress
+  } from "$lib/data/MainStreet";
   import Link from "$lib/ui/Link.svelte";
   import Section from "$lib/ui/Section.svelte";
 
@@ -9,8 +13,15 @@
 <footer>
   <Section bg="surface-green">
     <div>
-      <a href="/" aria-label="Homepage - Main Street DX" aria-current="page">
-        <img src="wordmark-bw.svg" width="201" height="51" alt="" role="presentation" class="inline-block" />
+      <a href="/" aria-label="Homepage - Main Street DX">
+        <img
+          src="wordmark-bw.svg"
+          width="201"
+          height="51"
+          alt=""
+          role="presentation"
+          class="inline-block"
+        />
       </a>
     </div>
     <h2 class="text-label">Made with ♡ in Bentonville, AR.</h2>

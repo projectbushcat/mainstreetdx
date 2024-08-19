@@ -7,7 +7,14 @@
 <Section bg="surface-green">
   <div>
     <a href="/" aria-label="Homepage - Main Street DX" aria-current="page">
-      <img src="wordmark.svg" width="201" height="51" alt="" role="presentation" class="inline-block" />
+      <img
+        src="wordmark.svg"
+        width="201"
+        height="51"
+        alt=""
+        role="presentation"
+        class="inline-block"
+      />
     </a>
   </div>
   <h1 class="text-headline md:text-hero">
@@ -16,7 +23,9 @@
       style="background-image: url(/decorations/iconic.svg);">iconic</span
     > local businesses.
   </h1>
-  <p class="text-subhead">We help entrepreneurs from all backgrounds grow their business using technology.</p>
+  <p class="text-subhead">
+    We help entrepreneurs from all backgrounds grow their business using technology.
+  </p>
   <ul class="flex flex-col gap-4">
     <li>
       <Link href="#easy-street" icon="compass" label="Explore our free resources" />
