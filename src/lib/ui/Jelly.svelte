@@ -23,7 +23,7 @@
   let expanded = false;
 
   let padding = spring(defaultPadding(), {
-    damping: 0.3
+    damping: 0.45
   });
 
   const handleHover = () => {
@@ -63,7 +63,9 @@
 </script>
 
 <li
-  style="padding: {$padding.container}rem; grid-column: {expanded ? 'span 2' : 'auto'}"
+  style="padding: {$padding.container}rem; grid-column: {width === 'half' && expanded
+    ? 'span 2'
+    : 'span 1'}"
   on:mouseenter={handleHover}
   on:touchstart={handleHover}
   on:mouseleave={handleLeave}
@@ -87,16 +89,18 @@
     {#if type === "expandable"}
       <button
         style="padding-top: {$padding.triggerT}rem; padding-left: {$padding.triggerX}rem; padding-right: {$padding.triggerX}rem; padding-bottom: {$padding.triggerB}rem;"
-        class="inline-flex w-full items-center gap-1 text-headline focus:ring focus:rounded-2xl focus:ring-inset hover:underline"
+        class="text-left inline-flex w-full gap-1 text-headline focus:ring focus:rounded-2xl focus:ring-inset hover:underline"
         class:underline={expanded}
         aria-expanded={expanded}
         aria-controls={id}
         on:click={handleExpandClick}
       >
-        <Icon
-          bg={bg === "main-yellow" || bg === "main-orange" ? "black" : "white"}
-          icon={expanded ? "minus_circle" : "plus_circle"}
-        />
+        <span class="inline-flex items-center h-[30px]">
+          <Icon
+            bg={bg === "main-yellow" || bg === "main-orange" ? "black" : "white"}
+            icon={expanded ? "minus_circle" : "plus_circle"}
+          />
+        </span>
         {action}
       </button>
       {#if expanded}

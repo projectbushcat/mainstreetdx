@@ -38,7 +38,7 @@
       <h2 id="explore-expertise" class="text-headline">Explore our areas of expertise:</h2>
     </div>
     <ul
-      class="mx-auto mt-4 px-4 pb-8 gap-4 justify-center grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 max-w-[1280px]"
+      class="mx-auto mt-4 px-4 pb-4 gap-4 justify-center grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 max-w-[1280px]"
       aria-labelledby="explore-expertise"
     >
       <Jelly bg="main-green" width="half" action="Ideate">

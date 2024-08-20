@@ -20,12 +20,9 @@
     </p>
     <p class="text-main-gray-secondary">
       For additional capacity, my friends are available for professional projects. Their expertise
-      in design, foresight, marketing and research complement any size of engagement.
+      in design, foresight, marketing and research complement any requirement.
     </p>
-    <p class="text-main-gray-secondary">
-      The bottom line is, we’re here to help more people start and grow iconic local businesses.
-      Reach out any time, we’d love to talk.
-    </p>
+    <p class="text-main-gray-secondary">Thanks for reading,</p>
     <div>
       <p class="text-headline">— Michael Griffith</p>
       <img src="/decorations/studio-lead.svg" width="217" height="38" alt="Studio Lead" />
