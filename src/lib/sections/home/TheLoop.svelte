@@ -20,7 +20,13 @@
       />
     </a>
   </div>
-  <h2 class="text-headline">Tech insights and research, weekly-ish.</h2>
+  <div class="flex flex-col gap-2">
+    <h2 class="text-headline">Tech insights and research, weekly-ish.</h2>
+    <p class="text-subhead">
+      The Loop is our newsletter for news, insights, original research, and whatever else is
+      interesting.
+    </p>
+  </div>
   <p>
     <Link icon="bookmark" href={MainStreetSubstackAddress} label="The Loop on Substack" />
   </p>

@@ -18,5 +18,5 @@
       Go to the homepage
     </a>.
   </p>
-  <div slot="full-width" class="min-h-[380px]"></div>
+  <div slot="full-width" class="min-h-[358px]"></div>
 </Section>
