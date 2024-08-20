@@ -25,7 +25,7 @@
   <div slot="full-width">
     <ul
       aria-labelledby="methodology"
-      class="mx-auto px-4 pb-4 grid justify-center grid-cols-1 gap-4 max-w-lg"
+      class="mx-auto px-4 pb-4 md:pb-8 grid justify-center grid-cols-1 gap-4 max-w-lg"
     >
       <Jelly bg="main-green" width="full" action="Assess for community impact">
         <dl class="text-white">
