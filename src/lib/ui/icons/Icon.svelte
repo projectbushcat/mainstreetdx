@@ -3,7 +3,7 @@
 
   export let icon: IconName;
   export let bg: IconColorName = "main-gray";
-  export let size: 16 | 20 | 32 = 20;
+  const size = 20;
 </script>
 
 <svg

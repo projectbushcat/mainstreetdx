@@ -7,7 +7,7 @@ export default {
         "main-green": "#007A53",
         "main-blue": "#0F398B",
         "main-yellow": "#FDDA16",
-        "main-orange": "#FE5000",
+        "main-orange": "#FF621A",
         "main-gray": "#303030",
         "main-gray-secondary": "#969696",
         "surface-green": "#E5F0EC",
@@ -27,9 +27,6 @@ export default {
         body: ["1.125rem", "1.5rem"],
         label: ["1.25rem", { lineHeight: "1.5rem", fontWeight: 590 }],
         mono: ["1rem", { lineHeight: "1.875rem", fontWeight: 590 }]
-      },
-      spacing: {
-        "jelly-half": "50%"
       },
       lineHeight: {
         decoration: "3.25rem"

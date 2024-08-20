@@ -3,7 +3,7 @@
   import Section from "$lib/ui/Section.svelte";
 </script>
 
-<Section bg="white">
+<Section bg="white" name="our-mission">
   <h2>
     <span class="text-headline block text-main-gray">Our mission:</span>
     <span class="text-hero"
@@ -13,16 +13,14 @@
       >
     </span>
   </h2>
-  <div class="flex flex-col gap-2">
-    <h3 class="text-headline">
-      We acknowledge the delicate balance between preserving local culture and embracing digital
-      change.
-    </h3>
-    <p class="text-subhead">
-      Our methodology treats each business we serve as a vital component of an interconnected
-      community landscape.
-    </p>
-  </div>
+  <p class="text-headline">
+    We acknowledge the delicate balance between preserving local culture and embracing digital
+    change.
+  </p>
+  <p class="text-subhead">
+    Our methodology treats each business we serve as a vital component of an interconnected
+    community landscape.
+  </p>
   <div slot="full-width">
     <div class="max-w-prose m-auto px-8">
       <h3 id="methodology" class="text-headline">How we achieve our mission:</h3>
@@ -46,7 +44,7 @@
           </dd>
         </dl>
       </Jelly>
-      <Jelly bg="main-blue" width="full" action="Foster resilience with education">
+      <Jelly bg="main-orange" width="full" action="Deploy responsibly & ethically">
         <dl>
           <dt class="text-label">Example goal:</dt>
           <dd class="text-body">Develop and refine core business concept.</dd>
@@ -61,7 +59,7 @@
           </dd>
         </dl>
       </Jelly>
-      <Jelly bg="main-orange" width="full" action="Deploy responsibly & ethically">
+      <Jelly bg="main-blue" width="full" action="Foster resilience with education">
         <dl>
           <dt class="text-label">Example goal:</dt>
           <dd class="text-body">Develop and refine core business concept.</dd>

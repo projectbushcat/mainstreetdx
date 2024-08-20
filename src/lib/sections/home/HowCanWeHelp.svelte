@@ -1,6 +1,8 @@
 <script lang="ts">
+  import { AllResources } from "$lib/data/EasyStreet";
   import { Calendly30Min } from "$lib/data/MainStreet";
   import Jelly from "$lib/ui/Jelly.svelte";
+  import JellyGrid from "$lib/ui/JellyGrid.svelte";
   import Section from "$lib/ui/Section.svelte";
 </script>
 
@@ -21,8 +23,9 @@
     <li class="flex flex-col gap-2">
       <h3 class="text-headline">Paid consulting services.</h3>
       <p class="text-body">
-        We work backwards from a 90-day goal you want to achieve. This drives alignment at project
-        kickoff and is an effective way to measure outcome.
+        We work backwards from a 90-day goal you want to achieve. This drives alignment at <a
+          href="#hire-us">project kickoff</a
+        > and is an effective way to measure outcome.
       </p>
     </li>
     <li class="flex flex-col gap-2">
@@ -37,85 +40,24 @@
     <div class="max-w-prose m-auto px-8">
       <h2 id="explore-expertise" class="text-headline">Explore our areas of expertise:</h2>
     </div>
-    <ul
-      class="mx-auto mt-4 px-4 pb-4 gap-4 justify-center grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 max-w-[1280px]"
-      aria-labelledby="explore-expertise"
-    >
-      <Jelly bg="main-green" width="half" action="Ideate">
-        <dl class="text-white">
+    <JellyGrid items={AllResources} labelledBy="explore-expertise" let:item>
+      <Jelly bg={item.bg} width="half" action={item.category}>
+        <dl
+          class:text-white={item.bg !== "main-yellow" && item.bg !== "main-orange"}
+          class:text-black={item.bg === "main-yellow" || item.bg === "main-orange"}
+        >
           <dt class="text-label">Example goal:</dt>
-          <dd class="text-body">Develop and refine core business concept.</dd>
+          <dd class="text-body">{item.exampleGoal}</dd>
           <dt class="text-label mt-4">Key concepts:</dt>
           <dd class="text-body">
             <ul class="list-inside list-disc">
-              <li>Brainstorming techniques</li>
-              <li>Market research basics</li>
-              <li>Identifying pain points</li>
-              <li>Crafting value propositions</li>
+              {#each item.concepts as concept}
+                <li>{concept}</li>
+              {/each}
             </ul>
           </dd>
         </dl>
       </Jelly>
-      <Jelly bg="main-yellow" width="half" action="Validate">
-        <dl>
-          <dt class="text-label">Example goal:</dt>
-          <dd class="text-body">Develop and refine core business concept.</dd>
-          <dt class="text-label mt-4">Key concepts:</dt>
-          <dd class="text-body">
-            <ul class="list-inside list-disc">
-              <li>Brainstorming techniques</li>
-              <li>Market research basics</li>
-              <li>Identifying pain points</li>
-              <li>Crafting value propositions</li>
-            </ul>
-          </dd>
-        </dl>
-      </Jelly>
-      <Jelly bg="main-orange" width="half" action="Launch">
-        <dl>
-          <dt class="text-label">Example goal:</dt>
-          <dd class="text-body">Develop and refine core business concept.</dd>
-          <dt class="text-label mt-4">Key concepts:</dt>
-          <dd class="text-body">
-            <ul class="list-inside list-disc">
-              <li>Brainstorming techniques</li>
-              <li>Market research basics</li>
-              <li>Identifying pain points</li>
-              <li>Crafting value propositions</li>
-            </ul>
-          </dd>
-        </dl>
-      </Jelly>
-      <Jelly bg="main-gray" width="half" action="Optimize">
-        <dl class="text-white">
-          <dt class="text-label">Example goal:</dt>
-          <dd class="text-body">Develop and refine core business concept.</dd>
-          <dt class="text-label mt-4">Key concepts:</dt>
-          <dd class="text-body">
-            <ul class="list-inside list-disc">
-              <li>Brainstorming techniques</li>
-              <li>Market research basics</li>
-              <li>Identifying pain points</li>
-              <li>Crafting value propositions</li>
-            </ul>
-          </dd>
-        </dl>
-      </Jelly>
-      <Jelly bg="main-blue" width="half" action="Scale">
-        <dl class="text-white">
-          <dt class="text-label">Example goal:</dt>
-          <dd class="text-body">Develop and refine core business concept.</dd>
-          <dt class="text-label mt-4">Key concepts:</dt>
-          <dd class="text-body">
-            <ul class="list-inside list-disc">
-              <li>Brainstorming techniques</li>
-              <li>Market research basics</li>
-              <li>Identifying pain points</li>
-              <li>Crafting value propositions</li>
-            </ul>
-          </dd>
-        </dl>
-      </Jelly>
-    </ul>
+    </JellyGrid>
   </div>
 </Section>

@@ -15,15 +15,21 @@
 
   const defaultPadding = () => ({
     container: 0,
-    triggerT: width === "half" ? 10 : 1,
-    triggerX: 1,
-    triggerB: 1
+    triggerT: type === "link" ? 1 : width === "half" ? 10 : 2,
+    triggerX: type === "link" ? 1 : width === "half" ? 1 : 2,
+    triggerB: type === "link" ? 1 : width === "half" ? 1 : 2
   });
+
+  const defaultHeight = 12;
 
   let expanded = false;
 
   let padding = spring(defaultPadding(), {
     damping: 0.45
+  });
+
+  let height = spring(defaultHeight, {
+    damping: 0.35
   });
 
   const handleHover = () => {
@@ -32,9 +38,11 @@
     padding.set({
       ...defaultPadding(),
       container: 0.25,
-      triggerT: width === "half" ? 9.5 : 0.75,
-      triggerB: width === "half" ? 1 : 0.75
+      triggerT: type === "link" ? 1 : width === "half" ? 9.5 : 1.75,
+      triggerB: type === "link" ? 1 : width === "half" ? 1 : 1.75
     });
+
+    if (type === "link") height.set(11.5);
   };
 
   const handleLeave = () => {
@@ -44,6 +52,8 @@
       ...defaultPadding(),
       container: 0
     });
+
+    if (type === "link") height.set(defaultHeight);
   };
 
   const handleExpandClick = () => {
@@ -63,6 +73,7 @@
 </script>
 
 <li
+  class:h-jelly-link={type === "link"}
   style="padding: {$padding.container}rem; grid-column: {width === 'half' && expanded
     ? 'span 2'
     : 'span 1'}"
@@ -109,15 +120,19 @@
         </div>
       {/if}
     {:else if type === "link"}
-      <a {href} class="flex flex-col justify-between">
-        <span class="text-headline">{title}</span>
-        <span class="text-body">
+      <a
+        {href}
+        target="_blank"
+        class="flex flex-col justify-between hover:underline underline-offset-2"
+        style="padding-top: {$padding.triggerT}rem; padding-left: {$padding.triggerX}rem; padding-right: {$padding.triggerX}rem; padding-bottom: {$padding.triggerB}rem; height: {$height}rem;"
+      >
+        <span class="text-headline pr-2">{title}</span>
+        <span class="text-body inline-flex items-center gap-1">
           <Icon
             icon="external_link"
-            size={16}
             bg={bg === "main-yellow" || bg === "main-orange" ? "black" : "white"}
           />
-          {action}
+          <span>{action}</span>
         </span>
       </a>
     {/if}

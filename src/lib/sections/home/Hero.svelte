@@ -8,7 +8,7 @@
   <div>
     <a href="/" aria-label="Homepage - Main Street DX" aria-current="page">
       <img
-        src="wordmark.svg"
+        src="/wordmark.svg"
         width="201"
         height="51"
         alt=""

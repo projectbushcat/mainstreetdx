@@ -3,7 +3,7 @@
   import Section from "$lib/ui/Section.svelte";
 </script>
 
-<Section bg="main-yellow">
+<Section bg="main-yellow" name="hire-us">
   <h2 class="text-hero">Hire us to build.</h2>
   <h3 class="text-headline">
     Consulting services available per-project, accessible for every budget.
@@ -15,9 +15,8 @@
         <span class="font-mono text-mono">$250/day</span>
       </h4>
       <p class="text-body">
-        Accessible pricing to get your business up and running. <a href={Calendly30Min}
-          >Schedule a free meeting</a
-        >, we’d love to help.
+        Accessible pricing to get your business up and running online, or update what's already
+        there. <a href={Calendly30Min}>Schedule a free meeting</a>, we’d love to help.
       </p>
     </li>
     <li>

@@ -2,7 +2,7 @@
   import Section from "$lib/ui/Section.svelte";
 </script>
 
-<Section bg="black">
+<Section bg="black" name="about">
   <img src="/decorations/five-dot.svg" width="278" height="52" role="presentation" alt="" />
   <div class="flex flex-col gap-4">
     <h2 class="text-headline">

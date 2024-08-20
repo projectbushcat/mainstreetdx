@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { AllResources } from "$lib/data/EasyStreet";
   import {
     Calendly30Min,
     MainStreetEmailAddress,
@@ -15,7 +16,7 @@
     <div>
       <a href="/" aria-label="Homepage - Main Street DX">
         <img
-          src="wordmark-bw.svg"
+          src="/wordmark-bw.svg"
           width="201"
           height="51"
           alt=""
@@ -39,9 +40,11 @@
     </dl>
     <dl class="flex flex-col gap-4">
       <dt class="text-headline">Resources for entrepreneurs and small businesses:</dt>
-      <dd>
-        <Link href={Calendly30Min} icon="link" label="Link" />
-      </dd>
+      {#each AllResources as item}
+        <dd>
+          <Link href={item.getHref()} icon="link" label="How to: {item.name}" />
+        </dd>
+      {/each}
     </dl>
     <dl class="flex flex-col gap-4">
       <dt class="text-headline">Everything else:</dt>

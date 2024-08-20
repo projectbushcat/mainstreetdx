@@ -6,8 +6,8 @@
   text-wrap: pretty;
 }
 
-body {
-  @apply bg-surface-green;
+html {
+  scroll-behavior: smooth;
 }
 
 .text-body {
