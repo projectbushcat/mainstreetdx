@@ -13,7 +13,17 @@
   fill="transparent"
   xmlns="http://www.w3.org/2000/svg"
 >
-  {#if icon === "compass"}
+  {#if icon === "bookmark"}
+    <path
+      d="M15.8337 17.5L10.0003 13.3333L4.16699 17.5V4.16667C4.16699 3.72464 4.34259 3.30072 4.65515 2.98816C4.96771 2.67559 5.39163 2.5 5.83366 2.5H14.167C14.609 2.5 15.0329 2.67559 15.3455 2.98816C15.6581 3.30072 15.8337 3.72464 15.8337 4.16667V17.5Z"
+      class:stroke-main-gray={bg === "main-gray"}
+      class:stroke-black={bg === "black"}
+      class:stroke-white={bg === "white"}
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  {:else if icon === "compass"}
     <g clip-path="url(#clip0_308_198)">
       <path
         d="M10.0003 18.3334C14.6027 18.3334 18.3337 14.6024 18.3337 10C18.3337 5.39765 14.6027 1.66669 10.0003 1.66669C5.39795 1.66669 1.66699 5.39765 1.66699 10C1.66699 14.6024 5.39795 18.3334 10.0003 18.3334Z"

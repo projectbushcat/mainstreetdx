@@ -1,4 +1,5 @@
 export type IconName =
+  | "bookmark"
   | "compass"
   | "edit"
   | "external_link"

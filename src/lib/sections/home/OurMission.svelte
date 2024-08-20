@@ -21,13 +21,11 @@
     Our methodology treats each business we serve as a vital component of an interconnected
     community landscape.
   </p>
+  <h3 id="methodology" class="text-headline">How we achieve our mission:</h3>
   <div slot="full-width">
-    <div class="max-w-prose m-auto px-8">
-      <h3 id="methodology" class="text-headline">How we achieve our mission:</h3>
-    </div>
     <ul
       aria-labelledby="methodology"
-      class="mx-auto mt-4 px-4 pb-4 grid justify-center grid-cols-1 gap-4 max-w-lg"
+      class="mx-auto px-4 pb-4 grid justify-center grid-cols-1 gap-4 max-w-lg"
     >
       <Jelly bg="main-green" width="full" action="Assess for community impact">
         <dl class="text-white">

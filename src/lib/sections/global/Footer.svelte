@@ -3,7 +3,8 @@
   import {
     Calendly30Min,
     MainStreetEmailAddress,
-    MainStreetLinkedInAddress
+    MainStreetLinkedInAddress,
+    MainStreetSubstackAddress
   } from "$lib/data/MainStreet";
   import Link from "$lib/ui/Link.svelte";
   import Section from "$lib/ui/Section.svelte";
@@ -36,6 +37,9 @@
       </dd>
       <dd>
         <Link href={MainStreetLinkedInAddress} icon="linkedin" label="Connect on LinkedIn" />
+      </dd>
+      <dd>
+        <Link href={MainStreetSubstackAddress} icon="bookmark" label="The Loop on Substack" />
       </dd>
     </dl>
     <dl class="flex flex-col gap-4">

@@ -29,6 +29,7 @@ html {
   }
 }
 
+.text-subhead a,
 .text-body a {
   font-weight: 510;
   text-decoration: underline;
@@ -36,5 +37,22 @@ html {
 
   &:hover {
     @apply text-black;
+  }
+}
+
+aside {
+  font-size: 0.875rem;
+  font-stretch: condensed;
+  font-weight: 510;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  padding: 0.15rem 0.5rem;
+  max-width: max-content;
+
+  color: #fff;
+
+  &.bg-main-orange,
+  &.bg-main-yellow {
+    color: #000;
   }
 }

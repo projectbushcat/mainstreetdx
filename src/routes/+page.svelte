@@ -5,6 +5,8 @@
   import OurMission from "$lib/sections/home/OurMission.svelte";
   import EasyStreet from "$lib/sections/home/EasyStreet.svelte";
   import About from "$lib/sections/home/About.svelte";
+  import AreasOfExpertise from "$lib/sections/home/AreasOfExpertise.svelte";
+  import TheLoop from "$lib/sections/home/TheLoop.svelte";
 </script>
 
 <svelte:head>
@@ -21,7 +23,9 @@
 
 <Hero />
 <HowCanWeHelp />
+<EasyStreet />
+<AreasOfExpertise />
 <HireUsToBuild />
 <OurMission />
-<EasyStreet />
 <About />
+<TheLoop />
