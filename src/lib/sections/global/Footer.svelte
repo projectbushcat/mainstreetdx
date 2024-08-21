@@ -30,7 +30,7 @@
     <dl class="flex flex-col gap-4">
       <dt class="text-headline">Contact Michael Griffith at Main Street DX:</dt>
       <dd>
-        <Link href={Calendly30Min} icon="phone" label="Schedule a free meeting" />
+        <Link href={Calendly30Min} icon="phone" label="Schedule a free consultation" />
       </dd>
       <dd>
         <Link href="mailto:{MainStreetEmailAddress}" icon="mail" label={MainStreetEmailAddress} />

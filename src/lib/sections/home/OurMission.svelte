@@ -28,49 +28,29 @@
       class="mx-auto px-4 pb-4 md:pb-8 grid justify-center grid-cols-1 gap-4 max-w-lg"
     >
       <Jelly bg="main-green" width="full" action="Assess for community impact">
-        <dl class="text-white">
-          <dt class="text-label">Example goal:</dt>
-          <dd class="text-body">Develop and refine core business concept.</dd>
-          <dt class="text-label mt-4">Key concepts:</dt>
-          <dd class="text-body">
-            <ul class="list-inside list-disc">
-              <li>Brainstorming techniques</li>
-              <li>Market research basics</li>
-              <li>Identifying pain points</li>
-              <li>Crafting value propositions</li>
-            </ul>
-          </dd>
-        </dl>
+        <p class="text-body">
+          We carefully evaluate how each digital transformation project will affect not just the
+          individual business, but the broader community ecosystem. We consider factors like local
+          job impacts, effects on neighboring businesses, and alignment with community values and
+          long-term goals. Our assessments go beyond financial metrics to measure true community
+          benefit.
+        </p>
       </Jelly>
       <Jelly bg="main-orange" width="full" action="Deploy responsibly & ethically">
-        <dl>
-          <dt class="text-label">Example goal:</dt>
-          <dd class="text-body">Develop and refine core business concept.</dd>
-          <dt class="text-label mt-4">Key concepts:</dt>
-          <dd class="text-body">
-            <ul class="list-inside list-disc">
-              <li>Brainstorming techniques</li>
-              <li>Market research basics</li>
-              <li>Identifying pain points</li>
-              <li>Crafting value propositions</li>
-            </ul>
-          </dd>
-        </dl>
+        <p class="text-body">
+          We implement digital solutions with a "do no harm" approach, prioritizing data privacy,
+          fair labor practices, and environmental sustainability. We favor open-source and
+          interoperable technologies that empower rather than restrict local businesses. We track
+          community feedback and course correct as appropriate.
+        </p>
       </Jelly>
       <Jelly bg="main-blue" width="full" action="Foster resilience with education">
-        <dl>
-          <dt class="text-label">Example goal:</dt>
-          <dd class="text-body">Develop and refine core business concept.</dd>
-          <dt class="text-label mt-4">Key concepts:</dt>
-          <dd class="text-body">
-            <ul class="list-inside list-disc">
-              <li>Brainstorming techniques</li>
-              <li>Market research basics</li>
-              <li>Identifying pain points</li>
-              <li>Crafting value propositions</li>
-            </ul>
-          </dd>
-        </dl>
+        <p class="text-body">
+          We don't just implement technology - we transfer knowledge. Through workshops, mentoring,
+          and accessible documentation, we ensure local businesses and community members understand
+          and can maintain the digital solutions we deploy. We aim to build long-term digital
+          literacy and self-sufficiency, reducing reliance on outside consultants over time.
+        </p>
       </Jelly>
     </ul>
   </div>

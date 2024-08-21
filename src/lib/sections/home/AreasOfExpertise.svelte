@@ -17,8 +17,8 @@
   <div class="flex flex-col gap-2">
     <h3 class="text-headline">Our approach is simple: we meet you where you are.</h3>
     <p class="text-subhead">
-      Our hands-on perspective spans two decades in marketing, startups and enterprise — giving your
-      business a tactical advantage at every phase.
+      Our hands-on perspective spans two decades in marketing, startups, mentoring and enterprise —
+      giving your business a tactical advantage at every phase.
     </p>
   </div>
   <h3 id="explore-expertise" class="text-headline">Explore our expertise:</h3>
