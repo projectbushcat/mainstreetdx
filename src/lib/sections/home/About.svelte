@@ -22,7 +22,7 @@
       For additional capacity, my friends are available for professional projects. Their expertise
       in design, foresight, marketing and research complement any requirement.
     </p>
-    <p class="text-main-gray-secondary">Thanks for reading,</p>
+    <p class="text-main-gray-secondary">Here's to sustainable growth,</p>
     <div>
       <p class="text-headline">— Michael Griffith</p>
       <img src="/decorations/studio-lead.svg" width="217" height="38" alt="Studio Lead" />

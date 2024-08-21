@@ -16,7 +16,7 @@
 
   @for $i from 1 through 9 {
     :global(main > *:nth-child(#{$i})) {
-      z-index: #{8 - $i};
+      z-index: #{9 - $i};
     }
   }
 </style>

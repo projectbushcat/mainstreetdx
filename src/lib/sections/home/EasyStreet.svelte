@@ -19,7 +19,7 @@
       Free resources to start and grow any kind of business.
     </h2>
     <p class="text-subhead">
-      From food trucks to startups, use our free AI-enabled workbooks to ideate, refine, and
+      From food trucks to startups, use our free AI-enabled resources to ideate, refine, and
       contextualize your goals.
     </p>
   </div>

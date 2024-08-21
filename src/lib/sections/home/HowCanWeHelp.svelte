@@ -4,25 +4,23 @@
 </script>
 
 <Section bg="white">
-  <h2 class="text-hero">How can we help?</h2>
+  <h2 class="text-hero">We drive community-led growth.</h2>
   <ul class="flex flex-col gap-8">
     <li class="flex flex-col gap-2">
-      <h3 class="text-headline">Free community resources.</h3>
+      <h3 class="text-headline">Paid consulting services to capitalize on a growing region.</h3>
+      <p></p>
       <p class="text-subhead">
-        We make entrepreneurship and technology accessible to more people with <a
-          href={Calendly30Min}
-        >
-          free consultations
-        </a>
-        and <a href="#easy-street">resources</a>.
+        <a href="#hire-us">We work</a> backwards from a 90-day goal your business needs to achieve.
+        Unsure where to start? <a href="#our-services">We can help</a> with that, too.
       </p>
     </li>
     <li class="flex flex-col gap-2">
-      <h3 class="text-headline">Paid consulting services.</h3>
+      <h3 class="text-headline">Free AI-enabled resources to help you start a business.</h3>
       <p class="text-subhead">
-        We work backwards from a 90-day goal you want to achieve. This drives alignment at <a
-          href="#hire-us">project kickoff</a
-        > and is an effective way to measure outcome.
+        We make entrepreneurship and technology accessible to more people with <a
+          href="#easy-street">free resources</a
+        >
+        and <a href={Calendly30Min}>consultations</a>.
       </p>
     </li>
   </ul>

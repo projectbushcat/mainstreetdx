@@ -4,9 +4,9 @@
 </script>
 
 <Section bg="main-yellow" name="hire-us">
-  <h2 class="text-hero">Hire us to build.</h2>
+  <h2 class="text-hero">Hire us to <em>do</em>.</h2>
   <h3 class="text-headline">
-    Consulting services available per-project, accessible for every budget.
+    Outcome-driven professional services available per-project, accessible for every budget.
   </h3>
   <ul class="flex flex-col gap-8">
     <li>
