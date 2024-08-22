@@ -3,10 +3,12 @@
 
   export let bg: ColorName = "white";
   export let name: string | undefined = undefined;
+  export let rounded: boolean = true;
 </script>
 
 <section
-  class="rounded-bl-4xl rounded-br-4xl"
+  class:rounded-bl-4xl={rounded}
+  class:rounded-br-4xl={rounded}
   class:bg-surface-green={bg === "surface-green"}
   class:bg-surface-blue={bg === "surface-blue"}
   class:bg-surface-yellow={bg === "surface-yellow"}

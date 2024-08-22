@@ -83,7 +83,7 @@
   on:touchend={handleLeave}
 >
   <div
-    class="ring-2 border-2 border-white rounded-2xl m-auto"
+    class="ring-2 border-2 border-white rounded-[18px] m-auto"
     class:bg-main-green={bg === "main-green"}
     class:bg-main-yellow={bg === "main-yellow"}
     class:bg-main-blue={bg === "main-blue"}
@@ -100,7 +100,7 @@
     {#if type === "expandable"}
       <button
         style="padding-top: {$padding.triggerT}rem; padding-left: {$padding.triggerX}rem; padding-right: {$padding.triggerX}rem; padding-bottom: {$padding.triggerB}rem;"
-        class="text-left inline-flex w-full gap-1 text-headline focus:ring focus:rounded-2xl focus:ring-inset hover:underline"
+        class="text-left inline-flex w-full gap-1 text-headline focus:ring focus:rounded-[18px] focus:ring-inset hover:underline"
         class:underline={expanded}
         aria-expanded={expanded}
         aria-controls={id}

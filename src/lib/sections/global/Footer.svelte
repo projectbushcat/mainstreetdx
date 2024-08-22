@@ -13,7 +13,7 @@
 </script>
 
 <footer>
-  <Section bg="surface-green">
+  <Section bg="surface-green" rounded={false}>
     <div>
       <a href="/" aria-label="Homepage - Main Street DX">
         <img
