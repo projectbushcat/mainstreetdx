@@ -1,8 +1,14 @@
 <script lang="ts">
-  import Section from "$lib/ui/Section.svelte";
+  import ExploreAdditionalResources from "$lib/sections/easy-street/ExploreAdditionalResources.svelte";
+  import Hero from "$lib/sections/easy-street/Hero.svelte";
+  import QuestionSection from "$lib/sections/easy-street/QuestionSection.svelte";
+  import TheLoop from "$lib/sections/global/TheLoop.svelte";
   import type { PageData } from "./$types";
 
   export let data: PageData;
+
+  // 0-2, for each completed section
+  let completed_index = 0;
 </script>
 
 <svelte:head>
@@ -17,24 +23,18 @@
   />
 </svelte:head>
 
-<Section bg={data.resource.surface}>
-  <div class="flex flex-col gap-[6rem]">
-    <div>
-      <a href="/easy-street">
-        <img
-          src="/wordmark-es.svg"
-          width="138"
-          height="72"
-          alt="Easy Street logo - Free resources for entrepreneurs from Main Street DX"
-        />
-      </a>
-    </div>
-    <div class="flex flex-col gap-2">
-      <aside class="bg-{data.resource.bg}">{data.resource.category}</aside>
-      <h1 class="text-hero">{data.resource.name}</h1>
-      {#each data.resource.instructions as instruction}
-        <p class="text-body">{@html instruction}</p>
-      {/each}
-    </div>
-  </div>
-</Section>
+<Hero resource={data.resource} bottom_border={completed_index > 0} />
+{#each data.resource.sections as section, index}
+  {#if index <= completed_index}
+    <QuestionSection
+      bg={data.resource.bg}
+      {section}
+      {index}
+      on:complete={() => {
+        completed_index += 1;
+      }}
+    />
+  {/if}
+{/each}
+<ExploreAdditionalResources exclude_href={data.href} />
+<TheLoop />

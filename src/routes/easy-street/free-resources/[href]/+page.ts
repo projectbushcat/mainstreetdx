@@ -10,6 +10,7 @@ export const load: PageLoad = (event) => {
     return {
       greeting: `hey there, snoop. we left our proompts visible for you. enjoy :)`,
       bg: resource.surface,
+      href,
       resource
     };
   } else {

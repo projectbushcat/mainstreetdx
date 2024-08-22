@@ -10,6 +10,7 @@
   export let type: "expandable" | "link" = "expandable";
   export let title: string | undefined = undefined;
   export let href: string | undefined = undefined;
+  export let target: "_blank" | "_self" = "_blank";
 
   const id = crypto.randomUUID();
 
@@ -73,7 +74,6 @@
 </script>
 
 <li
-  class:h-jelly-link={type === "link"}
   style="padding: {$padding.container}rem; grid-column: {width === 'half' && expanded
     ? 'span 2'
     : 'span 1'}"
@@ -122,17 +122,17 @@
     {:else if type === "link"}
       <a
         {href}
-        target="_blank"
+        {target}
         class="flex flex-col justify-between hover:underline underline-offset-2"
         style="padding-top: {$padding.triggerT}rem; padding-left: {$padding.triggerX}rem; padding-right: {$padding.triggerX}rem; padding-bottom: {$padding.triggerB}rem; height: {$height}rem;"
       >
-        <span class="text-headline pr-2">{title}</span>
+        <span class="text-headline pr-2 underline-offset-2">{title}</span>
         <span class="text-body inline-flex items-center gap-1">
           <Icon
-            icon="external_link"
+            icon={target === "_blank" ? "external_link" : "link"}
             bg={bg === "main-yellow" || bg === "main-orange" ? "black" : "white"}
           />
-          <span>{action}</span>
+          <span class="underline-offset-2">{action}</span>
         </span>
       </a>
     {/if}

@@ -6,7 +6,7 @@
   import EasyStreet from "$lib/sections/home/EasyStreet.svelte";
   import About from "$lib/sections/home/About.svelte";
   import AreasOfExpertise from "$lib/sections/home/AreasOfExpertise.svelte";
-  import TheLoop from "$lib/sections/home/TheLoop.svelte";
+  import TheLoop from "$lib/sections/global/TheLoop.svelte";
 </script>
 
 <svelte:head>

@@ -53,6 +53,9 @@
     <dl class="flex flex-col gap-4">
       <dt class="text-headline">Everything else:</dt>
       <dd>
+        <Link href="/#about" icon="link" label="About Main Street DX" />
+      </dd>
+      <dd>
         <Link href="/privacy-policy" icon="link" label="Privacy Policy" />
       </dd>
       <dd class="text-body">

@@ -48,6 +48,7 @@ export interface FreeResourceSection {
 
   // what prompt to run, using the question answers as context, that would give the user the most insight about achieving their goals and starting a business
   prompt: string;
+
   // insightful questions to ask the user, themed to this FreeResource
   questions: string[];
 }

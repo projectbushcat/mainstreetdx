@@ -4,6 +4,7 @@
   export let bg: ColorName = "white";
   export let name: string | undefined = undefined;
   export let rounded: boolean = true;
+  export let bottom_border: boolean = false;
 </script>
 
 <section
@@ -20,6 +21,12 @@
   class:bg-white={bg === "white"}
   class:text-white={bg === "black" || bg === "main-green"}
   class:relative={typeof name !== "undefined"}
+  class:border-b-2={bottom_border}
+  class:border-b-main-green={bottom_border && bg === "surface-green"}
+  class:border-b-main-blue={bottom_border && bg === "surface-blue"}
+  class:border-b-main-yellow={bottom_border && bg === "surface-yellow"}
+  class:border-b-main-orange={bottom_border && bg === "surface-orange"}
+  class:border-b-main-gray={bottom_border && bg === "surface-gray"}
 >
   {#if name}
     <a id={name} aria-label="Named anchor for {name}" class="absolute top-8"></a>{/if}
