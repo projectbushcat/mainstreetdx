@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { AllResources } from "$lib/data/EasyStreet";
+  import { AllResources, FreeResourceUtils } from "$lib/data/EasyStreet";
   import {
     Calendly30Min,
     MainStreetEmailAddress,
@@ -46,7 +46,7 @@
       <dt class="text-headline">Resources for entrepreneurs and small businesses:</dt>
       {#each AllResources as item}
         <dd>
-          <Link href={item.getHref()} icon="link" label="How to: {item.name}" />
+          <Link href={FreeResourceUtils.getHref(item)} icon="link" label="How to: {item.name}" />
         </dd>
       {/each}
     </dl>

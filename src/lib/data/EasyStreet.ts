@@ -1,125 +1,343 @@
 import type { ColorName } from "./ColorName";
 
-export class FreeResource {
-  static BASE_URL: string = `/easy-street/free-resources/`;
-  static href: string;
-  static bg: ColorName;
-  static surface: ColorName;
-  static name: string;
-  static category: string;
-  static exampleGoal: string;
-  static concepts: string[];
+// Easy Street (from Main Street DX): resources that help entrepreneurs contextualize their business goals, using AI to derive insights to help them think about their business and improve their chances of success
+export interface FreeResource {
+  // slug of the resource, e.g. mainstreetdx.com/easy-street/free-resources/ideate
+  href: string;
 
-  static getHref() {
-    return `${this.BASE_URL}${this.href}`;
-  }
+  // the main color of this free resource
+  bg: ColorName;
 
-  constructor() {}
+  // the surface color of this free resource
+  surface: ColorName;
+
+  // the name of the resource, e.g. "Refine your idea" or "Build your MVP"
+  name: string;
+
+  /** instructions to the user, e.g.:
+`The questions below help you understand your business idea from the market’s perspective.`,
+`Answer each question the best you can, and AI will generate insights to help you achieve your goal.`
+   */
+  instructions: string[];
+
+  // phase of business this belongs to, one of: Ideate, Validate, Launch, Optimize, Scale
+  category: string;
+
+  // example of a goal Main Street's services would help the user achieve, e.g.: "Develop and refine core business concept."
+  exampleGoal: string;
+
+  /**
+   * Concepts are core offerings of Main street for this phase of business, e.g.:
+`Brainstorming techniques`,
+`Market research basics`,
+`Identifying pain points`,
+`Crafting value propositions`
+   */
+  concepts: string[];
+
+  // three sections of questions to ask the user, with a prompt to run after each section to glean insights about their answers and offer advice to help them at their phase of business
+  sections: FreeResourceSection[];
 }
 
-export class ESIdeate extends FreeResource {
-  static href: string = `ideate`;
-  static bg: ColorName = "main-green";
-  static surface: ColorName = "surface-green";
-  static name = `Refine your idea`;
-  static category = `Ideate`;
-  static exampleGoal = `Develop and refine core business concept.`;
-  static concepts = [
+export interface FreeResourceSection {
+  // short name of the section, to help contextualize or explain the questions or motivate the user
+  headline: string;
+
+  // instructions for this section, outlining why it matters
+  instructions: string;
+
+  // what prompt to run, using the question answers as context, that would give the user the most insight about achieving their goals and starting a business
+  prompt: string;
+  // insightful questions to ask the user, themed to this FreeResource
+  questions: string[];
+}
+
+// helper class
+export class FreeResourceUtils {
+  static BASE_URL: string = `/easy-street/free-resources/`;
+
+  static getHref(r: FreeResource) {
+    return `${this.BASE_URL}${r.href}`;
+  }
+}
+
+/**
+ * Begin each of the sections
+ */
+
+export const ESIdeate: FreeResource = {
+  href: `ideate`,
+  bg: "main-green",
+  surface: "surface-green",
+  name: `Refine your idea`,
+  instructions: [
+    `The questions below help you understand your business idea from the market’s perspective.`,
+    `Answer each question the best you can, and AI will generate insights to help you achieve your goal.`
+  ],
+  category: `Ideate`,
+  exampleGoal: `Develop and refine core business concept.`,
+  concepts: [
     `Brainstorming techniques`,
     `Market research basics`,
     `Identifying pain points`,
     `Crafting value propositions`
-  ];
+  ],
+  sections: [
+    {
+      headline: `Business background`,
+      instructions: `Understanding your business's core concept and target audience is crucial for refining your idea. Be as specific as possible in your answers.`,
+      prompt: `Based on the user's responses, identify the core value proposition of their business idea and suggest potential ways to strengthen it. Also, provide insights on the chosen target audience and any potential gaps or opportunities in addressing their needs.`,
+      questions: [
+        `What problem or need does your business idea address?`,
+        `Who is your target audience or ideal customer?`,
+        `What inspired you to pursue this particular business idea?`
+      ]
+    },
+    {
+      headline: `Market analysis`,
+      instructions: `Analyzing your market and competition helps position your business for success. Consider both direct and indirect competitors in your answers.`,
+      prompt: `Analyze the user's competitive positioning based on their responses. Highlight unique selling points and suggest areas where the idea could be further differentiated. Identify potential strategies to overcome the anticipated challenges.`,
+      questions: [
+        `What are the key features or benefits of your product/service?`,
+        `Who are your main competitors, and how is your idea different?`,
+        `What are the biggest challenges you anticipate in bringing this idea to market?`
+      ]
+    },
+    {
+      headline: `Revenue and vision`,
+      instructions: `A clear revenue model and long-term vision are essential for your business's sustainability. Be realistic yet ambitious in your projections.`,
+      prompt: `Synthesize the user's responses to provide a comprehensive analysis of their business idea. Identify strengths, weaknesses, and opportunities for refinement. Suggest next steps for idea validation and development, including potential pivots or expansions based on the information provided. Offer insights on resource allocation and potential milestones for the next 6-12 months to move the idea forward.`,
+      questions: [
+        `How do you plan to generate revenue from this idea?`,
+        `What resources (skills, funding, partnerships) do you currently have to support this idea?`,
+        `How have you validated or tested your idea so far?`,
+        `What's your vision for the business in 3-5 years?`
+      ]
+    }
+  ]
+};
 
-  static tmp = `
-  Section 1:
-What problem or need does your business idea address?
-Who is your target audience or ideal customer?
-What inspired you to pursue this particular business idea?
-
-Example prompt after Section 1:
-"Based on the user's responses, identify the core value proposition of their business idea and suggest potential ways to strengthen it. Also, provide insights on the chosen target audience and any potential gaps or opportunities in addressing their needs."
-
-Section 2:
-4. What are the key features or benefits of your product/service?
-5. Who are your main competitors, and how is your idea different?
-6. What are the biggest challenges you anticipate in bringing this idea to market?
-
-Example prompt after Section 2:
-"Analyze the user's competitive positioning based on their responses. Highlight unique selling points and suggest areas where the idea could be further differentiated. Identify potential strategies to overcome the anticipated challenges."
-
-Section 3:
-7. How do you plan to generate revenue from this idea?
-8. What resources (skills, funding, partnerships) do you currently have to support this idea?
-9. How have you validated or tested your idea so far?
-10. What's your vision for the business in 3-5 years?
-
-Final analysis prompt:
-"Synthesize the user's responses to provide a comprehensive analysis of their business idea. Identify strengths, weaknesses, and opportunities for refinement. Suggest next steps for idea validation and development, including potential pivots or expansions based on the information provided. Offer insights on resource allocation and potential milestones for the next 6-12 months to move the idea forward."`;
-
-  constructor() {
-    super();
-  }
-}
-
-export class ESValidate extends FreeResource {
-  static href: string = `validate`;
-  static bg: ColorName = "main-yellow";
-  static surface: ColorName = "surface-yellow";
-  static name = `Develop a strategy`;
-  static category = `Validate`;
-  static exampleGoal = `Develop and test a minimum-viable product (MVP) with users and gather feedback.`;
-  static concepts = [
+export const ESValidate: FreeResource = {
+  href: `validate`,
+  bg: "main-yellow",
+  surface: "surface-yellow",
+  name: `Validate your concept`,
+  instructions: [
+    `The following questions will help you validate your business concept and prepare for building an MVP.`,
+    `Answer thoughtfully to receive AI-generated insights that will guide your validation process.`
+  ],
+  category: `Validate`,
+  exampleGoal: `Develop and test a minimum-viable product (MVP) with users and gather feedback.`,
+  concepts: [
     `Building a prototype or MVP`,
     `Customer discovery interviews`,
     `Competitive analysis`,
     `Financial projections`
-  ];
-}
+  ],
+  sections: [
+    {
+      headline: `MVP Planning`,
+      instructions: `Your MVP is crucial for validating your concept. Focus on core features that solve your main customer problem and can be developed quickly.`,
+      prompt: `Based on the user's responses, provide insights on their MVP strategy. Suggest improvements to their prototype plan and offer ideas for effective user testing methods.`,
+      questions: [
+        `What key features will your MVP include to solve your target audience's main problem?`,
+        `How do you plan to build your prototype or MVP?`,
+        `What methods will you use to gather user feedback on your MVP?`,
+        `What's your estimated timeline for building and launching your MVP?`
+      ]
+    },
+    {
+      headline: `Customer Discovery`,
+      instructions: `Direct customer feedback is invaluable. Aim to gather diverse perspectives and be open to surprising or unexpected insights.`,
+      prompt: `Analyze the user's approach to customer discovery. Offer suggestions for improving their interview process and highlight potential areas for deeper customer insights.`,
+      questions: [
+        `How many potential customers have you interviewed about your concept?`,
+        `What key insights have you gained from these customer discovery interviews?`,
+        `How has customer feedback influenced your business concept so far?`,
+        `What surprising or unexpected feedback have you received from potential customers?`
+      ]
+    },
+    {
+      headline: `Market and Financial Analysis`,
+      instructions: `A thorough understanding of your market and realistic financial projections are crucial for validation. Be as detailed and data-driven as possible.`,
+      prompt: `Evaluate the user's competitive analysis and financial projections. Identify potential gaps in their market understanding and suggest ways to strengthen their financial planning.`,
+      questions: [
+        `Who are your top 3 competitors and what sets your concept apart from theirs?`,
+        `What is your estimated cost to build and launch your MVP?`,
+        `What are your projected revenues for the first year after launch?`,
+        `How do you plan to fund your MVP development and initial operations?`
+      ]
+    }
+  ]
+};
 
-export class ESLaunch extends FreeResource {
-  static href: string = `launch`;
-  static bg: ColorName = "main-orange";
-  static surface: ColorName = "surface-orange";
-  static name: string = `Build your own MVP`;
-  static category: string = `Launch`;
-  static exampleGoal: string = `Launching version 1 to the public.`;
-  static concepts = [
+export const ESLaunch: FreeResource = {
+  href: `launch`,
+  bg: "main-orange",
+  surface: "surface-orange",
+  name: `Build your MVP`,
+  instructions: [
+    `These questions will guide you through the process of building and launching your MVP.`,
+    `Your answers will help AI generate tailored insights to support your launch strategy.`
+  ],
+  category: `Launch`,
+  exampleGoal: `Launching version 1 to the public.`,
+  concepts: [
     "Hands-on full-stack development",
     "Marketing strategy",
     "Operations setup",
     "Funding options"
-  ];
-}
+  ],
+  sections: [
+    {
+      headline: `MVP Development`,
+      instructions: `Your MVP should balance functionality with speed to market. Consider what's essential for launch versus what can be added later.`,
+      prompt: `Based on the user's responses, provide insights on their development approach. Suggest ways to optimize their tech stack and development process for a successful MVP launch.`,
+      questions: [
+        `What technology stack have you chosen for your MVP, and why?`,
+        `How are you managing the development process (e.g., agile, waterfall)?`,
+        `What are the biggest technical challenges you're facing in building your MVP?`,
+        `What features or functionality did you decide to leave out of your MVP, and why?`
+      ]
+    },
+    {
+      headline: `Marketing and Launch Strategy`,
+      instructions: `A well-planned launch can significantly impact your MVP's success. Consider both pre-launch buzz and post-launch engagement strategies.`,
+      prompt: `Analyze the user's marketing and launch plans. Offer suggestions to improve their go-to-market strategy and identify potential channels or tactics they may have overlooked.`,
+      questions: [
+        `What is your primary marketing strategy for your MVP launch?`,
+        `Which channels do you plan to use to reach your target audience?`,
+        `How do you plan to measure the success of your launch?`,
+        `How do you plan to gather and incorporate early user feedback after launch?`
+      ]
+    },
+    {
+      headline: `Operations and Funding`,
+      instructions: `Smooth operations and adequate funding are crucial for a successful launch. Plan for contingencies and unexpected challenges.`,
+      prompt: `Evaluate the user's operational setup and funding strategy. Provide insights on potential improvements to their operations and suggest alternative funding options if applicable.`,
+      questions: [
+        `How have you structured your operations to support your MVP launch?`,
+        `What key roles or skills do you still need to fill in your team?`,
+        `How much funding have you secured for your launch, and from what sources?`,
+        `What is your backup plan if you exceed your initial budget?`
+      ]
+    }
+  ]
+};
 
-export class ESOptimize extends FreeResource {
-  static href: string = `optimize`;
-  static bg: ColorName = "main-gray";
-  static surface: ColorName = "surface-gray";
-  static name: string = `Analyze feedback`;
-  static category: string = `Optimize`;
-  static exampleGoal: string = `Improve one key business metric by 20%.`;
-  static concepts = [
+export const ESOptimize: FreeResource = {
+  href: `optimize`,
+  bg: "main-gray",
+  surface: "surface-gray",
+  name: `Optimize your MVP`,
+  instructions: [
+    `These questions will help you identify areas for improvement in your MVP and business operations.`,
+    `Your responses will be used to generate AI-powered insights for optimizing your product and processes.`
+  ],
+  category: `Optimize`,
+  exampleGoal: `Improve one key business metric by 20%.`,
+  concepts: [
     "Web analytics integration",
     "Customer feedback loops",
     "Process improvement",
     "Team building"
-  ];
-}
+  ],
+  sections: [
+    {
+      headline: `Performance Metrics`,
+      instructions: `Tracking the right metrics is crucial for optimization. Focus on metrics that directly relate to your business goals and user satisfaction.`,
+      prompt: `Analyze the user's current metrics and KPIs. Suggest additional metrics they should consider tracking and provide insights on how to improve their most critical metrics.`,
+      questions: [
+        `What are the top 3 metrics you're currently tracking for your MVP?`,
+        `Which metric is underperforming the most, and why do you think that is?`,
+        `How often do you review and act on your analytics data?`,
+        `What customer behaviors or actions are you trying to encourage with your current MVP?`
+      ]
+    },
+    {
+      headline: `Customer Feedback and Iteration`,
+      instructions: `Continuous improvement based on user feedback is key to optimization. Develop a systematic approach to collecting and acting on feedback.`,
+      prompt: `Evaluate the user's approach to gathering and acting on customer feedback. Offer suggestions for improving their feedback loops and prioritizing product improvements.`,
+      questions: [
+        `How are you currently collecting customer feedback on your MVP?`,
+        `What is the most common piece of feedback you've received from users?`,
+        `How do you prioritize which feedback to act on for your next iteration?`,
+        `What's the biggest change you've made to your product based on user feedback?`
+      ]
+    },
+    {
+      headline: `Team and Process Optimization`,
+      instructions: `Efficient processes and a well-functioning team are crucial for scaling. Regularly assess and improve your operational practices.`,
+      prompt: `Based on the user's responses, provide insights on improving team efficiency and business processes. Suggest ways to enhance collaboration and streamline operations.`,
+      questions: [
+        `What is the biggest operational challenge your team is currently facing?`,
+        `How do you measure and improve your team's productivity?`,
+        `What processes have you implemented to ensure consistent quality in your product or service?`,
+        `What tools or software are you using to manage your team and workflows?`,
+        `How do you plan to scale your team and operations as your business grows?`
+      ]
+    }
+  ]
+};
 
-export class ESScale extends FreeResource {
-  static bg: ColorName = "main-blue";
-  static surface: ColorName = "surface-blue";
-  static href: string = `scale`;
-  static name: string = `Launch & grow`;
-  static category: string = `Scale`;
-  static exampleGoal: string = `Increase customer base or revenue by 30%.`;
-  static concepts = [
+export const ESScale: FreeResource = {
+  href: `scale`,
+  bg: "main-blue",
+  surface: "surface-blue",
+  name: `Scale your business`,
+  instructions: [
+    `The following questions will help you plan and execute your business scaling strategy.`,
+    `Your answers will be used to generate AI-powered insights to support your growth initiatives.`
+  ],
+  category: `Scale`,
+  exampleGoal: `Increase customer base or revenue by 30%.`,
+  concepts: [
     "Growth strategies",
     "Automation and efficiency",
     "Expanding product/service lines",
     "Market expansion"
-  ];
-}
+  ],
+  sections: [
+    {
+      headline: `Growth Strategy`,
+      instructions: `A clear growth strategy is essential for sustainable scaling. Consider both short-term wins and long-term sustainability in your plans.`,
+      prompt: `Analyze the user's growth strategy. Provide insights on potential opportunities they may have overlooked and suggest ways to optimize their approach for sustainable scaling.`,
+      questions: [
+        `What is your primary strategy for scaling your business in the next 12 months?`,
+        `Which aspect of your business do you believe has the most potential for growth?`,
+        `What are the biggest obstacles you anticipate in scaling your business?`,
+        `How do you plan to retain and grow your existing customer base while acquiring new customers?`
+      ]
+    },
+    {
+      headline: `Operational Efficiency`,
+      instructions: `Maintaining efficiency as you scale is crucial. Identify processes that can be automated or optimized to support growth without compromising quality.`,
+      prompt: `Evaluate the user's plans for maintaining and improving efficiency as they scale. Offer suggestions for automation and process improvements to support their growth.`,
+      questions: [
+        `Which areas of your business have you identified for automation or improved efficiency?`,
+        `How do you plan to maintain product/service quality as you scale operations?`,
+        `What key performance indicators (KPIs) will you use to measure operational efficiency during scaling?`,
+        `What potential risks have you identified in your scaling process, and how do you plan to mitigate them?`
+      ]
+    },
+    {
+      headline: `Market and Product Expansion`,
+      instructions: `Expanding into new markets or product lines can drive significant growth. Ensure your expansion plans align with your core competencies and market demands.`,
+      prompt: `Based on the user's responses, provide insights on their market and product expansion plans. Suggest potential risks and opportunities in their approach and offer ideas for successful expansion.`,
+      questions: [
+        `Are you planning to expand into new markets or customer segments? If so, which ones and why?`,
+        `How do you plan to expand your product or service line to support your scaling efforts?`,
+        `What research have you conducted to validate your expansion plans?`,
+        `How will you finance your scaling initiatives?`,
+        `How will you ensure your company culture and values scale alongside your business operations?`
+      ]
+    }
+  ]
+};
 
-export const AllResources = [ESIdeate, ESValidate, ESLaunch, ESOptimize, ESScale];
+/**
+ * End each of the sections
+ */
+
+// Export them in order of business phase for use around the site; this same data drives the homepage's "Our Services" section, and the Easy Street section.
+export const AllResources: FreeResource[] = [ESIdeate, ESValidate, ESLaunch, ESOptimize, ESScale];

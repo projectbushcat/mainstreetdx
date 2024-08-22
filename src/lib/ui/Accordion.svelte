@@ -37,7 +37,10 @@
       <span class="h-[30px] inline-flex items-center">
         <Icon icon={expanded ? "minus_circle" : "plus_circle"} />
       </span>
-      <span class="hover:underline text-headline flex-1" class:underline={expanded}>{title}</span>
+      <span
+        class="underline-offset-2 hover:underline text-headline flex-1"
+        class:underline={expanded}>{title}</span
+      >
     </button>
   </h3>
   <section {id} class:hidden={!expanded} aria-live="polite">

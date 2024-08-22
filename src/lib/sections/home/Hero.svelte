@@ -19,7 +19,7 @@
   </div>
   <h1 class="text-headline md:text-hero">
     Digital transformation for <span
-      class="indent-[-100000px] inline-block w-[123px] h-[54px] -translate-x-2 xs:translate-x-0 align-middle"
+      class="indent-[-100000px] inline-block w-[123px] h-[54px] -translate-x-2 xs:translate-x-0 align-middle print:translate-x-0 print:indent-0 print:w-auto print:h-auto print:inline print:align-baseline"
       style="background-image: url(/decorations/iconic.svg);">iconic</span
     > local businesses.
   </h1>

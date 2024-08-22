@@ -8,7 +8,7 @@
     <span class="text-headline block text-main-gray">Our mission:</span>
     <span class="text-hero"
       >Help communities <span
-        class="indent-[-100000px] inline-block align-middle w-[139px] h-[53px]"
+        class="indent-[-100000px] inline-block align-middle w-[139px] h-[53px] print:translate-x-0 print:indent-0 print:w-auto print:h-auto print:inline print:align-baseline"
         style="background-image:url(/decorations/thrive.svg)">thrive</span
       >
     </span>

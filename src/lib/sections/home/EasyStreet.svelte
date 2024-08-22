@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { AllResources } from "$lib/data/EasyStreet";
+  import { AllResources, FreeResourceUtils } from "$lib/data/EasyStreet";
   import Jelly from "$lib/ui/Jelly.svelte";
   import JellyGrid from "$lib/ui/JellyGrid.svelte";
   import Section from "$lib/ui/Section.svelte";
@@ -31,7 +31,7 @@
         action="Launch"
         type="link"
         title={item.name}
-        href={item.getHref()}
+        href={FreeResourceUtils.getHref(item)}
       ></Jelly>
     </JellyGrid>
   </div>
