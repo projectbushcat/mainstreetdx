@@ -115,7 +115,7 @@
         {action}
       </button>
       {#if expanded}
-        <div {id} in:slide out:slide class="p-4 pt-0">
+        <div {id} in:slide out:slide class="p-4 pt-0" aria-live="polite">
           <slot />
         </div>
       {/if}
