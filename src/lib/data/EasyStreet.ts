@@ -71,8 +71,8 @@ export const ESIdeate: FreeResource = {
   surface: "surface-green",
   name: `Refine your idea`,
   instructions: [
-    `The questions below help you understand your business idea from the market’s perspective.`,
-    `Answer each question the best you can, and AI will generate insights to help you achieve your goal.`
+    `The questions below help you understand your business idea from the market's perspective.`,
+    `Answer each question the best you can, considering industry-specific factors. AI will generate insights to help you achieve your goal.`
   ],
   category: `Ideate`,
   exampleGoal: `Develop and refine core business concept.`,
@@ -90,7 +90,8 @@ export const ESIdeate: FreeResource = {
       questions: [
         `What problem or need does your business idea address?`,
         `Who is your target audience or ideal customer?`,
-        `What inspired you to pursue this particular business idea?`
+        `What inspired you to pursue this particular business idea?`,
+        `What potential risks or challenges do you foresee in developing this idea?`
       ]
     },
     {
@@ -100,7 +101,8 @@ export const ESIdeate: FreeResource = {
       questions: [
         `What are the key features or benefits of your product/service?`,
         `Who are your main competitors, and how is your idea different?`,
-        `What are the biggest challenges you anticipate in bringing this idea to market?`
+        `What are the biggest challenges you anticipate in bringing this idea to market?`,
+        `How do you plan to stay updated on industry trends and emerging technologies relevant to your idea?`
       ]
     },
     {
@@ -124,7 +126,7 @@ export const ESValidate: FreeResource = {
   name: `Validate your concept`,
   instructions: [
     `The following questions will help you validate your business concept and prepare for building an MVP.`,
-    `Answer thoughtfully to receive AI-generated insights that will guide your validation process.`
+    `Answer thoughtfully, considering industry-specific factors, to receive AI-generated insights that will guide your validation process.`
   ],
   category: `Validate`,
   exampleGoal: `Develop and test a minimum-viable product (MVP) with users and gather feedback.`,
@@ -165,7 +167,7 @@ export const ESValidate: FreeResource = {
         `Who are your top 3 competitors and what sets your concept apart from theirs?`,
         `What is your estimated cost to build and launch your MVP?`,
         `What are your projected revenues for the first year after launch?`,
-        `How do you plan to fund your MVP development and initial operations?`
+        `What potential risks have you identified in your validation process, and how do you plan to mitigate them?`
       ]
     }
   ]
@@ -178,7 +180,7 @@ export const ESLaunch: FreeResource = {
   name: `Build your MVP`,
   instructions: [
     `These questions will guide you through the process of building and launching your MVP.`,
-    `Your answers will help AI generate tailored insights to support your launch strategy.`
+    `Your answers, considering industry-specific factors, will help AI generate tailored insights to support your launch strategy.`
   ],
   category: `Launch`,
   exampleGoal: `Launching version 1 to the public.`,
@@ -207,7 +209,7 @@ export const ESLaunch: FreeResource = {
       questions: [
         `What is your primary marketing strategy for your MVP launch?`,
         `Which channels do you plan to use to reach your target audience?`,
-        `How do you plan to measure the success of your launch?`,
+        `What specific metrics or milestones will you use to measure the success of your launch?`,
         `How do you plan to gather and incorporate early user feedback after launch?`
       ]
     },
@@ -219,7 +221,7 @@ export const ESLaunch: FreeResource = {
         `How have you structured your operations to support your MVP launch?`,
         `What key roles or skills do you still need to fill in your team?`,
         `How much funding have you secured for your launch, and from what sources?`,
-        `What is your backup plan if you exceed your initial budget?`
+        `What is your backup plan if you exceed your initial budget or face unexpected challenges?`
       ]
     }
   ]
@@ -232,7 +234,7 @@ export const ESOptimize: FreeResource = {
   name: `Optimize your MVP`,
   instructions: [
     `These questions will help you identify areas for improvement in your MVP and business operations.`,
-    `Your responses will be used to generate AI-powered insights for optimizing your product and processes.`
+    `Your responses, considering industry-specific factors, will be used to generate AI-powered insights for optimizing your product and processes.`
   ],
   category: `Optimize`,
   exampleGoal: `Improve one key business metric by 20%.`,
@@ -262,7 +264,7 @@ export const ESOptimize: FreeResource = {
         `How are you currently collecting customer feedback on your MVP?`,
         `What is the most common piece of feedback you've received from users?`,
         `How do you prioritize which feedback to act on for your next iteration?`,
-        `What's the biggest change you've made to your product based on user feedback?`
+        `What strategies are you using to retain existing customers while acquiring new ones?`
       ]
     },
     {
@@ -273,8 +275,7 @@ export const ESOptimize: FreeResource = {
         `What is the biggest operational challenge your team is currently facing?`,
         `How do you measure and improve your team's productivity?`,
         `What processes have you implemented to ensure consistent quality in your product or service?`,
-        `What tools or software are you using to manage your team and workflows?`,
-        `How do you plan to scale your team and operations as your business grows?`
+        `What tools or software are you using to manage your team and workflows?`
       ]
     }
   ]
@@ -287,7 +288,7 @@ export const ESScale: FreeResource = {
   name: `Scale your business`,
   instructions: [
     `The following questions will help you plan and execute your business scaling strategy.`,
-    `Your answers will be used to generate AI-powered insights to support your growth initiatives.`
+    `Your answers, considering industry-specific factors, will be used to generate AI-powered insights to support your growth initiatives.`
   ],
   category: `Scale`,
   exampleGoal: `Increase customer base or revenue by 30%.`,
@@ -305,8 +306,8 @@ export const ESScale: FreeResource = {
       questions: [
         `What is your primary strategy for scaling your business in the next 12 months?`,
         `Which aspect of your business do you believe has the most potential for growth?`,
-        `What are the biggest obstacles you anticipate in scaling your business?`,
-        `How do you plan to retain and grow your existing customer base while acquiring new customers?`
+        `How do you plan to maintain or enhance your competitive advantage as you scale?`,
+        `What are the biggest obstacles you anticipate in scaling your business?`
       ]
     },
     {
@@ -317,7 +318,7 @@ export const ESScale: FreeResource = {
         `Which areas of your business have you identified for automation or improved efficiency?`,
         `How do you plan to maintain product/service quality as you scale operations?`,
         `What key performance indicators (KPIs) will you use to measure operational efficiency during scaling?`,
-        `What potential risks have you identified in your scaling process, and how do you plan to mitigate them?`
+        `How will you allocate resources (financial, human, technological) to support your scaling efforts?`
       ]
     },
     {
@@ -328,7 +329,6 @@ export const ESScale: FreeResource = {
         `Are you planning to expand into new markets or customer segments? If so, which ones and why?`,
         `How do you plan to expand your product or service line to support your scaling efforts?`,
         `What research have you conducted to validate your expansion plans?`,
-        `How will you finance your scaling initiatives?`,
         `How will you ensure your company culture and values scale alongside your business operations?`
       ]
     }
