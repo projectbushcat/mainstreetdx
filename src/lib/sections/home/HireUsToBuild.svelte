@@ -1,13 +1,18 @@
 <script lang="ts">
   import { Calendly30Min, MainStreetEmailAddress } from "$lib/data/MainStreet";
+  import Accordion from "$lib/ui/Accordion.svelte";
   import Section from "$lib/ui/Section.svelte";
 </script>
 
 <Section bg="main-yellow" name="hire-us">
   <h2 class="text-hero">Hire us to <em>do</em>.</h2>
-  <h3 class="text-headline">
-    Outcome-driven professional services available per-project, accessible for every budget.
-  </h3>
+  <div class="flex flex-col gap-2">
+    <h3 class="text-headline">
+      Outcome-driven professional services available per-project, accessible for every budget.
+    </h3>
+    <Accordion title="How we work"></Accordion>
+    <Accordion title="Limited budget?"></Accordion>
+  </div>
   <ul class="flex flex-col gap-8">
     <li>
       <h4 class="flex justify-between border-b-2 border-b-black mb-2">

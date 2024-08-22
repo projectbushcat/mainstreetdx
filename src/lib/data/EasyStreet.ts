@@ -31,6 +31,32 @@ export class ESIdeate extends FreeResource {
     `Crafting value propositions`
   ];
 
+  static tmp = `
+  Section 1:
+What problem or need does your business idea address?
+Who is your target audience or ideal customer?
+What inspired you to pursue this particular business idea?
+
+Example prompt after Section 1:
+"Based on the user's responses, identify the core value proposition of their business idea and suggest potential ways to strengthen it. Also, provide insights on the chosen target audience and any potential gaps or opportunities in addressing their needs."
+
+Section 2:
+4. What are the key features or benefits of your product/service?
+5. Who are your main competitors, and how is your idea different?
+6. What are the biggest challenges you anticipate in bringing this idea to market?
+
+Example prompt after Section 2:
+"Analyze the user's competitive positioning based on their responses. Highlight unique selling points and suggest areas where the idea could be further differentiated. Identify potential strategies to overcome the anticipated challenges."
+
+Section 3:
+7. How do you plan to generate revenue from this idea?
+8. What resources (skills, funding, partnerships) do you currently have to support this idea?
+9. How have you validated or tested your idea so far?
+10. What's your vision for the business in 3-5 years?
+
+Final analysis prompt:
+"Synthesize the user's responses to provide a comprehensive analysis of their business idea. Identify strengths, weaknesses, and opportunities for refinement. Suggest next steps for idea validation and development, including potential pivots or expansions based on the information provided. Offer insights on resource allocation and potential milestones for the next 6-12 months to move the idea forward."`;
+
   constructor() {
     super();
   }
