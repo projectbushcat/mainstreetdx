@@ -1,3 +1,4 @@
+import { z } from "zod";
 import type { ColorName } from "./ColorName";
 
 // Easy Street (from Main Street DX): resources that help entrepreneurs contextualize their business goals, using AI to derive insights to help them think about their business and improve their chances of success
@@ -53,6 +54,15 @@ export interface FreeResourceSection {
   questions: string[];
 }
 
+export const FreeResourceValidators = {
+  generate: z.object({
+    i: z.number(),
+    a: z.array(z.string())
+  })
+};
+
+export type FreeResourceGenerateRequest = z.infer<typeof FreeResourceValidators.generate>;
+
 export type FreeResourceGenerateResponse =
   | {
       success: true;
@@ -70,25 +80,29 @@ export class FreeResourceUtils {
     return `${this.BASE_URL}${r.href}`;
   }
 
+  static #getEndpoint(r: FreeResource) {
+    return `${this.BASE_URL}${r.href}/generate`;
+  }
+
   static async generate(
     r: FreeResource,
-    s: FreeResourceSection,
+    i: number,
     a: string[]
   ): Promise<FreeResourceGenerateResponse> {
     try {
-      const p = new Promise<FreeResourceGenerateResponse>((resolve) => {
-        setTimeout(() => {
-          resolve({
-            success: true,
-            insights: "Fascinating!"
-          });
-          // resolve({
-          //   success: false
-          // })
-        }, 1000);
+      const body: FreeResourceGenerateRequest = { i, a };
+
+      const req = await fetch(this.#getEndpoint(r), {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
       });
 
-      return p;
+      const json = (await req.json()) as FreeResourceGenerateResponse;
+
+      return json;
     } catch (e) {
       return {
         success: false

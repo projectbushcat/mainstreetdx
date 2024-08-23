@@ -4,7 +4,7 @@ import type { PageLoad } from "./$types";
 
 export const load: PageLoad = (event) => {
   const href = event.params.href;
-  let resource: FreeResource | undefined = AllResources.find((r) => r.href === href);
+  const resource: FreeResource | undefined = AllResources.find((r) => r.href === href);
 
   if (resource) {
     return {

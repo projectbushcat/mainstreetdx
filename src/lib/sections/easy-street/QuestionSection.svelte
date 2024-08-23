@@ -11,7 +11,7 @@
   import Link from "$lib/ui/Link.svelte";
   import Section from "$lib/ui/Section.svelte";
   import { createEventDispatcher } from "svelte";
-  import { expoInOut, quartIn, quartInOut, quartOut } from "svelte/easing";
+  import { quartInOut } from "svelte/easing";
   import { tweened } from "svelte/motion";
   import { slide } from "svelte/transition";
 
@@ -22,7 +22,7 @@
   export let resource: FreeResource;
   export let section: FreeResourceSection;
 
-  let answers: string[] = section.questions.map((q) => "test");
+  let answers: string[] = section.questions.map((q) => "");
   let num_generated = 0;
   $: disabled = answers.join("").trim().length < 15 || num_generated > MAX_GENERATIONS;
   let generating = false;
@@ -30,7 +30,7 @@
   let generating_error = false;
   let completed = false;
   let insights: string | undefined = undefined;
-  let typing = tweened(0, { duration: 1000, easing: expoInOut });
+  let typing = tweened(0, { duration: 1000, easing: quartInOut });
 
   const generate = async () => {
     generating = true;
@@ -40,7 +40,7 @@
     $typing = 0;
     num_generated += 1;
 
-    const res = await FreeResourceUtils.generate(resource, section, answers);
+    const res = await FreeResourceUtils.generate(resource, index, answers);
 
     if (res.success) {
       generated = true;
@@ -115,10 +115,10 @@
       <p class="text-label">Something went wrong. Please try again later.</p>
     {/if}
     {#if insights}
-      <h3 class="text-headline" aria-live="polite">
-        <span class="text-main-gray-secondary block">AI Insights:</span>
-        {insights.substring(0, $typing)}
-      </h3>
+      <div>
+        <h3 class="text-headline text-main-gray-secondary">AI Insights:</h3>
+        <pre class="text-body font-sans">{insights.substring(0, $typing)}</pre>
+      </div>
     {/if}
     <div slot="full-width" class="max-w-prose m-auto">
       {#if generated && !generating}
