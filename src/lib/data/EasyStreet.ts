@@ -142,7 +142,7 @@ export const ESIdeate: FreeResource = {
       ]
     },
     {
-      headline: `Revenue and vision`,
+      headline: `Revenue & vision`,
       instructions: `A clear revenue model and long-term vision are essential for your business's sustainability. Be realistic yet ambitious in your projections.`,
       prompt: `Synthesize the user's responses to provide a comprehensive analysis of their business idea. Identify strengths, weaknesses, and opportunities for refinement. Suggest next steps for idea validation and development, including potential pivots or expansions based on the information provided. Offer insights on resource allocation and potential milestones for the next 6-12 months to move the idea forward.`,
       questions: [
@@ -196,7 +196,7 @@ export const ESValidate: FreeResource = {
       ]
     },
     {
-      headline: `Market and Financial Analysis`,
+      headline: `Market & Financial Analysis`,
       instructions: `A thorough understanding of your market and realistic financial projections are crucial for validation. Be as detailed and data-driven as possible.`,
       prompt: `Evaluate the user's competitive analysis and financial projections. Identify potential gaps in their market understanding and suggest ways to strengthen their financial planning.`,
       questions: [
@@ -239,7 +239,7 @@ export const ESLaunch: FreeResource = {
       ]
     },
     {
-      headline: `Marketing and Launch Strategy`,
+      headline: `Marketing & Launch Strategy`,
       instructions: `A well-planned launch can significantly impact your MVP's success. Consider both pre-launch buzz and post-launch engagement strategies.`,
       prompt: `Analyze the user's marketing and launch plans. Offer suggestions to improve their go-to-market strategy and identify potential channels or tactics they may have overlooked.`,
       questions: [
@@ -250,7 +250,7 @@ export const ESLaunch: FreeResource = {
       ]
     },
     {
-      headline: `Operations and Funding`,
+      headline: `Operations & Funding`,
       instructions: `Smooth operations and adequate funding are crucial for a successful launch. Plan for contingencies and unexpected challenges.`,
       prompt: `Evaluate the user's operational setup and funding strategy. Provide insights on potential improvements to their operations and suggest alternative funding options if applicable.`,
       questions: [
@@ -293,7 +293,7 @@ export const ESOptimize: FreeResource = {
       ]
     },
     {
-      headline: `Customer Feedback and Iteration`,
+      headline: `Customer Feedback & Iteration`,
       instructions: `Continuous improvement based on user feedback is key to optimization. Develop a systematic approach to collecting and acting on feedback.`,
       prompt: `Evaluate the user's approach to gathering and acting on customer feedback. Offer suggestions for improving their feedback loops and prioritizing product improvements.`,
       questions: [
@@ -304,7 +304,7 @@ export const ESOptimize: FreeResource = {
       ]
     },
     {
-      headline: `Team and Process Optimization`,
+      headline: `Team & Process Optimization`,
       instructions: `Efficient processes and a well-functioning team are crucial for scaling. Regularly assess and improve your operational practices.`,
       prompt: `Based on the user's responses, provide insights on improving team efficiency and business processes. Suggest ways to enhance collaboration and streamline operations.`,
       questions: [
@@ -358,7 +358,7 @@ export const ESScale: FreeResource = {
       ]
     },
     {
-      headline: `Market and Product Expansion`,
+      headline: `Market & Product Expansion`,
       instructions: `Expanding into new markets or product lines can drive significant growth. Ensure your expansion plans align with your core competencies and market demands.`,
       prompt: `Based on the user's responses, provide insights on their market and product expansion plans. Suggest potential risks and opportunities in their approach and offer ideas for successful expansion.`,
       questions: [
