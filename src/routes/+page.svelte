@@ -23,7 +23,7 @@
 
 <Hero />
 <HowCanWeHelp />
-<EasyStreetResources />
+<EasyStreetResources header="Free resources to start and grow any kind of business." />
 <AreasOfExpertise />
 <HireUsToBuild />
 <OurMission />
