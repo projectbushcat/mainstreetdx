@@ -3,10 +3,10 @@
   import HowCanWeHelp from "$lib/sections/home/HowCanWeHelp.svelte";
   import HireUsToBuild from "$lib/sections/home/HireUsToBuild.svelte";
   import OurMission from "$lib/sections/home/OurMission.svelte";
-  import EasyStreet from "$lib/sections/home/EasyStreet.svelte";
   import About from "$lib/sections/home/About.svelte";
   import AreasOfExpertise from "$lib/sections/home/AreasOfExpertise.svelte";
   import TheLoop from "$lib/sections/global/TheLoop.svelte";
+  import EasyStreetResources from "$lib/sections/easy-street/EasyStreetResources.svelte";
 </script>
 
 <svelte:head>
@@ -23,7 +23,7 @@
 
 <Hero />
 <HowCanWeHelp />
-<EasyStreet />
+<EasyStreetResources />
 <AreasOfExpertise />
 <HireUsToBuild />
 <OurMission />

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ExploreAdditionalResources from "$lib/sections/easy-street/ExploreAdditionalResources.svelte";
+  import EasyStreetResources from "$lib/sections/easy-street/EasyStreetResources.svelte";
   import Hero from "$lib/sections/easy-street/Hero.svelte";
   import QuestionSection from "$lib/sections/easy-street/QuestionSection.svelte";
   import TheLoop from "$lib/sections/global/TheLoop.svelte";
@@ -36,5 +36,5 @@
     />
   {/if}
 {/each}
-<ExploreAdditionalResources exclude_href={data.href} />
+<EasyStreetResources exclude_href={data.href} />
 <TheLoop />

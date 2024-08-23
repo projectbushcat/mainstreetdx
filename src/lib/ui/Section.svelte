@@ -17,9 +17,10 @@
   class:bg-surface-gray={bg === "surface-gray"}
   class:bg-main-green={bg === "main-green"}
   class:bg-main-yellow={bg === "main-yellow"}
+  class:bg-main-blue={bg === "main-blue"}
   class:bg-black={bg === "black"}
   class:bg-white={bg === "white"}
-  class:text-white={bg === "black" || bg === "main-green"}
+  class:text-white={bg === "black" || bg === "main-green" || bg === "main-blue"}
   class:relative={typeof name !== "undefined"}
   class:border-b-2={bottom_border}
   class:border-b-main-green={bottom_border && bg === "surface-green"}
