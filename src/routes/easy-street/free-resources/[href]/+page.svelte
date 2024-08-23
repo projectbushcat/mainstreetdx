@@ -28,6 +28,7 @@
   {#if index <= completed_index}
     <QuestionSection
       bg={data.resource.bg}
+      surface={data.resource.surface}
       {section}
       {index}
       on:complete={() => {

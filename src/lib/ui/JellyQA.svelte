@@ -12,7 +12,7 @@
 
   let fx = spring(
     {
-      gap: filled ? 1 : 0,
+      gap: filled ? 1 : 0.25,
       width: filled ? 100 : 90,
       minHeight: filled ? 3 : 1
     },
@@ -32,7 +32,7 @@
 
     if (!filled) {
       answer = "";
-      fx.set({ gap: 0, width: 90, minHeight: 1 });
+      fx.set({ gap: 0.25, width: 90, minHeight: 1 });
     }
   };
 </script>
@@ -71,6 +71,6 @@
       bg !== "main-orange" &&
       bg !== "main-yellow"}
     class:placeholder:text-black={focused || filled || bg === "main-orange" || bg === "main-yellow"}
-    placeholder="Tap to write your answer."
+    placeholder={focused ? "Thoughtful answers get the best results." : "Tap to write your answer."}
   ></textarea>
 </label>
