@@ -27,8 +27,7 @@
 {#each data.resource.sections as section, index}
   {#if index <= completed_index}
     <QuestionSection
-      bg={data.resource.bg}
-      surface={data.resource.surface}
+      resource={data.resource}
       {section}
       {index}
       on:complete={() => {

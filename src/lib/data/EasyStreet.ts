@@ -53,12 +53,47 @@ export interface FreeResourceSection {
   questions: string[];
 }
 
+export type FreeResourceGenerateResponse =
+  | {
+      success: true;
+      insights: string;
+    }
+  | {
+      success: false;
+    };
+
 // helper class
 export class FreeResourceUtils {
   static BASE_URL: string = `/easy-street/free-resources/`;
 
   static getHref(r: FreeResource) {
     return `${this.BASE_URL}${r.href}`;
+  }
+
+  static async generate(
+    r: FreeResource,
+    s: FreeResourceSection,
+    a: string[]
+  ): Promise<FreeResourceGenerateResponse> {
+    try {
+      const p = new Promise<FreeResourceGenerateResponse>((resolve) => {
+        setTimeout(() => {
+          resolve({
+            success: true,
+            insights: "Fascinating!"
+          });
+          // resolve({
+          //   success: false
+          // })
+        }, 1000);
+      });
+
+      return p;
+    } catch (e) {
+      return {
+        success: false
+      };
+    }
   }
 }
 

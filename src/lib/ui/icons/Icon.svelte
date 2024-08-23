@@ -3,6 +3,7 @@
 
   export let icon: IconName;
   export let bg: IconColorName = "main-gray";
+  export let spins: boolean = false;
   const size = 20;
 </script>
 
@@ -12,6 +13,7 @@
   viewBox="0 0 {size} {size}"
   fill="transparent"
   xmlns="http://www.w3.org/2000/svg"
+  class:animate-spin={spins}
 >
   {#if icon === "bookmark"}
     <path
@@ -161,6 +163,40 @@
       stroke-linecap="round"
       stroke-linejoin="round"
     />
+  {:else if icon === "refresh"}
+    <g clip-path="url(#clip0_391_2029)">
+      <path
+        d="M19.1663 3.33333V8.33333M19.1663 8.33333H14.1663M19.1663 8.33333L15.2997 4.7C14.4041 3.80393 13.296 3.14934 12.079 2.79731C10.862 2.44528 9.5756 2.40729 8.33991 2.68688C7.10423 2.96647 5.95951 3.55453 5.01256 4.39618C4.06562 5.23784 3.34731 6.30566 2.92467 7.5M0.833008 16.6667V11.6667M0.833008 11.6667H5.83301M0.833008 11.6667L4.69967 15.3C5.5953 16.1961 6.70332 16.8507 7.92035 17.2027C9.13738 17.5547 10.4238 17.5927 11.6594 17.3131C12.8951 17.0335 14.0398 16.4455 14.9868 15.6038C15.9337 14.7622 16.652 13.6943 17.0747 12.5"
+        class:stroke-main-gray={bg === "main-gray"}
+        class:stroke-black={bg === "black"}
+        class:stroke-white={bg === "white"}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_391_2029">
+        <rect width={size} height={size} fill="white" />
+      </clipPath>
+    </defs>
+  {:else if icon === "thumb"}
+    <g clip-path="url(#clip0_391_2029)">
+      <path
+        d="M5.83366 9.16667L9.16699 1.66667C9.83003 1.66667 10.4659 1.93006 10.9348 2.3989C11.4036 2.86774 11.667 3.50363 11.667 4.16667V7.5H16.3837C16.6252 7.49727 16.8645 7.54709 17.085 7.64602C17.3054 7.74494 17.5017 7.89061 17.6602 8.07293C17.8187 8.25525 17.9357 8.46985 18.0031 8.70188C18.0705 8.9339 18.0866 9.1778 18.0503 9.41667L16.9003 16.9167C16.8401 17.3141 16.6382 17.6763 16.3319 17.9367C16.0256 18.197 15.6356 18.3379 15.2337 18.3333H5.83366M5.83366 9.16667V18.3333M5.83366 9.16667H3.33366C2.89163 9.16667 2.46771 9.34226 2.15515 9.65482C1.84259 9.96738 1.66699 10.3913 1.66699 10.8333V16.6667C1.66699 17.1087 1.84259 17.5326 2.15515 17.8452C2.46771 18.1577 2.89163 18.3333 3.33366 18.3333H5.83366"
+        class:stroke-main-gray={bg === "main-gray"}
+        class:stroke-black={bg === "black"}
+        class:stroke-white={bg === "white"}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_391_2029">
+        <rect width={size} height={size} fill="white" />
+      </clipPath>
+    </defs>
   {:else if icon === "x_circle"}
     <g clip-path="url(#clip0_308_205)">
       <path
