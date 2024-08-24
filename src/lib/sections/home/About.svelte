@@ -15,12 +15,13 @@
     <p class="text-main-gray-secondary">
       As an award-winning creative technologist and serial entrepreneur, I help businesses achieve
       their goals using technology and strategic insight. I’ve held pivotal roles on 200-person
-      delivery teams, crafted future vision demos for the Board, and consulted for local restaurants
-      and nonprofits.
+      delivery teams, presented future vision concepts to the Board of Directors, and consulted for
+      local restaurants and nonprofits.
     </p>
     <p class="text-main-gray-secondary">
-      For additional capacity, my friends are available for professional projects. Their expertise
-      in design, foresight, marketing and research complement any requirement.
+      For additional expertise, my friends are available for collaboration on Professional-tier
+      projects. Fellow makers, researchers, and entrepreneurs, their hands-on technology perspective
+      complements any requirement.
     </p>
     <p class="text-main-gray-secondary">Here's to sustainable growth,</p>
     <div>

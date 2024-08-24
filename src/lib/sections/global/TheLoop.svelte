@@ -9,15 +9,9 @@
     <a
       href={MainStreetSubstackAddress}
       aria-label="The Loop newsletter on Substack"
-      class="inline-block h-14"
+      class="inline-block w-[254px] h-[91px] -mt-6 -ml-5"
     >
-      <img
-        src="/wordmark-loop.svg"
-        width="254"
-        height="91"
-        alt="The Loop"
-        class="inline-block -mt-6 -ml-5"
-      />
+      <img src="/wordmark-loop.svg" width="254" height="91" alt="The Loop" class="inline-block" />
     </a>
   </div>
   <div class="flex flex-col gap-2">

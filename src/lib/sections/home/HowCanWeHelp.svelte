@@ -13,7 +13,7 @@
       </h3>
       <p class="text-subhead">
         We make entrepreneurship and technology accessible to more people with <a
-          href="#easy-street">free resources</a
+          href="/easy-street">free resources</a
         >
         and <a href={Calendly30Min}>consultations</a>.
       </p>
