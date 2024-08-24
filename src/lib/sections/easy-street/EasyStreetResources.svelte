@@ -10,6 +10,7 @@
   export let header_size: "headline" | "hero" = "headline";
   export let exclude_href: string = "";
   export let bg: ColorName = "surface-blue";
+  export let max_cols: 4 | 5 = 4;
 </script>
 
 <Section {bg} name="easy-street">
@@ -40,7 +41,7 @@
   </div>
   <div slot="full-width">
     <JellyGrid
-      max_cols={header_size === "hero" ? 5 : 4}
+      {max_cols}
       labelledBy="free-resources"
       items={AllResources.filter((r) => r.href !== exclude_href)}
       let:item

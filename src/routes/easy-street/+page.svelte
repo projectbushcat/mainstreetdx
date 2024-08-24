@@ -15,7 +15,12 @@
   />
 </svelte:head>
 
-<EasyStreetResources logo={false} header_size="hero" header="Free resources for entrepreneurs.">
+<EasyStreetResources
+  logo={false}
+  header_size="hero"
+  header="Free resources for entrepreneurs."
+  max_cols={5}
+>
   <div class="flex justify-between" slot="header">
     <img
       src="/wordmark-es.svg"
