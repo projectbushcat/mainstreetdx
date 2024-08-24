@@ -21,6 +21,7 @@
     content="Use this free resource to help you contextualize your business. For example: {data
       .resource.exampleGoal}"
   />
+  <meta property="og:image" content="/og/og-{data.resource.href}.jpg" />
 </svelte:head>
 
 <Hero resource={data.resource} bottom_border={completed_index > 0} />
