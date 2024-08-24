@@ -19,7 +19,7 @@
     {value}
     {disabled}
     on:click
-    class="p-4 max-w-max text-label underline-offset-2 ring-2 border-2 border-white rounded-lg active:ring-0 enabled:active:scale-95 transition-all duration-75 disabled:opacity-50 disabled:ring-0 active:no-underline disabled:no-underline disabled:active:animate-shake"
+    class="p-4 max-w-max text-label underline-offset-2 ring-2 border-2 border-white rounded-lg active:ring-0 enabled:active:scale-95 transition-all duration-75 disabled:opacity-90 disabled:ring-0 active:no-underline disabled:no-underline disabled:active:animate-shake"
     class:underline={!secondary}
     class:self-start={secondary}
     class:bg-main-green={bg === "main-green"}

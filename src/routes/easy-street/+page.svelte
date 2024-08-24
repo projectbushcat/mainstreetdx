@@ -35,9 +35,11 @@
 </EasyStreetResources>
 <Section bg="main-blue">
   <h2 class="text-hero">Easy Street empowers entrepreneurs.</h2>
-  <p class="text-hero text-white/50">With free time, free resources, and community outreach.</p>
+  <p class="text-hero text-surface-blue/80">
+    With free time, free resources, and community outreach.
+  </p>
   <p class="text-hero">We serve our thriving local ecosystem.</p>
-  <p class="text-hero text-white/50">
+  <p class="text-hero text-surface-blue/80">
     Helping more people transform their ideas into iconic local businesses.
   </p>
 </Section>
