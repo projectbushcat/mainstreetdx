@@ -30,7 +30,7 @@
   class:border-b-main-gray={bottom_border && bg === "surface-gray"}
 >
   {#if name}
-    <a id={name} aria-label="Named anchor for {name}" class="absolute top-8"></a>{/if}
+    <a id={name} class="absolute top-8"></a>{/if}
   <div class="max-w-prose m-auto pt-24 px-8 pb-8 flex flex-col gap-8">
     <slot />
   </div>
