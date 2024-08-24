@@ -34,13 +34,13 @@
       <h2 class="text-headline" id="free-resources">{header}</h2>
     {/if}
     <p class="text-subhead">
-      From food trucks to startups, use our free AI-enabled resources to ideate, refine, and
-      contextualize your goals.
+      From refining your initial idea to scaling your business, our free AI-enabled resources help
+      you navigate your journey.
     </p>
   </div>
   <div slot="full-width">
     <JellyGrid
-      max_cols={4}
+      max_cols={header_size === "hero" ? 5 : 4}
       labelledBy="free-resources"
       items={AllResources.filter((r) => r.href !== exclude_href)}
       let:item

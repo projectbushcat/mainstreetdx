@@ -48,7 +48,7 @@ export const POST = async (event) => {
     if (message.content[0].type === "text") {
       return json({
         success: true,
-        insights: message.content[0].text
+        insights: message.content[0].text.replaceAll("\n", "<br/>")
       } as FreeResourceGenerateResponse);
     } else {
       throw new Error(`malformed response:\n${JSON.stringify(message)}`);

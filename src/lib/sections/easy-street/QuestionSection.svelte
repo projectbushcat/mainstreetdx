@@ -26,6 +26,7 @@
   let num_generated = 0;
   $: disabled = answers.join("").trim().length < 15 || num_generated > MAX_GENERATIONS;
   let generating = false;
+  let generating_el: HTMLParagraphElement;
   let generated = false;
   let generating_error = false;
   let completed = false;
@@ -71,8 +72,11 @@
     generate();
   };
 
-  const handleGenerateClick = () => {
+  const handleRegenerateClick = () => {
     generate();
+    setTimeout(() => {
+      generating_el?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   };
 </script>
 
@@ -104,7 +108,7 @@
       />
     {/if}
     {#if generating || generated}
-      <p class="text-label text-main-gray flex gap-1" aria-live="polite">
+      <p class="text-label text-main-gray flex gap-1" aria-live="polite" bind:this={generating_el}>
         <span class="flex h-[24px] items-center">
           <Icon icon={generating ? "refresh" : "thumb"} spins={generating} />
         </span>
@@ -116,8 +120,11 @@
     {/if}
     {#if insights}
       <div>
-        <h3 class="text-headline text-main-gray-secondary">AI Insights:</h3>
-        <pre class="text-body font-sans">{insights.substring(0, $typing)}</pre>
+        <h3 class="text-headline text-main-gray flex items-center gap-1">
+          <img src="/decorations/zap.svg" width="24" height="24" alt="" role="presentation" />
+          Insights from AI
+        </h3>
+        <p class="text-subhead">{@html insights.substring(0, $typing)}</p>
       </div>
     {/if}
     <div slot="full-width" class="max-w-prose m-auto">
@@ -134,7 +141,7 @@
               value="Regenerate insights"
               bg={resource.surface}
               secondary
-              on:click={handleGenerateClick}
+              on:click={handleRegenerateClick}
             />
             {#if !completed}
               {#if index === 2}
