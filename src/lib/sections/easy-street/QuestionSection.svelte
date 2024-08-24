@@ -88,7 +88,7 @@
   >
     <div class="flex flex-col gap-2">
       <h2 class="flex flex-col">
-        <span class="text-headline text-main-gray-secondary"
+        <span class="text-headline text-main-gray/80"
           >Section {index + 1} of 3{#if completed}, completed{/if}:</span
         >
         <span class="text-hero">{section.headline}</span>

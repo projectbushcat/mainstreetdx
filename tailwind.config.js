@@ -28,7 +28,7 @@ export default {
         "main-yellow": "#FDDA16",
         "main-orange": "#FF621A",
         "main-gray": "#303030",
-        "main-gray-secondary": "#636363",
+        "main-gray-secondary": "#CFCFCF",
         "surface-green": "#E5F0EC",
         "surface-blue": "#E5E9F0",
         "surface-yellow": "#F0EEE5",
