@@ -1,7 +1,6 @@
 <script lang="ts">
   import { Calendly30Min } from "$lib/data/MainStreet";
   import EasyStreetResources from "$lib/sections/easy-street/EasyStreetResources.svelte";
-  import ExploreAdditionalResources from "$lib/sections/easy-street/EasyStreetResources.svelte";
   import TheLoop from "$lib/sections/global/TheLoop.svelte";
   import Link from "$lib/ui/Link.svelte";
   import Section from "$lib/ui/Section.svelte";
@@ -13,6 +12,7 @@
     name="description"
     content="Easy Street empowers entrepreneurs with free time, free resources, and community outreach. We serve our thriving local ecosystem, helping more people transform their ideas into iconic local businesses."
   />
+  <meta property="og:image" content="/og/og-easystreet.jpg" />
 </svelte:head>
 
 <EasyStreetResources

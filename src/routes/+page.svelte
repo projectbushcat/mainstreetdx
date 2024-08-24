@@ -19,6 +19,7 @@
     name="description"
     content="We help entrepreneurs from all backgrounds grow their business using technology by providing free resources and consulting services starting at $250/day."
   />
+  <meta property="og:image" content="/og/og-mainstreet.jpg" />
 </svelte:head>
 
 <Hero />
