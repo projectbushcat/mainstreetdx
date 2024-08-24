@@ -1,10 +1,11 @@
 <script lang="ts">
-  import Icon from "./Icon.svelte";
+  import { slide } from "svelte/transition";
+  import Icon from "./icons/Icon.svelte";
+  import type { ColorName } from "$lib/data/ColorName";
 
   export let expanded: boolean = false;
-  export let surface: "dark" | "light" = "dark";
-  export let emoji: string | undefined = undefined;
   export let title: string;
+  export let bg: ColorName = "surface-green";
 
   const id = crypto.randomUUID();
 
@@ -16,35 +17,37 @@
 </script>
 
 <article
-  class="transition-all flex flex-col gap-lg"
-  class:bg-surface-dark={expanded && surface === "dark"}
-  class:bg-surface-light={expanded && surface === "light"}
-  class:ring-2={expanded && surface === "light"}
-  class:ring-surface-light={expanded && surface === "light"}
-  class:border-2={expanded && surface === "light"}
-  class:border-surface-dark={expanded && surface === "light"}
-  class:rounded={expanded}
-  class:p-lg={expanded}
+  class="flex flex-col gap-8 transition-all"
+  class:bg-surface-green={expanded && bg === "surface-green"}
+  class:bg-main-yellow={expanded && bg === "main-yellow"}
+  class:border-black={expanded && bg === "main-yellow"}
+  class:border-2={expanded}
+  class:rounded-2xl={expanded}
+  class:p-4={expanded}
+  class:my-4={expanded}
 >
-  <h3 class="header-weak flex gap-md items-baseline justify-start hover:text-black">
-    {#if emoji && !expanded}
-      <span role="presentation">{emoji}</span>
-    {:else}
-      <Icon
-        icon={expanded ? "minus_circle" : "plus_circle"}
-        positionOverrideType="accordion"
-        className="shrink-0"
-      />
-    {/if}
+  <h3>
     <button
       aria-expanded={expanded}
       aria-controls={id}
+      class="flex text-left gap-2 rounded focus:ring-2 focus:ring-main-green"
       on:click={() => (expanded = !expanded)}
-      class="text-left underline underline-offset-2 focus:ring-2 focus:ring-main-green focus:rounded active:outline-main-green focus:outline-main-green"
-      on:keyup={handleKeyUp}>{title}</button
+      on:keyup={handleKeyUp}
     >
+      <span class="h-[30px] inline-flex items-center">
+        <Icon icon={expanded ? "minus_circle" : "plus_circle"} />
+      </span>
+      <span
+        class="underline-offset-2 hover:underline text-headline flex-1"
+        class:underline={expanded}>{title}</span
+      >
+    </button>
   </h3>
-  <section {id} class="text-accordion flex flex-col gap-lg print:block" class:hidden={!expanded}>
-    <slot />
+  <section {id} class:hidden={!expanded} aria-live="polite">
+    {#if expanded}
+      <div class="text-body flex flex-col gap-8" in:slide out:slide>
+        <slot />
+      </div>
+    {/if}
   </section>
 </article>
