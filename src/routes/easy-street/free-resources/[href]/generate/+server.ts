@@ -6,7 +6,10 @@ import {
   type FreeResourceGenerateResponse
 } from "$lib/data/EasyStreet.js";
 import Anthropic from "@anthropic-ai/sdk";
+import type { MessageParam } from "@anthropic-ai/sdk/resources/messages.mjs";
 import { json } from "@sveltejs/kit";
+
+const buildQuestion = (q: string[], a: string[]) => q.map((q, i) => `${q}\n${a[i]}`).join("\n");
 
 export const POST = async (event) => {
   try {
@@ -25,14 +28,23 @@ export const POST = async (event) => {
         `generate API couldn't find section for index ${parsed.i} raw: ${JSON.stringify(parsed)}`
       );
 
-    if (parsed.a.length !== section.questions.length)
+    if (parsed.a[parsed.i].length !== section.questions.length)
       throw new Error(
-        `generate API found question and answer length mismatch (${parsed.a.length} != ${section.questions.length}) raw:\n${parsed.a}\n${section.questions}`
+        `generate API found question and answer length mismatch (${parsed.a[parsed.i].length} != ${section.questions.length}) raw:\n${parsed.a[parsed.i]}\n${section.questions}`
       );
 
-    const user_message = section.questions
-      .map((q, i) => `${i + 1}. ${q}\n${parsed.a[i] ?? "(No answer was provided)"}`)
-      .join("\n");
+    const user_content = [];
+
+    for (let i = 0; i <= parsed.i; i++) {
+      user_content.push(buildQuestion(resource.sections[i].questions, parsed.a[i]));
+    }
+
+    const messages: MessageParam[] = [
+      {
+        role: "user",
+        content: user_content.join("\n")
+      }
+    ];
 
     const client = new Anthropic({
       apiKey: env.ANTHROPIC_API_KEY
@@ -42,7 +54,7 @@ export const POST = async (event) => {
       model: "claude-3-5-sonnet-20240620",
       max_tokens: 768,
       system: section.prompt,
-      messages: [{ role: "user", content: user_message }]
+      messages
     });
 
     if (message.content[0].type === "text") {
@@ -54,6 +66,7 @@ export const POST = async (event) => {
       throw new Error(`malformed response:\n${JSON.stringify(message)}`);
     }
   } catch (e) {
+    console.log(e);
     return json({
       success: false
     } as FreeResourceGenerateResponse);

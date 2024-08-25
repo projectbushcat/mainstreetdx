@@ -57,7 +57,7 @@ export interface FreeResourceSection {
 export const FreeResourceValidators = {
   generate: z.object({
     i: z.number(),
-    a: z.array(z.string())
+    a: z.array(z.array(z.string()))
   })
 };
 
@@ -71,6 +71,11 @@ export type FreeResourceGenerateResponse =
   | {
       success: false;
     };
+
+export type FreeResourceGeneratorFn = (
+  r: FreeResource,
+  i: number
+) => Promise<FreeResourceGenerateResponse>;
 
 // helper class
 export class FreeResourceUtils {
@@ -87,7 +92,7 @@ export class FreeResourceUtils {
   static async generate(
     r: FreeResource,
     i: number,
-    a: string[]
+    a: string[][]
   ): Promise<FreeResourceGenerateResponse> {
     try {
       const body: FreeResourceGenerateRequest = { i, a };

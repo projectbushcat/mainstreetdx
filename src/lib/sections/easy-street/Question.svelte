@@ -1,7 +1,7 @@
 <script lang="ts">
   import {
-    FreeResourceUtils,
     type FreeResource,
+    type FreeResourceGeneratorFn,
     type FreeResourceSection
   } from "$lib/data/EasyStreet";
   import { Calendly30Min } from "$lib/data/MainStreet";
@@ -21,8 +21,9 @@
   export let index: number;
   export let resource: FreeResource;
   export let section: FreeResourceSection;
+  export let answers: string[];
+  export let getGeneration: FreeResourceGeneratorFn;
 
-  let answers: string[] = section.questions.map((q) => "");
   let num_generated = 0;
   $: disabled = answers.join("").trim().length < 15 || num_generated > MAX_GENERATIONS;
   let generating = false;
@@ -41,7 +42,7 @@
     $typing = 0;
     num_generated += 1;
 
-    const res = await FreeResourceUtils.generate(resource, index, answers);
+    const res = await getGeneration(resource, index);
 
     if (res.success) {
       generated = true;
@@ -129,7 +130,10 @@
     {/if}
     <div slot="full-width" class="max-w-prose m-auto">
       {#if generated && !generating}
-        <div class="px-8 pb-8" in:slide={{ delay: 250, duration: 500, easing: quartInOut }}>
+        <div
+          class="px-8 pb-8 flex flex-col gap-8"
+          in:slide={{ delay: 250, duration: 500, easing: quartInOut }}
+        >
           <div class="flex flex-col gap-8 md:gap-0 md:flex-row md:justify-between">
             <FormButton
               bind:disabled
@@ -144,21 +148,7 @@
               on:click={handleRegenerateClick}
             />
             {#if !completed}
-              {#if index === 2}
-                <p class="text-hero">Good luck!</p>
-                <p class="text-label">
-                  We hope you found this resource helpful, and would love to hear from you with any
-                  questions about starting a business or harnessing technology.
-                </p>
-                <p>
-                  <Link
-                    href={Calendly30Min}
-                    target="_blank"
-                    label="Schedule a free call"
-                    icon="external_link"
-                  />
-                </p>
-              {:else}
+              {#if index < 2}
                 <FormButton
                   label="Move on to Section {index + 2}:"
                   value={resource.sections[index + 1].headline ?? "Next Section"}
@@ -168,6 +158,23 @@
               {/if}
             {/if}
           </div>
+          {#if index === 2}
+            <div class="flex flex-col gap-4">
+              <p class="text-hero">Good luck!</p>
+              <p class="text-label">
+                We hope you found this resource helpful, and would love to hear from you with any
+                questions about starting a business or harnessing technology.
+              </p>
+              <p>
+                <Link
+                  href={Calendly30Min}
+                  target="_blank"
+                  label="Schedule a free call"
+                  icon="external_link"
+                />
+              </p>
+            </div>
+          {/if}
         </div>
       {/if}
     </div>
