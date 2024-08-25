@@ -36,7 +36,7 @@
     {/if}
     <p class="text-subhead">
       From refining your initial idea to scaling your business, our free AI-enabled resources help
-      you navigate your journey.
+      navigate your journey.
     </p>
   </div>
   <div slot="full-width">
