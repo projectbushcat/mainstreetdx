@@ -32,14 +32,15 @@
   let generating_error = false;
   let completed = false;
   let insights: string | undefined = undefined;
-  let typing = tweened(0, { duration: 1000, easing: quartInOut });
+  // Fade in the complete HTML so Markdown tags are never truncated mid-element.
+  let reveal = tweened(0, { duration: 1000, easing: quartInOut });
 
   const generate = async () => {
     generating = true;
     generated = false;
     generating_error = false;
     insights = undefined;
-    $typing = 0;
+    $reveal = 0;
     num_generated += 1;
 
     const res = await getGeneration(resource, index);
@@ -47,7 +48,7 @@
     if (res.success) {
       generated = true;
       insights = res.insights;
-      typing.set(insights.length).then(() => {
+      reveal.set(1).then(() => {
         generating = false;
       });
     } else {
@@ -120,13 +121,17 @@
       <p class="text-label">Something went wrong. Please try again later.</p>
     {/if}
     {#if insights}
-      <div>
-        <h3 class="text-headline text-main-gray flex items-center gap-1">
+      <section aria-labelledby="insights-heading-{index}">
+        <h3
+          id="insights-heading-{index}"
+          class="text-headline text-main-gray flex items-center gap-1"
+        >
           <img src="/decorations/zap.svg" width="24" height="24" alt="" role="presentation" />
           Insights from AI
         </h3>
-        <p class="text-subhead">{@html insights.substring(0, $typing)}</p>
-      </div>
+        <!-- The API sanitizes this HTML before it reaches the client. -->
+        <div class="markdown text-subhead" style:opacity={$reveal}>{@html insights}</div>
+      </section>
     {/if}
     <div slot="full-width" class="max-w-prose m-auto">
       {#if generated && !generating}
@@ -180,3 +185,28 @@
     </div>
   </Section>
 </form>
+
+<style lang="postcss">
+  /* Restore readable spacing because Tailwind's reset removes default Markdown margins. */
+  .markdown :global(p),
+  .markdown :global(ul),
+  .markdown :global(ol),
+  .markdown :global(blockquote),
+  .markdown :global(pre),
+  .markdown :global(table),
+  .markdown :global(h4) {
+    @apply mt-4;
+  }
+
+  .markdown :global(ul) {
+    @apply list-disc pl-6;
+  }
+
+  .markdown :global(ol) {
+    @apply list-decimal pl-6;
+  }
+
+  .markdown :global(a) {
+    @apply underline;
+  }
+</style>

@@ -8,6 +8,8 @@ import {
 import Anthropic from "@anthropic-ai/sdk";
 import type { MessageParam } from "@anthropic-ai/sdk/resources/messages.mjs";
 import { json } from "@sveltejs/kit";
+import { marked } from "marked";
+import sanitizeHtml from "sanitize-html";
 
 const buildQuestion = (q: string[], a: string[]) => q.map((q, i) => `${q}\n${a[i]}`).join("\n");
 
@@ -64,14 +66,59 @@ export const POST = async (event) => {
       .map((block) => block.text)
       .join("\n");
 
-    if (content.length > 0) {
-      return json({
-        success: true,
-        insights: content.replaceAll("\n", "<br/>")
-      } as FreeResourceGenerateResponse);
-    } else {
+    if (content.length === 0) {
       throw new Error(`malformed response:\n${JSON.stringify(message)}`);
     }
+
+    // Convert Claude's Markdown into HTML while retaining intentional single-line breaks.
+    const renderedContent = await marked.parse(content, { async: false, breaks: true, gfm: true });
+    // Sanitize model-generated markup before the client renders it with Svelte's `@html` tag.
+    const insights = sanitizeHtml(renderedContent, {
+      allowedTags: [
+        "p",
+        "br",
+        "strong",
+        "em",
+        "ul",
+        "ol",
+        "li",
+        "blockquote",
+        "code",
+        "pre",
+        "hr",
+        "a",
+        "h4",
+        "table",
+        "thead",
+        "tbody",
+        "tr",
+        "th",
+        "td",
+        "del"
+      ],
+      allowedAttributes: {
+        a: ["href", "title"]
+      },
+      allowedSchemes: ["http", "https", "mailto"],
+      allowProtocolRelative: false,
+      // Keep AI-generated headings beneath the component's existing level-three heading.
+      transformTags: {
+        h1: "h4",
+        h2: "h4",
+        h3: "h4",
+        h5: "h4",
+        h6: "h4"
+      }
+    });
+
+    if (insights.trim().length === 0) {
+      throw new Error(`generate API received no safe HTML:\n${JSON.stringify(message)}`);
+    }
+
+    return json({
+      success: true,
+      insights
+    } as FreeResourceGenerateResponse);
   } catch (e) {
     console.log(e);
     return json({
