@@ -32,15 +32,14 @@
   let generating_error = false;
   let completed = false;
   let insights: string | undefined = undefined;
-  // Fade in the complete HTML so Markdown tags are never truncated mid-element.
-  let reveal = tweened(0, { duration: 1000, easing: quartInOut });
+  let typing = tweened(0, { duration: 1000, easing: quartInOut });
 
   const generate = async () => {
     generating = true;
     generated = false;
     generating_error = false;
     insights = undefined;
-    $reveal = 0;
+    $typing = 0;
     num_generated += 1;
 
     const res = await getGeneration(resource, index);
@@ -48,7 +47,7 @@
     if (res.success) {
       generated = true;
       insights = res.insights;
-      reveal.set(1).then(() => {
+      typing.set(insights.length).then(() => {
         generating = false;
       });
     } else {
@@ -121,18 +120,14 @@
       <p class="text-label">Something went wrong. Please try again later.</p>
     {/if}
     {#if insights}
-      <section aria-labelledby="insights-heading-{index}">
-        <h3
-          id="insights-heading-{index}"
-          class="text-headline text-main-gray flex items-center gap-1"
-        >
+      <div>
+        <h3 class="text-headline text-main-gray flex items-center gap-1">
           <img src="/decorations/zap.svg" width="24" height="24" alt="" role="presentation" />
           Insights from AI
         </h3>
-        <!-- The API sanitizes this HTML before it reaches the client. -->
-        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-        <div class="markdown text-subhead" style:opacity={$reveal}>{@html insights}</div>
-      </section>
+        <!-- Preserve Claude's line breaks while letting Svelte escape the model-generated text. -->
+        <p class="text-subhead whitespace-pre-line">{insights.substring(0, $typing)}</p>
+      </div>
     {/if}
     <div slot="full-width" class="max-w-prose m-auto">
       {#if generated && !generating}
@@ -186,28 +181,3 @@
     </div>
   </Section>
 </form>
-
-<style lang="postcss">
-  /* Restore readable spacing because Tailwind's reset removes default Markdown margins. */
-  .markdown :global(p),
-  .markdown :global(ul),
-  .markdown :global(ol),
-  .markdown :global(blockquote),
-  .markdown :global(pre),
-  .markdown :global(table),
-  .markdown :global(h4) {
-    @apply mt-4;
-  }
-
-  .markdown :global(ul) {
-    @apply list-disc pl-6;
-  }
-
-  .markdown :global(ol) {
-    @apply list-decimal pl-6;
-  }
-
-  .markdown :global(a) {
-    @apply underline;
-  }
-</style>
