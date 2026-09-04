@@ -130,6 +130,7 @@
           Insights from AI
         </h3>
         <!-- The API sanitizes this HTML before it reaches the client. -->
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
         <div class="markdown text-subhead" style:opacity={$reveal}>{@html insights}</div>
       </section>
     {/if}
