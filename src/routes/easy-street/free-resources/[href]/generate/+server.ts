@@ -57,10 +57,17 @@ export const POST = async (event) => {
       messages
     });
 
-    if (message.content[0].type === "text") {
+    // Claude may return non-text blocks, such as thinking, before its visible response.
+    const content = message.content
+      // Narrow the union so TypeScript knows each remaining block has a `text` property.
+      .filter((block) => block.type === "text")
+      .map((block) => block.text)
+      .join("\n");
+
+    if (content.length > 0) {
       return json({
         success: true,
-        insights: message.content[0].text.replaceAll("\n", "<br/>")
+        insights: content.replaceAll("\n", "<br/>")
       } as FreeResourceGenerateResponse);
     } else {
       throw new Error(`malformed response:\n${JSON.stringify(message)}`);
